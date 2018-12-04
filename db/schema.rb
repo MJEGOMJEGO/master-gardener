@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_112649) do
+ActiveRecord::Schema.define(version: 2018_12_04_134626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_112649) do
   create_table "actions", force: :cascade do |t|
     t.string "name"
     t.integer "points"
-    t.string "img_url"
+    t.string "img"
     t.bigint "specie_id"
     t.integer "frequency_in_days"
     t.datetime "created_at", null: false
@@ -54,13 +54,13 @@ ActiveRecord::Schema.define(version: 2018_12_04_112649) do
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.integer "max_life_points"
-    t.string "img_url_water"
-    t.string "img_url_feed"
-    t.string "img_url_exposure"
-    t.string "img_url_repot"
-    t.string "img_url_cutclean"
-    t.string "img_url_feeling_good"
-    t.string "img_url_feeling_bad"
+    t.string "img_water"
+    t.string "img_feed"
+    t.string "img_exposure"
+    t.string "img_repot"
+    t.string "img_cutclean"
+    t.string "img_feeling_good"
+    t.string "img_feeling_bad"
     t.string "quizz_question_1"
     t.boolean "quizz_answer_1"
     t.string "quizz_question_2"
@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_112649) do
     t.string "city_location"
     t.integer "level"
     t.integer "score"
-    t.string "img_url"
+    t.string "img"
     t.text "badges", array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
