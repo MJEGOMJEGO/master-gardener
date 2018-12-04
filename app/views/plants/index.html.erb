@@ -1,3 +1,17 @@
-<% @plants.each do |plant| %>
-<%= plant.nickname %>
-<% end %>
+<div class="container test-background-red">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <% @plants.each do |plant| %>
+        <%= image_tag "species/#{plant.specie.code}.svg" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
