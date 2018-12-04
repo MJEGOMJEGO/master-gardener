@@ -14,6 +14,8 @@ Specie.destroy_all
 
 puts "Creating users..."
 matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 1, score: 600, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')))
+ben = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 2, score: 1500, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')))  
+
 
 puts "Creating species..."
 cactus = Specie.create!(name: 'Cactus', max_life_points: 1000, img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
