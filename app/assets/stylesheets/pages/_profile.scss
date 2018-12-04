@@ -1,0 +1,30 @@
+.profile-title {
+  text-align: center;
+}
+
+.profile-star {
+  height: 50px;
+  width: 50px;
+}
+.profile-star-grey {
+  height: 50px;
+  width: 50px;
+  filter: grayscale(100%);
+}
+.display-stars {
+  display :flex;
+}
+.badge-won {
+  height: 350px;
+  width: 350px;
+}
+.badge-not-won {
+  height: 350px;
+  width: 350px;
+  filter: grayscale(100%);
+}
+.badge_table {
+  height: 70px;
+  width: 70px;
+  border: 2px solid lightgrey;
+  }
