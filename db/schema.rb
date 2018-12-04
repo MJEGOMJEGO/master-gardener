@@ -10,10 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_095454) do
+ActiveRecord::Schema.define(version: 2018_12_04_112649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "actions", force: :cascade do |t|
+    t.string "name"
+    t.integer "points"
+    t.string "img_url"
+    t.bigint "specie_id"
+    t.integer "frequency_in_days"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["specie_id"], name: "index_actions_on_specie_id"
+  end
+
+  create_table "plants", force: :cascade do |t|
+    t.string "nickname"
+    t.integer "life_points"
+    t.bigint "user_id"
+    t.bigint "specie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["specie_id"], name: "index_plants_on_specie_id"
+    t.index ["user_id"], name: "index_plants_on_user_id"
+  end
+
+  create_table "quizz_answers", force: :cascade do |t|
+    t.boolean "correct_answer_1"
+    t.boolean "correct_answer_2"
+    t.boolean "correct_answer_3"
+    t.boolean "correct_answer_4"
+    t.boolean "correct_answer_5"
+    t.bigint "user_id"
+    t.bigint "specie_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["specie_id"], name: "index_quizz_answers_on_specie_id"
+    t.index ["user_id"], name: "index_quizz_answers_on_user_id"
+  end
+
+  create_table "species", force: :cascade do |t|
+    t.string "name"
+    t.integer "max_life_points"
+    t.string "img_url_water"
+    t.string "img_url_feed"
+    t.string "img_url_exposure"
+    t.string "img_url_repot"
+    t.string "img_url_cutclean"
+    t.string "img_url_feeling_good"
+    t.string "img_url_feeling_bad"
+    t.string "quizz_question_1"
+    t.boolean "quizz_answer_1"
+    t.string "quizz_question_2"
+    t.boolean "quizz_answer_2"
+    t.string "quizz_question_3"
+    t.boolean "quizz_answer_3"
+    t.string "quizz_question_4"
+    t.boolean "quizz_answer_4"
+    t.string "quizz_question_5"
+    t.boolean "quizz_answer_5"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.date "max_date"
+    t.boolean "mark_as_done"
+    t.bigint "plant_id"
+    t.bigint "action_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["action_id"], name: "index_tasks_on_action_id"
+    t.index ["plant_id"], name: "index_tasks_on_plant_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +94,21 @@ ActiveRecord::Schema.define(version: 2018_12_04_095454) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "city_location"
+    t.integer "level"
+    t.integer "score"
+    t.string "img_url"
+    t.text "badges", array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "actions", "species", column: "specie_id"
+  add_foreign_key "plants", "species", column: "specie_id"
+  add_foreign_key "plants", "users"
+  add_foreign_key "quizz_answers", "species", column: "specie_id"
+  add_foreign_key "quizz_answers", "users"
+  add_foreign_key "tasks", "actions"
+  add_foreign_key "tasks", "plants"
 end
