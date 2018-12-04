@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'plants/index'
+  get 'plants/show'
   devise_for :users
   root to: 'pages#home'
   resources :plants
