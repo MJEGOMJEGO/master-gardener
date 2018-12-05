@@ -1,16 +1,12 @@
+<div class="container test-background-profile">
 <div class = "profile-page">
 <div class= "profile-title">
-  <h1>Awards Gallery</h1>
+  Awards Gallery
 </div>
 
 <!-- badges area -->
 <div class="">
-  <div class="">
-    <h1> <%= @user.username %></h1>
-    <h2> Player Score :<%=  @user.score %></h2>
-  </div>
   <div class="stars">
-    <h1> Level :<%= @user.level %></h1>
     <div class= "display-stars">
     <h2>
     <% star_counter = @user.level%>
@@ -25,29 +21,23 @@
   </div>
   </div>
 </div>
-<div class="container">
   <div class="container-badges">
     <div class="row">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="badges-area">
           <% User::BADGES.each do |code, title| %>
+      <div class="col-xs-3 col-sm-2 col-md-2">
+        <div class="badges-area ">
             <%= image_tag "profile/badges/#{code}.png", title: title, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
-          <% end %>
         </div>
       </div>
+          <% end %>
     </div>
   </div>
 </div>
 
-<!-- A faire en Javascript
-nextWagonPlace.classList.add("active");
-currentWagonPlace.classList.remove("actie"); -->
-
 <!-- Edit Profile -->
 
-<div class="background-form-login-sign-up">
   <div class="container-form-sign-up">
-    <h5>Update profile details ?</h5>
+   <p> Need to change player details ?</p>
       <%= simple_form_for @user, url: profile_path do |f| %>
         <div class="form-inputs-sign-up">
           <div class="form-block">
@@ -60,11 +50,11 @@ currentWagonPlace.classList.remove("actie"); -->
                 input_html: { autocomplete: "Your City" } %>
 
           </div>
-        </div>
         <div class="form-actions">
+          <%= image_tag("profile/hand-kawaii.png", class: "hand-kawaii")%>
           <p><%= f.button :submit, class: "btn-form-sign-up" %></p>
+        </div>
         </div>
       <% end %>
   </div>
-</div>
 </div>
