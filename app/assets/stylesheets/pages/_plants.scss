@@ -1,3 +1,67 @@
 .test-background-red {
-  background-color: red;
+  background-color: rgba(136, 223, 215, 0.52);
+  height: 100vh;
 }
+
+.test-background-green {
+  background-color: green;
+}
+
+.plants-shelf {
+  display: flex;
+  border-bottom: 1em solid #D4B483;
+  border-radius: 6px;
+  justify-content: space-around;
+  align-items: flex-end;
+  box-shadow: 0 9px 6px -6px grey;
+  margin-top: 10px;
+  height: 30vh;
+}
+
+.plant-index {
+  align-self: flex-end;
+  margin-bottom: -4px;
+  // width: 80px;
+  height: 27vh;
+}
+
+.plant-index-ficus {
+  align-self: flex-end;
+  margin-bottom: -4px;
+  // width: 80px;
+  height: 27vh;
+}
+.plant-index:hover {
+  cursor: pointer;
+  animation: plant-bounce 0.4s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes plant-bounce {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-20px); }
+  80% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+.books {
+  height: 100px;
+  align-self: flex-end;
+  margin-bottom: -3px;
+}
+
+.drink {
+  height: 60px;
+  align-self: flex-end;
+  margin-bottom: -3px;
+}
+
+
+
+.plant-index-ficus:hover {
+  cursor: pointer;
+  animation: plant-bounce 0.3s ease;
+  animation-iteration-count: 1;
+}
+
+
