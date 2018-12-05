@@ -5,7 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Cleaning database..."
 Task.destroy_all
 Plant.destroy_all
@@ -15,13 +14,12 @@ Specie.destroy_all
 
 puts "Creating users..."
 matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 1, score: 600, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')))
-ben    = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 2, score: 1500, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')))
+ben  = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 2, score: 1500, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')))
 
 puts "Creating species..."
-aaaa   = Specie.create!(name: 'aaaa', max_life_points: 2000 , img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
-cactus = Specie.create!(name: 'Cactus', max_life_points: 1000, img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
-ficus  =  Specie.create!(name: 'Ficus', max_life_points: 2000, img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
-
+haworthia = Specie.create!(code: 'haworthia', name: 'Haworthia', max_life_points: 2000)
+cactus    = Specie.create!(code: 'cactus', name: 'Cactus', max_life_points: 1000)
+ficus     =  Specie.create!(code: 'ficus', name: 'Ficus', max_life_points: 2000)
 
 puts "Creating plants..."
 bernard = Plant.create!(specie: cactus, nickname: 'Bernard', life_points: 600, user: matt)
@@ -43,3 +41,4 @@ Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', mar
 Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', mark_as_done: false)
 
 puts "Finished!"
+
