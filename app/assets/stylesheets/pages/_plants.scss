@@ -1,7 +1,8 @@
-.test-background-red {
+.custom-background {
   background-color: rgba(136, 223, 215, 0.52);
-  height: 100vh;
+  height: 90vh;
   display: flex;
+  align-items: center;
 }
 
 .test-background-green {
@@ -12,6 +13,8 @@
   // display: block;
   //   margin-left: auto;
   //   margin-right: auto
+  width: 100%;
+  margin: 0 auto;
 
 }
 
@@ -23,14 +26,14 @@
   align-items: flex-end;
   box-shadow: 0 9px 6px -6px grey;
   margin-top: 10px;
-  height: 30vh;
+  height: 27vh;
 
 }
 
 .plant-index {
   align-self: flex-end;
   margin-bottom: -12px;
-  height: 27vh;
+  height: 26vh;
 }
 
 .plant-index:hover {

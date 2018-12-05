@@ -1,0 +1,22 @@
+<div class="container custom-background-form">
+  <h2>Hey Matthieu! You can add a new plant to your garden here</h2>
+  <div class="container-form">
+<%= simple_form_for [@plant] do |f| %>
+    <div class="container-form-inputs">
+      <%= f.input :specie,
+                  label: false,
+                  placeholder: "What is the specie of your plant?",
+                  required: true %>
+      <%= f.input :nickname,
+                  label: false,
+                  required: true,
+                  placeholder: "Her nickname ?" %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "LOG IN", class: "btn-form-login" %>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>
+
