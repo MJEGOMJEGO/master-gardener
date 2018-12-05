@@ -34,3 +34,4 @@ Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', mar
 Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', mark_as_done: false)
 
 puts "Finished!"
+
