@@ -4,28 +4,34 @@
         <div class="tasks-box">
 
           <div class="task-message">
-            <% @plant.tasks.todo_quickly.each do |task|  %>
+            <% if @plant.tasks.todo_quickly != [] %>
+              <% @plant.tasks.todo_quickly.each do |task|  %>
 
-              <%if task.action.name == "water" %>
-                <%= "hey #{@plant.user.username} j'ai soife, IL ME FAUT DE L'EAU!!!!!!!!!" %>
-                <%= image_tag "actions/#{task.action.code}.png" %>
+                <%if task.action.name == "water" %>
+                  <%= "hey #{@plant.user.username} j'ai soif, IL ME FAUT DE L'EAU!!!!!!!!!" %>
+                  <%= image_tag "actions/#{task.action.code}.png" %>
 
-              <%elsif task.action.name == "exposure" %>
-                <%= "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!" %>
-                <%= image_tag "actions/#{task.action.code}.png" %>
+                <%elsif task.action.name == "exposure" %>
+                  <%= "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!" %>
+                  <%= image_tag "actions/#{task.action.code}.png" %>
 
-              <%elsif task.action.name == "cutclean" %>
-                <%= "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut." %>
-                <%= image_tag "actions/#{task.action.code}.png" %>
+                <%elsif task.action.name == "cutclean" %>
+                  <%= "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut." %>
+                  <%= image_tag "actions/#{task.action.code}.png" %>
 
-              <%elsif task.action.name == "feed" %>
-                <%= "hey #{@plant.user.username}I am hungry, feed me!!" %>
-                <%= image_tag "actions/#{task.action.code}.png" %>
-              <%elsif task.action.name == "repot" %>
-                <%= "hey #{@plant.user.username} I am to big, give me some space." %>
-                <%= image_tag "actions/#{task.action.code}.png" %>
+                <%elsif task.action.name == "feed" %>
+                  <%= "hey #{@plant.user.username}I am hungry, feed me!!" %>
+                  <%= image_tag "actions/#{task.action.code}.png" %>
 
-              <%end %>
+                <%elsif task.action.name == "repot" %>
+                  <%= "hey #{@plant.user.username} I am to big, give me some space." %>
+                  <%= image_tag "actions/#{task.action.code}.png" %>
+
+
+                <%end %>
+              <% end %>
+            <% else %>
+              <%= "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good" %>
             <% end %>
           </div>
         </div>
