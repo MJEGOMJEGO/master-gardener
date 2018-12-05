@@ -30,32 +30,9 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="badges-area">
-          <table class="badge_table">
-            <tr>
-              <td id="badge1" ><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge2" ><%= image_tag("profile/badge-won.png", class: "badge-not-won")%></td>
-              <td id="badge3"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge4"><%= image_tag("profile/badge-won.png", class: "badge-not-won")%></td>
-            </tr>
-            <tr>
-              <td id="badge5"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge6"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge7"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge8"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-            </tr>
-            <tr>
-              <td id="badge9"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge10"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge11"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge12"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-            </tr>
-            <tr>
-              <td id="badge13"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge14"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge15"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-              <td id="badge16"><%= image_tag("profile/badge-won.png", class: "badge-not-won" )%></td>
-            </tr>
-          </table>
+          <% User::BADGES.each do |code, title| %>
+            <%= image_tag "profile/badges/#{code}.png", title: title, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -64,7 +41,7 @@
 
 <!-- A faire en Javascript
 nextWagonPlace.classList.add("active");
-currentWagonPlace.classList.remove("active"); -->
+currentWagonPlace.classList.remove("actie"); -->
 
 <!-- Edit Profile -->
 
