@@ -6,8 +6,8 @@ User.destroy_all
 Specie.destroy_all
 
 puts "Creating users..."
-matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 1, score: 600, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')))
-ben  = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 2, score: 1500, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')))
+matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 1, score: 600, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')), badges: ['fake-flower-1'])
+ben  = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 2, score: 1500, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')), badges: ['fake-flower-1'])
 
 puts "Creating species..."
 haworthia = Specie.create!(code: 'haworthia', name: 'Haworthia', max_life_points: 2000)
@@ -27,11 +27,11 @@ water_haworthia  = Action.create!(code: 'water',name: 'water', points: 100, spec
 cut_haworthia    = Action.create!(code: 'cut', name: 'cut', points: 250, specie: haworthia, frequency_in_days: 40 )
 
 puts "Creating tasks..."
-Task.create!(plant: bernard, action: water_cactus, max_date: '2018-12-11', mark_as_done: false)
-Task.create!(plant: rené, action: water_ficus, max_date: '2018-12-11', mark_as_done: false)
+Task.create!(plant: bernard, action: water_cactus, max_date: '2018-12-11', done: false)
+Task.create!(plant: rené, action: water_ficus, max_date: '2018-12-11', done: false)
 
-Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', mark_as_done: false)
-Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', mark_as_done: false)
+Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', done: false)
+Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', done: false)
 
 puts "Finished!"
 
