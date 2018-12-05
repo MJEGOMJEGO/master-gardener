@@ -6,10 +6,12 @@
         <% @plants[0..1].each do |plant| %>
           <%= link_to plant_path(plant) do %>
               <%= svg 'plants', "#{plant.specie.code}" %>
+            <% end %>
           <% end %>
-        <% end %>
         <% if [0, 1].include?(@plants.length) %>
-          <%= svg 'components', 'pot' %>
+          <%= link_to new_plant_path(plant) do %>
+              <%= svg 'components', 'pot' %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -22,7 +24,9 @@
           <% end %>
         <% end %>
         <% if [2, 3].include?(@plants.length) %>
-          <%= svg 'components', 'pot' %>
+          <%= link_to new_plant_path(@plants) do %>
+              <%= svg 'components', 'pot' %>
+          <% end %>
         <% end %>
       </div>
     </div>

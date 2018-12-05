@@ -4,6 +4,10 @@ class PlantsController < ApplicationController
     @plants = Plant.all
   end
 
+  def new
+    @plant = Plant.new
+  end
+
   def show
   end
 
