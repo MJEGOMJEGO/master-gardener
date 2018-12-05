@@ -22,24 +22,24 @@ aaaa   = Specie.create!(name: 'aaaa', max_life_points: 2000 , img_water: File.op
 cactus = Specie.create!(name: 'Cactus', max_life_points: 1000, img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
 ficus  =  Specie.create!(name: 'Ficus', max_life_points: 2000, img_water: File.open(Rails.root.join('db/fixtures/species/cactus/cactus_main.svg')), img_feed: '', img_exposure: '', img_repot: '', img_cutclean:'', img_feeling_good: '', img_feeling_bad: '')
 
+
 puts "Creating plants..."
 bernard = Plant.create!(specie: cactus, nickname: 'Bernard', life_points: 600, user: matt)
-sophie  = Plant.create!(specie: aaaa, nickname: 'Sophie', life_points: 1, user: matt)
+sophie  = Plant.create!(specie: haworthia, nickname: 'Sophie', life_points: 1, user: matt)
 rené    = Plant.create!(specie: ficus, nickname: 'René', life_points: 800, user: matt)
 
 
-
 puts "Creating actions..."
-water_cactus  = Action.create!(name: 'water', points: 100, img: File.open(Rails.root.join('db/fixtures/actions/water.png')), specie: cactus, frequency_in_days: 21 )
-water_ficus   = Action.create!(name: 'water', points: 100, img: File.open(Rails.root.join('db/fixtures/actions/water.png')), specie: ficus, frequency_in_days: 7 )
-water_aaaa    = Action.create!(name: 'water', points: 100, img: File.open(Rails.root.join('db/fixtures/actions/water.png')), specie: aaaa, frequency_in_days: 4 )
-cutclean_aaaa = Action.create!(name: 'cut/clean', points: 250, img: File.open(Rails.root.join('db/fixtures/actions/cisors.png')), specie: aaaa, frequency_in_days: 40 )
+water_ficus      = Action.create!(code: 'water', name: 'water', points: 100, specie: ficus, frequency_in_days: 7 )
+water_cactus     = Action.create!(code: 'water',name: 'water', points: 100, specie: cactus, frequency_in_days: 21 )
+water_haworthia  = Action.create!(code: 'water',name: 'water', points: 100, specie: haworthia, frequency_in_days: 4 )
+cut_haworthia    = Action.create!(code: 'cut', name: 'cut', points: 250, specie: haworthia, frequency_in_days: 40 )
 
 puts "Creating tasks..."
 Task.create!(plant: bernard, action: water_cactus, max_date: '2018-12-11', mark_as_done: false)
 Task.create!(plant: rené, action: water_ficus, max_date: '2018-12-11', mark_as_done: false)
 
-Task.create!(plant: sophie, action: water_aaaa, max_date: '2018-15-11', mark_as_done: false)
-Task.create!(plant: sophie, action: cutclean_aaaa, max_date: '2018-12-16', mark_as_done: false)
+Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', mark_as_done: false)
+Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', mark_as_done: false)
 
 puts "Finished!"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_134626) do
+ActiveRecord::Schema.define(version: 2018_12_04_160700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,11 +18,11 @@ ActiveRecord::Schema.define(version: 2018_12_04_134626) do
   create_table "actions", force: :cascade do |t|
     t.string "name"
     t.integer "points"
-    t.string "img"
     t.bigint "specie_id"
     t.integer "frequency_in_days"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
     t.index ["specie_id"], name: "index_actions_on_specie_id"
   end
 
@@ -54,13 +54,6 @@ ActiveRecord::Schema.define(version: 2018_12_04_134626) do
   create_table "species", force: :cascade do |t|
     t.string "name"
     t.integer "max_life_points"
-    t.string "img_water"
-    t.string "img_feed"
-    t.string "img_exposure"
-    t.string "img_repot"
-    t.string "img_cutclean"
-    t.string "img_feeling_good"
-    t.string "img_feeling_bad"
     t.string "quizz_question_1"
     t.boolean "quizz_answer_1"
     t.string "quizz_question_2"
@@ -73,6 +66,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_134626) do
     t.boolean "quizz_answer_5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "code"
   end
 
   create_table "tasks", force: :cascade do |t|
