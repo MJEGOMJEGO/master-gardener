@@ -1,35 +1,77 @@
 .profile-title {
   text-align: center;
-
+  color: black;
+  font-size: 80px;
+  font-weight: bolder;
 }
 
+.test-background-profile {
+  background: linear-gradient(#f9cb40, #e86252);
+  height: 100vh;
+}
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .profile-star {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 100px;
 }
 .profile-star-grey {
-  height: 50px;
-  width: 50px;
+  height: 100px;
+  width: 120px;
   filter: grayscale(100%);
 }
 .display-stars {
   display :flex;
 }
 .badge-won {
-  height: 200px;
-  width: 200px;
-  border: 3px solid green;
-  border-radius: 5px;
+  height: 150px;
+  width: 120px;
+  border: 3px solid red;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  background-color: yellow;
+  box-shadow: 3px 3px black;
 }
+
+.badge-won:hover {
+ cursor: pointer;
+ animation: badge-bounce 0.4s ease;
+ animation-iteration-count: 1;
+}
+
 .badge-not-won {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 120px;
   filter: grayscale(100%);
-  border: 3px solid green;
-  border-radius: 5px;
+  border: 3px solid black;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+  background-color: lightgrey;
+  box-shadow: 3px 3px black;
 }
-.badge_table {
-  height: 70px;
-  width: 70px;
-  border: 5px solid red;
-  }
+.badge-not-won:hover {
+ cursor: pointer;
+ animation: badge-bounce 0.4s ease;
+ animation-iteration-count: 1;
+}
+@keyframes badge-bounce {
+ 0% { transform: translateY(0); }
+ 40% { transform: translateY(-20px); }
+ 80% { transform: translateY(0); }
+ 100% { transform: translateY(0); }
+}
+.badges-area {
+  display: flex;
+}
+.container-badges {
+  display: flex;
+}
+.hand-kawaii {
+  height: 150px;
+  width: 150px;
+}

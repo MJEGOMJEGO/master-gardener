@@ -3,8 +3,16 @@
   height: 100vh;
 }
 
+
 .test-background-green {
   background-color: green;
+}
+
+.center-row{
+  // display: block;
+  //   margin-left: auto;
+  //   margin-right: auto
+
 }
 
 .plants-shelf {
@@ -16,21 +24,15 @@
   box-shadow: 0 9px 6px -6px grey;
   margin-top: 10px;
   height: 30vh;
+
 }
 
 .plant-index {
   align-self: flex-end;
-  margin-bottom: -4px;
-  // width: 80px;
+  margin-bottom: -12px;
   height: 27vh;
 }
 
-.plant-index-ficus {
-  align-self: flex-end;
-  margin-bottom: -4px;
-  // width: 80px;
-  height: 27vh;
-}
 .plant-index:hover {
   cursor: pointer;
   animation: plant-bounce 0.4s ease;
@@ -56,7 +58,11 @@
   margin-bottom: -3px;
 }
 
-
+.pot {
+  height: 100px;
+  align-self: flex-end;
+  margin-bottom: -3px;
+}
 
 .plant-index-ficus:hover {
   cursor: pointer;
