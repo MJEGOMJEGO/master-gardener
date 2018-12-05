@@ -1,51 +1,35 @@
-<!--
 
-<div class=" container-show test-background-red">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <div class="tasks-box">
-        <p>“Hey Matthieu, I am so thirsty today !”</p>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm-3 col-md-3">
-      <p>a</p>
-    </div>
-    <div class="col-xs-6 col-sm-6 col-md-6">
-      <%= image_tag "plants/#{@plant.specie.code}.svg" %>
-    </div>
-    <div class="col-sm-3 col-md-3">
-      <p>a</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-      <%= @plant.nickname %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6">
-
-    </div>
-
-
-  </div>
-</div>
- -->
-
-
-
-
-
-<div class="a">
-  <div class="col-sm-3 col-md-3"></div>
-
-    <div class="col-xs-12 col-sm-6 col-md-6">
+<div class="container">
       <div class=" container-show ">
         <div class="tasks-box">
-          p "heheheheheheheheheheheh"
+
+          <div class="task-message">
+            <% @plant.tasks.todo_quickly.each do |task|  %>
+
+              <%if task.action.name == "water" %>
+                <%= "hey #{@plant.user.username} j'ai soife, IL ME FAUT DE L'EAU!!!!!!!!!" %>
+                <%= image_tag "actions/#{task.action.code}.png" %>
+
+              <%elsif task.action.name == "exposure" %>
+                <%= "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!" %>
+                <%= image_tag "actions/#{task.action.code}.png" %>
+
+              <%elsif task.action.name == "cutclean" %>
+                <%= "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut." %>
+                <%= image_tag "actions/#{task.action.code}.png" %>
+
+              <%elsif task.action.name == "feed" %>
+                <%= "hey #{@plant.user.username}I am hungry, feed me!!" %>
+                <%= image_tag "actions/#{task.action.code}.png" %>
+              <%elsif task.action.name == "repot" %>
+                <%= "hey #{@plant.user.username} I am to big, give me some space." %>
+                <%= image_tag "actions/#{task.action.code}.png" %>
+
+              <%end %>
+            <% end %>
+          </div>
         </div>
+
         <div class="plant-box">
           <%= image_tag "plants/#{@plant.specie.code}.svg" %>
         </div>
@@ -54,12 +38,13 @@
             <%= @plant.nickname %>
           </div>
           <div class="progress-bar"></div>
-          <div><%= @plant.life_points %></div>
+          <div class="plant-life">
+            <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
+          </div>
         </div>
       </div>
-    </div>
 
-      <div class="col-sm-3 col-md-3"></div>
+<!--       <div class="col-sm-3 col-md-3"></div> -->
 </div>
 
 
