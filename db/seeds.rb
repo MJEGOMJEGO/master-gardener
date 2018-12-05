@@ -27,11 +27,11 @@ water_haworthia  = Action.create!(code: 'water',name: 'water', points: 100, spec
 cut_haworthia    = Action.create!(code: 'cut', name: 'cut', points: 250, specie: haworthia, frequency_in_days: 40 )
 
 puts "Creating tasks..."
-Task.create!(plant: bernard, action: water_cactus, max_date: '2018-12-11', mark_as_done: false)
-Task.create!(plant: rené, action: water_ficus, max_date: '2018-12-11', mark_as_done: false)
+Task.create!(plant: bernard, action: water_cactus, max_date: '2018-12-11', done: false)
+Task.create!(plant: rené, action: water_ficus, max_date: '2018-12-11', done: false)
 
-Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', mark_as_done: false)
-Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', mark_as_done: false)
+Task.create!(plant: sophie, action: water_haworthia, max_date: '2018-15-11', done: false)
+Task.create!(plant: sophie, action: cut_haworthia, max_date: '2018-12-16', done: false)
 
 puts "Finished!"
 
