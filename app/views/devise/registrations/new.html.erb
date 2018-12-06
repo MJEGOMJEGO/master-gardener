@@ -1,25 +1,41 @@
-<h2>Sign up</h2>
+  <div class="reg-background-form-login-sign-up">
+    <div class="reg-container-form-sign-up">
+    <h2>Hi, do you want to sign up ?</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+    <div class="reg-form-inputs-sign-up">
+      <div class="reg-form-block">
+      <%= f.input :username,
+                  required: true,
+                  autofocus: true ,
+                  input_html: { autocomplete: "last name" }%>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true ,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :city_location,
+                  required: true,
+                  autofocus: true ,
+                  input_html: { autocomplete: "City location" }%>
+      <%= f.input :password,
+                  required: true,
+                  placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { class: "reg-placeholder-input", autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :img %>
+      <%= f.input :img_cache, as: :hidden %>
+      </div>
+    </div>
+    <div class="reg-form-actions">
+      <%= f.button :submit, "SIGN UP", class: "reg-btn-form-sign-up" %>
+    </div>
+      <% end %>
+      <div class="reg-link-sign-up-forgot-password">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

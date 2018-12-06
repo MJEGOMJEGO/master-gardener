@@ -1,57 +1,33 @@
 
 <div class="container">
-      <div class=" container-show ">
-        <div class="tasks-box">
+    <div class=" container-show ">
+      <div class="tasks-box">
 
-          <div class="task-message">
-            <% if @plant.tasks.todo_quickly != [] %>
-              <% @plant.tasks.todo_quickly.each do |task|  %>
+        <div class="task-message">
+          <%= @no_task %>
+          <%= @task_text %>
+          <% if @task %>
+         <%= link_to image_tag("actions/#{@task.action.code}.png"), mark_as_done_task_path(@task), method: :patch  %>
+          <% end %>
 
-                <%if task.action.name == "water" %>
-                  <%= "hey #{@plant.user.username} j'ai soif, IL ME FAUT DE L'EAU!!!!!!!!!" %>
-                  <%= image_tag "actions/#{task.action.code}.png" %>
-
-                <%elsif task.action.name == "exposure" %>
-                  <%= "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!" %>
-                  <%= image_tag "actions/#{task.action.code}.png" %>
-
-                <%elsif task.action.name == "cutclean" %>
-                  <%= "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut." %>
-                  <%= image_tag "actions/#{task.action.code}.png" %>
-
-                <%elsif task.action.name == "feed" %>
-                  <%= "hey #{@plant.user.username}I am hungry, feed me!!" %>
-                  <%= image_tag "actions/#{task.action.code}.png" %>
-
-                <%elsif task.action.name == "repot" %>
-                  <%= "hey #{@plant.user.username} I am to big, give me some space." %>
-                  <%= image_tag "actions/#{task.action.code}.png" %>
-
-
-                <%end %>
-              <% end %>
-            <% else %>
-              <%= "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good" %>
-            <% end %>
-          </div>
-        </div>
-
-        <div class="plant-box">
-          <%= image_tag "plants/#{@plant.specie.code}.svg" %>
-        </div>
-        <div class="name-box">
-          <div class="plant-name">
-            <%= @plant.nickname %>
-          </div>
-          <div class="progress-bar"></div>
-          <div class="plant-life">
-            <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
-          </div>
         </div>
       </div>
 
-<!--       <div class="col-sm-3 col-md-3"></div> -->
+      <div class="plant-box">
+        <%= image_tag "plants/#{@plant.specie.code}.svg" %>
+      </div>
+      <div class="name-box">
+        <div class="plant-name">
+          <%= @plant.nickname %>
+        </div>
+        <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div>
+        <div class="plant-life">
+          <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
+        </div>
+      </div>
+    </div>
 </div>
+
 
 
 

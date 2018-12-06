@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :plants
   has_many :quizz_answers
+  mount_uploader :img, PhotoUploader
 
   BADGES = {
     'garden-master' => 'Garden Master, level 4',
