@@ -1,4 +1,4 @@
-<div class="container test-background-red">
+<div class="container custom-container">
   <div class="row center-row">
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="plants-shelf">
@@ -6,10 +6,12 @@
         <% @plants[0..1].each do |plant| %>
           <%= link_to plant_path(plant) do %>
               <%= svg 'plants', "#{plant.specie.code}" %>
+            <% end %>
           <% end %>
-        <% end %>
         <% if [0, 1].include?(@plants.length) %>
-          <%= svg 'components', 'pot' %>
+          <%= link_to new_plant_path do %>
+              <%= svg 'components', 'pot' %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -22,7 +24,9 @@
           <% end %>
         <% end %>
         <% if [2, 3].include?(@plants.length) %>
-          <%= svg 'components', 'pot' %>
+          <%= link_to new_plant_path do %>
+              <%= svg 'components', 'pot' %>
+          <% end %>
         <% end %>
       </div>
     </div>
@@ -30,9 +34,13 @@
     <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="plants-shelf">
         <%= svg 'components', 'books' %>
-        <% if @plants.length == 4 %>
-          <%= link_to plant_path(plant) do %>
-              <%= svg 'plants', "#{plant.specie.code}" %>
+        <% if @plants.count == 5 %>
+          <%= link_to plant_path(@plants.last) do %>
+              <%= svg 'plants', "#{@plants.last.specie.code}" %>
+          <% end %>
+        <% else %>
+          <%= link_to new_plant_path do %>
+              <%= svg 'components', 'pot' %>
           <% end %>
         <% end %>
       </div>

@@ -9,6 +9,20 @@ class PlantsController < ApplicationController
   def show
   end
 
+  def new
+    @plant = Plant.new
+  end
+
+  def create
+    @plant = Plant.new(plant_params)
+    @plant.user = current_user
+    if @plant.save
+      redirect_to plants_path
+    else
+      render 'new'
+    end
+  end
+
   private
 
   def find_plant
@@ -38,5 +52,8 @@ class PlantsController < ApplicationController
     else
       @no_task = "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good"
     end
+
+  def plant_params
+    params.require(:plant).permit(:specie_id, :nickname, :user, :life_points)
   end
 end

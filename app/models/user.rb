@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  mount_uploader :img, PhotoUploader
   BADGES = {
     'garden-master' => 'Garden Master, level 4',
     'botanist' => 'Botanist, level 3',
