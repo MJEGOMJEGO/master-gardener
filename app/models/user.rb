@@ -1,5 +1,11 @@
 class User < ApplicationRecord
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
+
+  has_many :plants
+  has_many :quizz_answers
   mount_uploader :img, PhotoUploader
+
   BADGES = {
     'garden-master' => 'Garden Master, level 4',
     'botanist' => 'Botanist, level 3',
@@ -28,11 +34,8 @@ class User < ApplicationRecord
 
   }
 
+end
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
 
-  has_many :plants
-  has_many :quizz_answers
-end
+
