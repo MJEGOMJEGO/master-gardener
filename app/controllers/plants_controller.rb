@@ -1,5 +1,7 @@
 class PlantsController < ApplicationController
   before_action :find_plant, only: [:show]
+  before_action :find_next_task, only: [:show]
+
   def index
     @plants = Plant.all
   end
@@ -11,5 +13,30 @@ class PlantsController < ApplicationController
 
   def find_plant
     @plant = Plant.find(params[:id])
+  end
+
+  def find_next_task
+    if @plant.tasks.todo_quickly != []
+      @plant.tasks.todo_quickly.each do |task|
+        if task.action.name == "water"
+          @task = task
+          @task_text = "hey #{@plant.user.username} j'ai soif, IL ME FAUT DE L'EAU!!!!!!!!!"
+        elsif task.action.name == "exposure"
+          @task = task
+          @task_text = "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!"
+        elsif task.action.name == "cut"
+          @task = task
+          @task_text = "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut."
+        elsif task.action.name == "feed"
+          @task = task
+          @task_text = "hey #{@plant.user.username}I am hungry, feed me!!"
+        elsif task.action.name == "repot"
+          @task = task
+          @task_text = "hey #{@plant.user.username} I am to big, give me some space."
+        end
+      end
+    else
+      @no_task = "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good"
+    end
   end
 end
