@@ -52,6 +52,7 @@ class PlantsController < ApplicationController
     else
       @no_task = "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good"
     end
+  end
 
   def plant_params
     params.require(:plant).permit(:specie_id, :nickname, :user, :life_points)
