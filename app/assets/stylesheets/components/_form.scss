@@ -10,18 +10,19 @@
 
 .container-form-sign-up {
   margin: auto;
+  margin-bottom: 15px;
   justify-content: center;
   width: 80%;
-  background-color: none;
+  background-color: lightblue;
   margin-top: 15px;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 3px solid black;
   box-shadow: 3px 3px black;
 
      p {
   text-align: center;
   font-weight: lighter;
-  color: white;
+  color: black;
   font-weight: bolder;
   font-size: 25px;
    padding: 10px;
@@ -32,10 +33,12 @@
  border-radius: 30px;
  display: flex;
  justify-content: space-around;
+ color:black;
 }
 
 .form-block {
   display:inline-block;
+
 }
 
 
