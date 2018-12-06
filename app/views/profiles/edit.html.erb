@@ -55,7 +55,7 @@
    <p> Need to change player details ?</p>
       <%= simple_form_for @user, url: profile_path do |f| %>
         <div class="form-inputs-sign-up">
-          <div class="form-block">
+          <div class="form-block inputs-width">
              <%= f.input :username, required: true,
                 autofocus: true ,
                 input_html: { autocomplete: "Your username" } %>
@@ -63,7 +63,8 @@
             <%= f.input :city_location, required: true,
                 autofocus: true ,
                 input_html: { autocomplete: "Your City" } %>
-
+            <%= f.input :img %>
+            <%= f.input :img_cache, as: :hidden %>
           </div>
         <div class="form-actions">
           <%= image_tag("profile/hand-kawaii.png", class: "hand-kawaii")%>
