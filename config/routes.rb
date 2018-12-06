@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get 'plants/index'
-  get 'plants/show'
+  get 'tasks/update'
+  get 'tasks/edit'
+
   devise_for :users
   root to: 'pages#home'
   resources :plants
