@@ -1,5 +1,5 @@
 <div class="player-score">
-  <div class="tox-progress" data-size="60" data-thickness="20" data-color="#4AB2AE" data-background="#F2F2F2" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed="5000">
+  <div class="tox-progress" data-size="50" data-thickness="10" data-color="#4AB2AE" data-background="#FFFFFF" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed="5000">
 
     <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;top: -180px;width:180px;height:180px;">
       <%= image_tag("http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
