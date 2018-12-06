@@ -1,9 +1,66 @@
-.custom-background-form {
+.background-form {
   background-color: rgba(136, 223, 215, 0.52);
-  height: 90vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  text-align:center;
+  justify-content: center;
+  min-height: 90vh;
 }
+
+.container-form {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  height: 450px;
+   h2 {
+  text-align: center;
+  font-weight: lighter;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: grey;
+  font-size: 24px;
+  }
+}
+
+.sel1 {
+  color: red;
+}
+
+.form-inputs-plant {
+ border-radius: 30px;
+ display: flex;
+ justify-content: space-around;
+}
+
+.form-control {
+  border-radius: 20px;
+}
+
+.input-plant {
+  width: 300px;
+}
+
+.form-control-label {
+  font-weight: lighter;
+  font-size: 16px;
+  color: grey;
+}
+
+.placeholder-input {
+  font-weight: lighter;
+  font-size: 14px;
+}
+
+.btn-form-sign-up:hover {
+  opacity: 1;
+  background: #3ac162;
+  text-decoration: none;
+  color: white;
+  transform: scale(1.05,1.05);
+  box-shadow: 1px 1px 1px 1px rgba(0,0,0,.05);
+  cursor:pointer;
+  transition: all 0.2s;
+}
+
 
