@@ -1,22 +1,22 @@
-<div class="container custom-background-form">
-  <h2>Hey Matthieu! You can add a new plant to your garden here</h2>
+<div class="background-form">
   <div class="container-form">
-<%= simple_form_for [@plant] do |f| %>
-    <div class="container-form-inputs">
-      <%= f.input :specie,
-                  label: false,
-                  placeholder: "What is the specie of your plant?",
-                  required: true %>
-      <%= f.input :nickname,
-                  label: false,
-                  required: true,
-                  placeholder: "Her nickname ?" %>
+  <h2>Hey Matthieu, You can add a new plant here !</h2>
+    <%= simple_form_for [@plant] do |f| %>
+    <div class="form-inputs-plant">
+      <div class="form-block input-plant">
+        <%= f.input :nickname, required: true,
+                    label: false,
+                    placeholder: "nickname",
+                    input_html: { class: "placeholder-input" } %>
+        <div class="form-group">
+          <%= f.association :specie, required: true %>
+        </div>
+      </div>
     </div>
     <div class="form-actions">
-      <%= f.button :submit, "LOG IN", class: "btn-form-login" %>
+    <p><%= f.button :submit, class: "btn-form-sign-up" %></p>
     </div>
-  <% end %>
+    <% end %>
   </div>
-</div>
 </div>
 
