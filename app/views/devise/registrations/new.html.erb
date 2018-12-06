@@ -1,12 +1,12 @@
-  <div class="reg-background-form-login-sign-up">
-    <div class="reg-container-form-sign-up">
+  <div class="background-form-sign-up">
+    <div class="container-form-sign-up">
     <h2>Hi, do you want to sign up ?</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="reg-form-inputs-sign-up">
-      <div class="reg-form-block">
+    <div class="form-inputs-sign-up">
+      <div class="form-block">
       <%= f.input :username,
                   required: true,
                   autofocus: true ,
@@ -30,11 +30,11 @@
       <%= f.input :img_cache, as: :hidden %>
       </div>
     </div>
-    <div class="reg-form-actions">
-      <%= f.button :submit, "SIGN UP", class: "reg-btn-form-sign-up" %>
+    <div class="form-actions">
+      <%= f.button :submit, "SIGN UP", class: "btn-form-sign-up" %>
     </div>
       <% end %>
-      <div class="reg-link-sign-up-forgot-password">
+      <div class="link-forgot-password">
         <%= render "devise/shared/links" %>
       </div>
     </div>
