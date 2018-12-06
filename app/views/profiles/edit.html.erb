@@ -6,25 +6,40 @@
 
 <!-- badges area -->
 <div class="">
+    <p class="hand"> Player's gifts <%= image_tag("profile/gifts/hand-left.png", class: "hand-left")%></p>
   <div class="stars">
+
     <div class= "display-stars">
     <h2>
     <% star_counter = @user.level%>
-    <% star_counter.times do  %>
-    <%= image_tag("profile/profile-star.png", class: "profile-star")%>
+    <% if star_counter == 1 %>
+    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
+    <% elsif star_counter == 2 %>
+    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
+    <% elsif star_counter == 3 %>
+    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/gift-brouette.png", class: "profile-star")%>
+    <% elsif star_counter == 4 %>
+    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/gift-brouette.png", class: "profile-star")%>
+    <%= image_tag("profile/gifts/profile-star.png", class: "profile-star")%>
     <% end %>
     <% black_stars = 4 - star_counter %>
     <% black_stars.times do  %>
-    <%= image_tag("profile/profile-star.png", class: "profile-star-grey")%>
+    <%= image_tag("profile/gifts/gift-no-gift.png", class: "profile-star-grey")%>
     <% end %>
     </h2>
   </div>
   </div>
 </div>
+<p class="hand"> Player's badges <%= image_tag("profile/gifts/hand-left.png", class: "hand-left")%></p>
   <div class="container-badges">
     <div class="row">
           <% User::BADGES.each do |code, title| %>
-      <div class="col-xs-3 col-sm-2 col-md-2">
+      <div class="col-xs-3 col-sm-3 col-md-2">
         <div class="badges-area ">
             <%= image_tag "profile/badges/#{code}.png", title: title, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
         </div>

@@ -6,25 +6,43 @@
 }
 
 .test-background-profile {
-  background: linear-gradient(#f9cb40, #e86252);
-  height: 100vh;
+  background-color: #ff01fb;
+  height: 1350px;
 }
 .stars {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.hand {
+  font-size :30px;
+  text-align:center;
+}
+.hand-left{
+  height: 45px;
+  width: 45px;
+}
 .profile-star {
   height: 100px;
   width: 100px;
 }
 .profile-star-grey {
-  height: 100px;
-  width: 120px;
+  height: 50px;
+  width: 60px;
+  margin: 10px;
   filter: grayscale(100%);
+  opacity: 0.5;
 }
 .display-stars {
   display :flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color :white;
+  padding: 0 20px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 }
 .badge-won {
   height: 150px;
@@ -34,7 +52,7 @@
   padding: 5px;
   margin: 3px;
   background-color: yellow;
-  box-shadow: 3px 3px black;
+  box-shadow: 2px 2px black;
 }
 
 .badge-won:hover {
@@ -52,7 +70,7 @@
   padding: 5px;
   margin: 3px;
   background-color: lightgrey;
-  box-shadow: 3px 3px black;
+  box-shadow: 2px 2px black;
 }
 .badge-not-won:hover {
  cursor: pointer;
@@ -75,3 +93,7 @@
   height: 150px;
   width: 150px;
 }
+.container-badges {
+  padding-left: 100px;
+  padding-right: 100px;
+  }

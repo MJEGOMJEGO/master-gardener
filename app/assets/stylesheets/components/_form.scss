@@ -14,16 +14,17 @@
   width: 700px;
   background-color: none;
   margin-top: 15px;
-  padding-top: 15px;
-  padding-bottom: 15px;
   border-radius: 10px;
   border: 2px solid black;
-   p {
+  box-shadow: 3px 3px black;
+
+     p {
   text-align: center;
   font-weight: lighter;
   color: white;
   font-weight: bolder;
   font-size: 25px;
+   padding: 10px;
   }
 }
 

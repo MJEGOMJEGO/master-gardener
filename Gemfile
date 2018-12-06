@@ -17,12 +17,15 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+gem 'carrierwave', '~> 1.2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
