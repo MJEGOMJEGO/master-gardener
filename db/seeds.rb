@@ -15,7 +15,7 @@ cactus    = Specie.create!(code: 'cactus', name: 'Cactus', max_life_points: 1000
 ficus     =  Specie.create!(code: 'ficus', name: 'Ficus', max_life_points: 2000)
 
 puts "Creating plants..."
-bernard = Plant.create!(specie: cactus, nickname: 'Bernard', life_points: 600, user: matt)
+bernard = Plant.create!(specie: cactus, nickname: 'Bernard', life_points: 950, user: matt)
 sophie  = Plant.create!(specie: haworthia, nickname: 'Sophie', life_points: 1, user: matt)
 rené    = Plant.create!(specie: ficus, nickname: 'René', life_points: 800, user: matt)
 

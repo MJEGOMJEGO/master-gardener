@@ -19,6 +19,9 @@ class TasksController < ApplicationController
 
   def update_plant_lifepoints
     @task.plant.life_points += @task.action.points
+    if @task.plant.life_points > @task.action.specie.max_life_points
+      @task.plant.life_points = @task.action.specie.max_life_points
+    end
     @task.plant.save
   end
 
