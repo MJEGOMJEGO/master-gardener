@@ -3,7 +3,9 @@ class PlantsController < ApplicationController
   before_action :find_next_task, only: [:show]
   before_action :update_user_badges
   def index
-    @plants = Plant.all
+    # @plants = Plant.all
+
+    @plants = current_user.plants
   end
 
   def show
