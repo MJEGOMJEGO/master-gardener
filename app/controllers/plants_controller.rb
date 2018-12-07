@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
   before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
-
+  before_action :update_user_badges
   def index
     @plants = Plant.all
   end
@@ -18,6 +18,7 @@ class PlantsController < ApplicationController
     @plant.user = current_user
     if @plant.save
       Plants::CreateTasksService.new(@plant).call
+      # TODO update user badges
       redirect_to plants_path
     else
       render 'new'
@@ -48,10 +49,16 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
+
+  def update_user_badges
+    UpdateUserBadgesService.new(current_user).call
+  end
+  
   def update_player_score
     current_user.score = current_user.plants.sum(:life_points)
     current_user.save!
     # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
+
   end
 
   def find_next_task

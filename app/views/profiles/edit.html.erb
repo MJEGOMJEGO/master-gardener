@@ -39,10 +39,10 @@
 <p class="hand"> My badges </p>
   <div class="container-badges">
     <div class="row">
-          <% User::BADGES.each do |code, title| %>
+          <% User::BADGES_DATA.each do |code, explanation| %>
       <div class="col-xs-3 col-sm-3 col-md-2">
         <div class="badges-area ">
-            <%= image_tag "profile/badges/#{code}.png", title: title, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
+            <%= image_tag "profile/badges/#{code}.png", title: explanation.first, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
         </div>
       </div>
           <% end %>
