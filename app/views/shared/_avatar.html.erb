@@ -1,20 +1,18 @@
 <!-- <div class="player-score" data-toggle="dropdown"> -->
-  <div class="player-score">
-
-
-
+<div class="player-score">
   <div class="tox-progress" data-size="90" data-thickness="30" data-color="#C0454E" data-background="#7DDAD1" data-progress="<%= (current_user.score.fdiv(4000)* 100).to_i %>" data-speed="5000">
-
-
     <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;">
-      <%= cl_image_tag current_user.img, class: "avatar-gardener" %>
-
+    <%= cl_image_tag current_user.img, class: "avatar-gardener" %>
     </div>
   </div>
-  <!-- <p style= "padding-left: 10px"><%= current_user.score %> pts/ 4000</p>
- -->
-
 </div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        ToxProgress.create();
+        ToxProgress.animate();
+    });
+</script>
 
 
 

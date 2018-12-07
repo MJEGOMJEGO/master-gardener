@@ -6,7 +6,7 @@
 
         <!-- Avatar with dropdown menu -->
 
-          <div class="dropdown-on-avatar js-menu-trigger">
+          <div class="dropdown-on-avatar">
             <%= render 'shared/avatar' %>
 
             <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"> -->
@@ -48,30 +48,40 @@
     </div>
     <%if current_page?(plants_path)%>
     <!-- Podium -->
-      <%= image_tag "profile/podium/podium.png", height: 80 %>
+      <%= link_to plants_path do %>
+        <%= image_tag "profile/podium/podium.png", height: 80 %>
+      <% end  %>
     <% else  %>
-      <!-- link_to image_tag("Search.png", border: 0), {action: 'search', controller: 'pages'}, class: 'dock-item' -->
+    <!-- Back -->
       <%= link_to plants_path do %>
         <%= image_tag "navbar/back.svg", height: 60 %>
       <% end  %>
     <% end  %>
 
 </div>
+<div >
+  <ul id="mobile-menu" class="menu-hidden list-unstyled">
+    <i class="fas fa-times close"></i>
+    <li>
+      <%= link_to plants_path do %>
+        <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to edit_profile_path do %>
+        <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
+    </li>
+  </ul>
 
-<ul id ="mobile-menu" class="menu-hidden">
-  <li>
-    <%= link_to plants_path do %>
-      <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to edit_profile_path do %>
-      <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to destroy_user_session_path, method: :delete do %>
-      <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
-    <% end %>
-  </li>
-</ul>
+
+</div>
+
+
+
+
