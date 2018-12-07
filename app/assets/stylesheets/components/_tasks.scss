@@ -1,4 +1,7 @@
-
+// .edit_icone {
+//   width: 18%;
+//   height: 18%;
+// }
 
 .container-show {
   display: flex;
@@ -9,13 +12,23 @@
 }
 
 .tasks-box {
-  text-align: center;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
   position:relative;
   height: 20%;
-  width: 94%;
-  margin: 3%;
+  width: 90%;
+  margin-top: 2%;
+  margin-right: 5%;
+  margin-left: 5%;
   background: white;
   border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-message{
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .task-message img{
@@ -27,14 +40,28 @@
 
 }
 
+// .task-message:hover {
+//   cursor: pointer;
+//   animation: icone-bounce 0.4s ease;
+//   animation-iteration-count: 1;
+// }
+
+// @keyframes icone-bounce {
+//   0% { transform: translateY(0); }
+//   40% { transform: translateY(-20px); }
+//   80% { transform: translateY(0); }
+//   100% { transform: translateY(0); }
+// }
+
 
 
 .plant-box {
-  // position:absolute;
-  height: 60%;
+
+  height: 63%;
   width: 94%;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-top: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
   border-radius: 15px;
   // background-color: blue;
   top: 25%;
@@ -48,15 +75,16 @@
 
 
 .name-box {
+  vertical-align: middle;
   display: flex;
   flex-direction: column;
   text-align: center;
   align-items: center;
 
-  height: 15%;
+  height: 17%;
   width: 94%;
-  margin-left: 3%;
-  margin-right: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
   border-radius: 15px;
   // background-color: green;
   top: 85%;
@@ -64,7 +92,8 @@
 }
 
 .plant-name {
-
+font-weight: bold;
+font-size: 25px
 }
 
 
@@ -86,7 +115,7 @@
     border-style: solid;
     border-width: 2px;
     border-color: #F68712;
-    box-shadow: inset 0 1px 2px #000, 0 1px 0 #2b2b2b;
+    box-shadow: inset 0 1px 2px #F68702;;
 }
 
 
@@ -95,7 +124,7 @@
     display: block;
     width: 200px;
     height: 24px;
-    background: #999;
+    background: #F68700;
     border-radius: 12px;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), inset 0 -1px 3px rgba(0, 0, 0, 0.4), 0 1px 1px #000;
 }

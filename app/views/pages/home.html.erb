@@ -1,2 +1,19 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wraper">
+  <div class="banner">
+    <div class="banner-content">
+      <h1>Garden Master</h1>
+      <p>Take of your plant friends</p>
+      <%= link_to 'PLAY NOW', plants_path, class: "btn-form-banner" %>
+    </div>
+
+
+    </div>
+    <ul class="bg-bubbles">
+      <li><%= svg 'components', 'pot' %></li>
+      <li><%= svg 'plants', 'ficus' %></li>
+      <li><%= svg 'plants', 'cactus' %></li>
+      <li><%= svg 'plants', 'ficus' %></li>
+      <li><%= svg 'plants', 'haworthia' %></li>
+    </ul>
+</div>
+

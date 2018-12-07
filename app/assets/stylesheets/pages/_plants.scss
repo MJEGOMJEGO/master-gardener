@@ -1,10 +1,12 @@
-.custom-background {
-  background-color: rgba(136, 223, 215, 0.52);
+.custom-container {
   height: 90vh;
   display: flex;
   align-items: center;
 }
 
+.wraper-index {
+  background-color: rgba(136, 223, 215, 0.52);
+}
 
 .test-background-green {
   background-color: green;
@@ -65,7 +67,7 @@
 .pot {
   height: 100px;
   align-self: flex-end;
-  margin-bottom: -3px;
+  margin-bottom: -8px;
 }
 
 .plant-index-ficus:hover {
