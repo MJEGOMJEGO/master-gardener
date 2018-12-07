@@ -1,7 +1,7 @@
 class PlantsController < ApplicationController
   before_action :find_plant, only: [:show]
   before_action :find_next_task, only: [:show]
-
+  before_action :update_user_badges
   def index
     @plants = Plant.all
   end
@@ -18,6 +18,7 @@ class PlantsController < ApplicationController
     @plant.user = current_user
     if @plant.save
       Plants::CreateTasksService.new(@plant).call
+      # TODO update user badges
       redirect_to plants_path
     else
       render 'new'
@@ -28,6 +29,10 @@ class PlantsController < ApplicationController
 
   def find_plant
     @plant = Plant.find(params[:id])
+  end
+
+  def update_user_badges
+    UpdateUserBadgesService.new(current_user).call
   end
 
   def find_next_task

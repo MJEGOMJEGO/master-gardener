@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
-
+  before_action :update_user_badges
   def show
   end
 
@@ -20,6 +20,10 @@ class ProfilesController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :city_location, :img, :img_cache)
+  end
+
+  def update_user_badges
+    UpdateUserBadgesService.new(current_user).call
   end
 end
 
