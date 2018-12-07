@@ -1,3 +1,4 @@
+<div class = "test-background-profile">
 <div class="container test-background-profile">
 <div class = "profile-page">
 <div class= "profile-title">
@@ -6,7 +7,7 @@
 
 <!-- badges area -->
 <div class="">
-    <p class="hand"> Player's gifts <%= image_tag("profile/gifts/hand-left.png", class: "hand-left")%></p>
+    <p class="hand"> My gifts </p>
   <div class="stars">
 
     <div class= "display-stars">
@@ -35,13 +36,13 @@
   </div>
   </div>
 </div>
-<p class="hand"> Player's badges <%= image_tag("profile/gifts/hand-left.png", class: "hand-left")%></p>
+<p class="hand"> My badges </p>
   <div class="container-badges">
     <div class="row">
-          <% User::BADGES.each do |code, title| %>
+          <% User::BADGES_DATA.each do |code, explanation| %>
       <div class="col-xs-3 col-sm-3 col-md-2">
         <div class="badges-area ">
-            <%= image_tag "profile/badges/#{code}.png", title: title, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
+            <%= image_tag "profile/badges/#{code}.png", title: explanation.first, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
         </div>
       </div>
           <% end %>
@@ -51,7 +52,7 @@
 
 <!-- Edit Profile -->
 
-  <div class="container-form-sign-up">
+  <div class="profile-container-form-sign-up">
    <p> Need to change player details ?</p>
       <%= simple_form_for @user, url: profile_path do |f| %>
         <div class="form-inputs-sign-up">
@@ -73,4 +74,5 @@
         </div>
       <% end %>
   </div>
+</div>
 </div>
