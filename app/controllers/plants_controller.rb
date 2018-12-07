@@ -17,6 +17,7 @@ class PlantsController < ApplicationController
     @plant = Plant.new(plant_params)
     @plant.user = current_user
     if @plant.save
+      Plants::CreateTasksService.new(@plant).call
       redirect_to plants_path
     else
       render 'new'
