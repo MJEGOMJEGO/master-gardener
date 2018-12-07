@@ -72,7 +72,7 @@ class PlantsController < ApplicationController
    elsif score < 2000
      2
    elsif score < 3000
-     2
+     3
    else
      4
    end
