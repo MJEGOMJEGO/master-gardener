@@ -6,26 +6,11 @@
 
         <!-- Avatar with dropdown menu -->
 
-          <div class="dropdown-on-avatar">
+          <div class="dropdown-on-avatar js-menu-trigger">
             <%= render 'shared/avatar' %>
 
-            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-              <li>
-                <%= link_to plants_path do %>
-                  <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to edit_profile_path do %>
-                  <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
-                <% end %>
-              </li>
-              <li>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %>
-              </li>
-            </ul>
+            <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"> -->
+
           </div>
           <div class = "navbar-color-levels">
             <% star_counter = current_user.level%>
@@ -72,3 +57,21 @@
     <% end  %>
 
 </div>
+
+<ul id ="mobile-menu" class="menu-hidden">
+  <li>
+    <%= link_to plants_path do %>
+      <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to edit_profile_path do %>
+      <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
+    <% end %>
+  </li>
+</ul>
