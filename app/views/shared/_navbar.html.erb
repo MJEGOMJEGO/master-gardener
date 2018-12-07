@@ -1,19 +1,14 @@
-<div class="navbar-wagon">
-  <%= render 'shared/avatar' %>
-  <!-- Logo -->
+<div class="navbar-gardener">
 
-    <!-- Right Navigation -->
-    <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-      <% if user_signed_in? %>
-
-        <!-- Links when logged in -->
-
+    <!-- Avatar on the left with levels -->
+    <div class="avatar-levels">
 
         <!-- Avatar with dropdown menu -->
-        <div class="navbar-wagon-item">
-          <div class="dropdown">
-             <%= cl_image_tag current_user.img, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+
+          <div class="dropdown-on-avatar">
+            <%= render 'shared/avatar' %>
+
             <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
               <li>
                 <%= link_to plants_path do %>
@@ -54,33 +49,26 @@
             <%= image_tag("navbar/green-level.png", class: "level-not-succeeded")%>
             <% end %>
           </div>
-        </div>
-      <% else %>
-        <!-- Login link (when logged out) -->
-        <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <% end %>
-    </div>
 
-    <!-- Dropdown list appearing on mobile only -->
-    <div class="navbar-wagon-item hidden-md hidden-lg">
-      <div class="dropdown">
-        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to plants_path do %>
-                  <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
-                <% end %></li>
-          <li><%= link_to edit_profile_path do %>
-                            <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
-                          <% end %>
-                        </li>
-          <li><%= link_to destroy_user_session_path, method: :delete do %>
-                  <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
-                <% end %></li>
-        </ul>
-      </div>
     </div>
-    <!-- Logo -->
-    <%= link_to edit_profile_path, class: "navbar-wagon-brand" do %>
-      <%= image_tag "profile/podium/podium.png", height: 50 %>
-    <% end %>
+    <div class="navbar-title">
+      <span>Hey <%= current_user.username %>, the </span>
+      <% case current_user.level %>
+        <% when 1%>
+          <span>Junior Gardener</span>
+        <% when 2  %>
+          <span>Green lover</span>
+        <% end %>
+      <p>you reached <%= current_user.score %> points !</p>
+    </div>
+    <%if current_page?(plants_path)%>
+    <!-- Podium -->
+      <%= image_tag "profile/podium/podium.png", height: 80 %>
+    <% else  %>
+      <!-- link_to image_tag("Search.png", border: 0), {action: 'search', controller: 'pages'}, class: 'dock-item' -->
+      <%= link_to plants_path do %>
+        <%= image_tag "navbar/back.svg", height: 60 %>
+      <% end  %>
+    <% end  %>
+
 </div>
