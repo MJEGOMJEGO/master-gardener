@@ -1,6 +1,7 @@
 class PlantsController < ApplicationController
-  before_action :find_plant, only: [:show]
+  before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
+  # before_action :destroy_tasks, only: [:destroy]
 
   def index
     @plants = Plant.all
@@ -24,11 +25,34 @@ class PlantsController < ApplicationController
     end
   end
 
+ #  def edit
+
+ #  end
+
+
+ # def update
+ #   if @plant.update()
+ #   else
+ #     render 'edit'
+ #   end
+ # end
+
+
+  def destroy
+    @plant.tasks.destroy_all
+    @plant.delete
+    redirect_to plants_path
+  end
+
   private
 
   def find_plant
     @plant = Plant.find(params[:id])
   end
+
+  # def destroy_tasks
+
+  # end
 
   def find_next_task
     if @plant.tasks.todo_quickly != []
