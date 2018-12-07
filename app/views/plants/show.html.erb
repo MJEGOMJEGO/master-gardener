@@ -19,7 +19,11 @@
       <div class="name-box">
         <div class="plant-name">
           <%= @plant.nickname %>
-        </div>
+
+     <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
+      <i class="fas fa-trash-alt trash"></i>
+      <% end %>
+              </div>
         <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div>
         <div class="plant-life">
           <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
