@@ -1,5 +1,5 @@
 class PlantsController < ApplicationController
-  before_action :find_plant, only: [:show]
+  before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
   before_action :update_user_badges
   def index
@@ -25,14 +25,40 @@ class PlantsController < ApplicationController
     end
   end
 
+ #  def edit
+ #  end
+
+ # def update
+ #   if @plant.update()
+ #   else
+ #     render 'edit'
+ #   end
+ # end
+
+
+  def destroy
+    @plant.tasks.destroy_all
+    @plant.delete
+    update_player_score
+    redirect_to plants_path
+  end
+
   private
 
   def find_plant
     @plant = Plant.find(params[:id])
   end
 
+
   def update_user_badges
     UpdateUserBadgesService.new(current_user).call
+  end
+  
+  def update_player_score
+    current_user.score = current_user.plants.sum(:life_points)
+    current_user.save!
+    # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
+
   end
 
   def find_next_task
