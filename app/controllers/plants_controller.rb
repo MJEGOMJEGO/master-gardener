@@ -4,7 +4,9 @@ class PlantsController < ApplicationController
   # before_action :destroy_tasks, only: [:destroy]
 
   def index
-    @plants = Plant.all
+    # @plants = Plant.all
+
+    @plants = current_user.plants
   end
 
   def show
