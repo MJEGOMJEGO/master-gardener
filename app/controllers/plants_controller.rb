@@ -42,6 +42,7 @@ class PlantsController < ApplicationController
     @plant.tasks.destroy_all
     @plant.delete
     update_player_score
+
     redirect_to plants_path
   end
 
@@ -55,13 +56,27 @@ class PlantsController < ApplicationController
   def update_user_badges
     UpdateUserBadgesService.new(current_user).call
   end
-  
-  def update_player_score
-    current_user.score = current_user.plants.sum(:life_points)
-    current_user.save!
-    # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
 
-  end
+ def update_player_score
+   current_user.score = current_user.plants.sum(:life_points)
+   current_user.level = update_player_level(current_user.score)
+   current_user.save!
+   # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
+ end
+
+ def update_player_level(score)
+   if score < 500
+     0
+   elsif score < 1000
+     1
+   elsif score < 2000
+     2
+   elsif score < 3000
+     2
+   else
+     4
+   end
+ end
 
   def find_next_task
     if @plant.tasks.todo_quickly != []
