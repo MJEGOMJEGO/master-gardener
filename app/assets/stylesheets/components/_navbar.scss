@@ -7,11 +7,14 @@
   background-color: rgb(136, 223, 215);
   transition: all 0.3s ease;
   height: 130px;
-  padding: 0px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0;
+}
+
+.navbar-gardener > a {
+  padding: 0 5%;
 }
 
 .navbar-color-levels{
