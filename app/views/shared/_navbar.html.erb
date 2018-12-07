@@ -59,25 +59,32 @@
     <% end  %>
 
 </div>
-<div >
+<div>
   <ul id="mobile-menu" class="menu-hidden list-unstyled">
     <i class="fas fa-times close"></i>
     <li>
       <%= link_to plants_path do %>
-        <i class="fa fa-leaf"></i> <%= t(".profile", default: "My plants") %>
+        <p><i class="fas fa-trophy"></i> my achievements</p>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to plants_path do %>
+        <p><i class="fas fa-tasks"></i> my tasks</p>
       <% end %>
     </li>
     <li>
       <%= link_to edit_profile_path do %>
-        <i class="fa fa-trophy"></i> <%= t(".profile", default: "My profile") %>
+        <p><i class="fas fa-user-edit"></i> change my profile</p>
       <% end %>
     </li>
     <li>
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fa fa-user"></i>  <%= t(".sign_out", default: "Log out") %>
+        <p><i class="fas fa-power-off"></i> leave the game</p>
       <% end %>
     </li>
+
   </ul>
+
 
 
 </div>
