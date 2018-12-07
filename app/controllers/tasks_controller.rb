@@ -25,4 +25,7 @@ class TasksController < ApplicationController
     @task.plant.save
   end
 
+  def update_player_points
+    @tasks.plant.user.score += @tasks.plant.user.plants.all.life_points
+  end
 end
