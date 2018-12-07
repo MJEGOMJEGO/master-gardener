@@ -1,7 +1,6 @@
 class PlantsController < ApplicationController
   before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
-  # before_action :destroy_tasks, only: [:destroy]
 
   def index
     @plants = Plant.all
@@ -26,9 +25,7 @@ class PlantsController < ApplicationController
   end
 
  #  def edit
-
  #  end
-
 
  # def update
  #   if @plant.update()
@@ -41,6 +38,7 @@ class PlantsController < ApplicationController
   def destroy
     @plant.tasks.destroy_all
     @plant.delete
+    update_player_score
     redirect_to plants_path
   end
 
@@ -50,9 +48,11 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
-  # def destroy_tasks
-
-  # end
+  def update_player_score
+    current_user.score = current_user.plants.sum(:life_points)
+    current_user.save!
+    # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
+  end
 
   def find_next_task
     if @plant.tasks.todo_quickly != []

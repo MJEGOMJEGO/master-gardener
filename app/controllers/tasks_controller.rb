@@ -8,6 +8,7 @@ class TasksController < ApplicationController
     @task.done = true
     @task.save!
     update_plant_lifepoints
+    update_player_score
     redirect_to plant_path(@task.plant)
   end
 
@@ -23,6 +24,12 @@ class TasksController < ApplicationController
       @task.plant.life_points = @task.action.specie.max_life_points
     end
     @task.plant.save
+  end
+
+  def update_player_score
+    current_user.score = current_user.plants.sum(:life_points)
+    current_user.save!
+    # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
   end
 
 end
