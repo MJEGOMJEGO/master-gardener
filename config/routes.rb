@@ -11,7 +11,7 @@ Rails.application.routes.draw do
    end
   end
   resources :quizz_answers, only: [:create]
-  resource :ranking, only: [:show]
+  resource :ranking, only: [:show, :index]
   resource :profile, only: [:show, :edit, :update]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -1,0 +1,82 @@
+
+.ranking-background {
+  background-color: rgba(136, 223, 215, 0.52);
+  justify-content: center;
+  text-align:center;
+}
+.ranking-custom-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.column-class{
+  justify-content: center;
+}
+.username-garden {
+  text-align: center;
+}
+.ranking-center-row{
+  // display: block;
+  //   margin-left: auto;
+  //   margin-right: auto
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+
+}
+.ranking-area{
+    justify-content: center;
+}
+.users-data {
+  position: relative;
+  background-color : white;
+  width: 100%;
+  min-width: 500px;
+  border-radius: 15px;
+  padding: 5px;
+  text-align: left;
+  justify-content: center;
+  margin-bottom: 10px;
+    h5 {
+      text-align : left;
+    }
+    h1 {
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      font-size: 25px;
+      border-radius: 50%;
+      background-color: gold;
+      border: 1px solid black;
+      font-weight: bolder;
+      color: black;
+      height: 30px;
+      width: 30px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+}
+.card {
+  display: flex;
+}
+.ranking-title {
+  margin-top: 100px;
+  text-align: center;
+}
+.players-plants-avatars {
+  padding: 5px;
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.plant-data {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
