@@ -5,10 +5,10 @@ class TasksController < ApplicationController
   end
 
   def mark_as_done
-    #@task.done = true
-    #@task.save!
-    #update_plant_lifepoints
-    #update_player_score
+    @task.done = true
+    @task.save!
+    update_plant_lifepoints
+    update_player_score
     flash[:action_done] = "Thanks!"
     redirect_to plant_path(@task.plant)
   end
