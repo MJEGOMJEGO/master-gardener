@@ -12,4 +12,8 @@ class Task < ApplicationRecord
       in_four_days: Date.today + 4.days
     )
   end
+
+  def overdue?
+    (self.max_date - Date.today) < 0
+  end
 end
