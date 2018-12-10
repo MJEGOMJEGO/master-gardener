@@ -1,121 +1,54 @@
-.profile-title {
-  text-align: center;
-  color: black;
-  font-size: 80px;
-  font-weight: bolder;
-}
-.inputs-width {
-  width: 150px;
-}
-.test-background-profile {
-  background-color: #ff01fb;
-  text-align:center;
-  justify-content: center;
-}
-.stars {
+.container-badges {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
-.hand {
-  font-size :30px;
-  text-align:center;
-}
-.hand-left{
-  height: 45px;
-  width: 45px;
-}
-.profile-star {
+
+.badge-won {
+  cursor: help;
   height: 100px;
   width: 100px;
-}
-.profile-star-grey {
-  height: 50px;
-  width: 60px;
-  margin: 10px;
-  filter: grayscale(100%);
-  opacity: 0.5;
-}
-.display-stars {
-  display :flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color :lightblue;
-  padding: 0 20px;
-  margin-bottom: 50px;
+  border-radius: 50%;
+  // background-color: yellow;
+  box-shadow: 0 9px 6px -6px grey;
   margin-top: 10px;
-}
-.badge-won {
-  height: 150px;
-  width: 120px;
-  border: 1px solid red;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 3px;
-  background-color: yellow;
-  box-shadow: 1px 1px lightgrey;
+  margin-bottom: 10px;
+  border: 8px solid rgba(136, 223, 215, 0.60);
+  z-index: 1;
+  animation: pulse 2s infinite;
 }
 
 .badge-won:hover {
- cursor: pointer;
- animation: badge-bounce 0.4s ease;
- animation-iteration-count: 1;
+  transform: scale(1.3);
+  transition-duration: 0.3s;
+
 }
 
 .badge-not-won {
-  height: 150px;
-  width: 120px;
-  filter: grayscale(100%);
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 3px;
+  height: 100px;
+  width: 100px;
+  filter: grayscale(80%);
+  border-radius: 50%;
   background-color: lightgrey;
-  box-shadow: 1px 1px lightgrey;
+  box-shadow: 0 9px 6px -6px grey;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  z-index: 1;
 }
+
 .badge-not-won:hover {
- cursor: pointer;
- animation: badge-bounce 0.4s ease;
- animation-iteration-count: 1;
+  transform: scale(1.3);
+  transition-duration: 0.3s;
 }
-@keyframes badge-bounce {
- 0% { transform: translateY(0); }
- 40% { transform: translateY(-20px); }
- 80% { transform: translateY(0); }
- 100% { transform: translateY(0); }
-}
-.badges-area {
-  display: flex;
-}
-.container-badges {
-  display: flex;
-}
-.hand-kawaii {
-  height: 150px;
-  width: 150px;
-}
-.container-badges {
-  padding-left: 100px;
-  padding-right: 100px;
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(136, 223, 215, 1);
   }
-  .profile-container-form-sign-up {
-    width: 600px;
-    height: 300px;
-    background-color: white;
-    padding: 20px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    justify-content: center;
-    border-radius: 10px;
-     h2 {
-    text-align: center;
-    font-weight: lighter;
-    padding-bottom: 30px;
-    color: grey;
-    font-size: 18px;
-    }
+  50% {
+      box-shadow: 0 0 0 10px rgba(136, 223, 215, 0.40);
   }
+  100% {
+      box-shadow: 0 0 0 0 rgba(136, 223, 215, 0.5);
+  }
+}
