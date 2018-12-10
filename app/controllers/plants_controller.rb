@@ -2,6 +2,7 @@ class PlantsController < ApplicationController
   before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
   before_action :update_user_badges
+
   def index
     # @plants = Plant.all
 

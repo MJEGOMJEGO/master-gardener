@@ -10,6 +10,7 @@ Rails.application.routes.draw do
      patch :mark_as_done
    end
   end
+
   resources :quizz_answers, only: [:create]
   resource :ranking, only: [:show, :index]
   resource :profile, only: [:show, :edit, :update]

@@ -1,11 +1,13 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:mark_as_done, :rebuild_done_task_for_later]
   before_action :update_user_badges
+
   def edit
   end
 
   def mark_as_done
     @task.done = true
+    @task.done_at = DateTime.now
     @task.save!
     update_plant_lifepoints
     update_player_score
