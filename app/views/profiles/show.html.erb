@@ -1,14 +1,20 @@
 
 <div class="container">
-  <div class="row center-row">
-    <% User::BADGES_DATA.each do |code, explanation| %>
-    <div class="col-xs-4 col-sm-3 col-md-2">
-      <div class="container-badges">
-          <%= image_tag "profile/badges/#{code}.png", title: explanation.first, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
+    <div class="row center-row">
+      <% User::Badge.all.each do |badge| %>
+      <div class="list">
+        <div class="col-xs-4 col-sm-3 col-md-2">
+          <div class="container-badges">
+              <%= image_tag "profile/badges/#{badge.id}", title: badge.description, class: "#{@user.badges.include?(badge.id) ? 'badge-won' : 'badge-not-won'}" %>
+              <p><%= "
+              #{badge.explanation}" %></p>
+          </div>
+        </div>
+          <% end %>
       </div>
+
     </div>
-      <% end %>
-  </div>
+
 </div>
 
 
