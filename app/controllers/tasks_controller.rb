@@ -9,6 +9,7 @@ class TasksController < ApplicationController
     @task.save!
     update_plant_lifepoints
     update_player_score
+    flash[:action_done] = "Thanks!"
     rebuild_done_task_for_later
     redirect_to plant_path(@task.plant)
   end
