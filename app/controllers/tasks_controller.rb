@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:mark_as_done]
+  before_action :find_task, only: [:mark_as_done, :rebuild_done_task_for_later]
   before_action :update_user_badges
   def edit
   end
@@ -9,11 +9,15 @@ class TasksController < ApplicationController
     @task.save!
     update_plant_lifepoints
     update_player_score
-
+    rebuild_done_task_for_later
     redirect_to plant_path(@task.plant)
   end
 
   private
+
+  def rebuild_done_task_for_later
+    Task.create!(plant: @task.plant, action: @task.action, max_date: Date.today + @task.action.frequency_in_days, done: false)
+  end
 
   def find_task
     @task = Task.find(params[:id])
