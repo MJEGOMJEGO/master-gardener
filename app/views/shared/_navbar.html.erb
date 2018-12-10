@@ -1,50 +1,36 @@
 <div class="navbar-gardener">
 
-    <!-- Avatar on the left with levels -->
-    <div class="avatar-levels">
+    <!-- Box on the left with rounded avatar and rectangle with player level -->
+    <div class="level-box">
 
-        <!-- Avatar with dropdown menu -->
+        <!-- Rectangle box on the right of the avatar -->
+          <div class="rect-box">
+            <div class="player-level">
+              <p>Hey ! <%= current_user.username %>
+              <% case current_user.level %>
+                <% when 0 %>
+                  <span>the baby-gardener !</span>
+                <% when 1 %>
+                  <span>the green lover !</span>
+                <% when 2 %>
+                  <span>the vegetal protector !</span>
+                <% when 3 %>
+                  <span>the botanist !</span>
+                <% when 4 %>
+                  <span>you are Master Gardener !</span>
+                <% end %>
+              </p>
 
+            </div>
+          </div>
+          <!-- Rounded progress bar with avatar gardener inside -->
           <div class="dropdown-on-avatar">
             <%= render 'shared/avatar' %>
-
-            <!-- <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu"> -->
-
-          </div>
-          <div class = "navbar-color-levels">
-            <% star_counter = current_user.level%>
-            <% if star_counter == 1 %>
-            <%= image_tag("navbar/green-cross.png", class: "level-succeeded")%>
-            <% elsif star_counter == 2 %>
-            <%= image_tag("navbar/green-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/red-cross.png", class: "level-succeeded")%>
-            <% elsif star_counter == 3 %>
-            <%= image_tag("navbar/green-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/red-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/blue-cross.png", class: "level-succeeded")%>
-            <% elsif star_counter == 4 %>
-            <%= image_tag("navbar/green-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/red-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/blue-cross.png", class: "level-succeeded")%>
-            <%= image_tag("navbar/yellow-cross.png", class: "level-succeeded")%>
-            <% end %>
-            <% black_stars = 4 - star_counter %>
-            <% black_stars.times do  %>
-            <%= image_tag("navbar/green-level.png", class: "level-not-succeeded")%>
-            <% end %>
           </div>
 
+
     </div>
-    <div class="navbar-title">
-      <span>Hey <%= current_user.username %>, the </span>
-      <% case current_user.level %>
-        <% when 1%>
-          <span>Junior Gardener</span>
-        <% when 2  %>
-          <span>Green lover</span>
-        <% end %>
-      <p>you reached <%= current_user.score %> points !</p>
-    </div>
+    <!-- Icon the right side of the navbar-->
     <%if current_page?(plants_path)%>
     <!-- Podium -->
       <%= link_to ranking_path do %>
@@ -58,6 +44,7 @@
     <% end  %>
 
 </div>
+<!-- Dropdown menu items -->
 <div>
   <ul id="mobile-menu" class="menu-hidden list-unstyled">
     <i class="fas fa-times close"></i>

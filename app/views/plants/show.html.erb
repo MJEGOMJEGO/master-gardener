@@ -6,7 +6,10 @@
           <%= @no_task %>
           <%= @task_text %>
           <% if @task %>
-         <%= link_to image_tag("actions/#{@task.action.code}.png"), mark_as_done_task_path(@task), method: :patch  %>
+
+         <%= link_to mark_as_done_task_path(@task), method: :patch do %>
+             <%= svg 'actions', "#{@task.action.code}" %>
+           <% end %>
           <% end %>
 
         </div>
