@@ -48,10 +48,6 @@
 
 
 #mobile-menu li a{
-  //border-style: solid;
-
-  //border-left-style: none;
-
   display:inline-block;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -65,7 +61,12 @@
   background: #8BDED6;
 }
 
+// .disappear-menu {
+//   display: none;
+// }
+
 .menu-hidden {
+
   margin-top: -15em;
   -webkit-transition: margin-top 1s; /* Safari */
   transition: margin-top 1s;

@@ -5,6 +5,7 @@ const close = document.querySelector(".close");
 if(menu) {
   menu.addEventListener("click", (event) => {
     const dropDown = $("#mobile-menu");
+    dropDown.toggleClass("disappear-menu", 3000, "ease");
     dropDown.toggleClass("menu-hidden", 3000, "ease");
     dropDown.toggleClass("menu-show", 3000, "ease");
   });

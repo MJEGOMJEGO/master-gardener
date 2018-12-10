@@ -6,9 +6,9 @@
 .container-show {
   display: flex;
   flex-direction: column;
-  height: 92vh;
-  border-radius: 15px;
-  background-color: #F0F8FF;
+  height: calc(100vh - 130px);
+  //border-radius: 15px;
+  //background-color: #F0F8FF;
 }
 
 .tasks-box {
