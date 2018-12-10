@@ -1,19 +1,18 @@
-<div class="container">
-  <div class=" container-show ">
+<div class="container container-show">
     <div class="tasks-box">
       <div class="task-message">
         <%= @no_task %>
         <%= @task_text %>
-        <% if @task %>
-
-         <%= link_to mark_as_done_task_path(@task), method: :patch do %>
-            <%= svg 'actions', "#{@task.action.code}" %>
-           <% end %>
-        <% end %>
       </div>
     </div>
     <div class="plant-box">
       <%= svg 'plants', "#{@plant.specie.code}" %>
+      <% if @task %>
+          <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
+            <%= svg 'actions', "#{@task.action.code}" %>
+           <% end %>
+        <% end %>
+
     </div>
     <div class="name-box">
       <div class="plant-name">
@@ -33,8 +32,7 @@
           <span class="title">60%</span>
           </div>
         </div>
-      </div>
-  </div>
+    </div>
 </div>
 
 

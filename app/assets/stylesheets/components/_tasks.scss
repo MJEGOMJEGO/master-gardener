@@ -1,34 +1,20 @@
-// .edit_icone {
-//   width: 18%;
-//   height: 18%;
-// }
-
 .container-show {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 130px);
-  //border-radius: 15px;
-  //background-color: #F0F8FF;
+  height: calc(100vh - 150px);
 }
 
 .tasks-box {
-  // box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .2);
   border: 3px solid black;
-
   position:relative;
   height: 20%;
   width: 80%;
-  margin-top: 2%;
-  margin-right: 10%;
-  margin-left: 10%;
-  background: white;
+  margin: 2% 10%;
+  background: rgba(250, 250, 250, 0.5);
   border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-left: 10%;
-  padding-right: 10%;
-
 }
 
 
@@ -37,17 +23,21 @@
 
 }
 
-.task-message svg{
-  position: absolute;
-  max-width: 70%;
-  max-height: 70%;
-  bottom: -45%;
-  right: 20%;
+.action{
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  //position: absolute;
+  //max-width: 70%;
+  //max-height: 70%;
+  //bottom: -45%;
+  //right: 20%;
   border-radius: 50%;
   border: 3px solid green;
-  padding: 1%;
-  background-color: white;
-
+  //padding: 1%;
+  background-color: rgba(250, 250, 250, 0.5);
+  transform: scale(1.6);
+  transition-duration: 0.3s infinite;
 }
 
 // .task-message:hover {
@@ -66,15 +56,17 @@
 
 
 .plant-box {
-
+  display: flex;
+  align-items: center;
   height: 63%;
   width: 94%;
   margin-top: 1%;
   margin-left: 5%;
   margin-right: 5%;
-  border-radius: 15px;
+  justify-content: space-around;
+  //border-radius: 15px;
   // background-color: blue;
-  top: 25%;
+  //top: 25%;
   text-align: center;
 
 }
@@ -105,16 +97,6 @@
 font-weight: bold;
 font-size: 25px
 }
-
-
-
-.plant-life{
-
-}
-
-
-
-
 
 
 .progress-bar {
