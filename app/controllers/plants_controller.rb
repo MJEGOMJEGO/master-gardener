@@ -83,23 +83,23 @@ class PlantsController < ApplicationController
       @plant.tasks.todo_quickly.each do |task|
         if task.action.name == "water"
           @task = task
-          @task_text = "hey #{@plant.user.username} j'ai soif, IL ME FAUT DE L'EAU!!!!!!!!!"
+          @task_text = "  I am thirsty, give me water"
         elsif task.action.name == "exposure"
           @task = task
-          @task_text = "hey #{@plant.user.username} I look like a zombie, Show me the SUN!!"
+          @task_text = "  I need to see the sunlight."
         elsif task.action.name == "cut"
           @task = task
-          @task_text = "hey #{@plant.user.username} I have to many leafs give me a nice leaf-cut."
+          @task_text = "  I have to many leafs give me a nice leaf-cut."
         elsif task.action.name == "feed"
           @task = task
-          @task_text = "hey #{@plant.user.username}I am hungry, feed me!!"
-        elsif task.action.name == "repot"
+          @task_text = "  I am hungry, feed me."
+        elsif task.action.name == "pot"
           @task = task
-          @task_text = "hey #{@plant.user.username} I am to big, give me some space."
+          @task_text = "  I am to big, give me some space."
         end
       end
     else
-      @no_task = "2 options: I have no tasks OR My next task.max_date is in more than 4 days, todo questions et feeling good"
+      @no_task = "I am feeling good today. Come back tomorow."
     end
   end
 
