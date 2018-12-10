@@ -25,6 +25,12 @@ rené    = Plant.create!(specie: orchidee, nickname: 'René', life_points: 800, 
 puts "Creating actions..."
 water_ficus         = Action.create!(code: 'water', name: 'water', points: 100, specie: ficus, frequency_in_days: 7 )
 cut_ficus           = Action.create!(code: 'cut', name: 'cut', points: 250, specie: ficus, frequency_in_days: 40 )
+feed_ficus           = Action.create!(code: 'feed', name: 'feed', points: 25, specie: ficus, frequency_in_days: 40 )
+pot_ficus           = Action.create!(code: 'pot', name: 'pot', points: 250, specie: ficus, frequency_in_days: 80 )
+exposure_ficus           = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: ficus, frequency_in_days: 40 )
+
+
+
 water_orchidee      = Action.create!(code: 'water',name: 'water', points: 100, specie: orchidee, frequency_in_days: 4 )
 cut_orchidee        = Action.create!(code: 'cut',name: 'cut', points: 100, specie: orchidee, frequency_in_days: 4 )
 water_guzmania      = Action.create!(code: 'water', name: 'water', points: 100, specie: guzmania, frequency_in_days: 7 )

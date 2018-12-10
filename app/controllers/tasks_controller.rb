@@ -51,6 +51,4 @@ class TasksController < ApplicationController
       4
     end
   end
-
-
 end
