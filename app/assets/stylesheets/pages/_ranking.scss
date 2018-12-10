@@ -3,10 +3,13 @@
   background-color: rgba(136, 223, 215, 0.52);
   justify-content: center;
   text-align:center;
+  display: flex;
+  min-height: calc(100vh);
 }
 .ranking-custom-container {
-  height: 100vh;
+  width: 600px;
   display: flex;
+  margin: auto;
   align-items: center;
   justify-content: center;
 }
@@ -14,17 +17,7 @@
   justify-content: center;
 }
 .username-garden {
-  text-align: center;
-}
-.ranking-center-row{
-  // display: block;
-  //   margin-left: auto;
-  //   margin-right: auto
-  width: 100%;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-
+  text-align: left;
 }
 .ranking-area{
     justify-content: center;
@@ -33,23 +26,23 @@
   position: relative;
   background-color : white;
   width: 100%;
-  min-width: 500px;
+
   border-radius: 15px;
-  padding: 5px;
   text-align: left;
   justify-content: center;
+  box-shadow: 5px 5px grey;
   margin-bottom: 10px;
     h5 {
       text-align : left;
     }
     h1 {
-      position: absolute;
-      top: 5px;
-      right: 30px;
+
+      top: 0px;
+
       font-size: 25px;
       border-radius: 50%;
-      background-color: gold;
-      border: 1px solid black;
+      background-color: rgba(0, 102, 51, 0.4);
+      border: 1px solid rgba(0, 102, 51, 1);
       font-weight: bolder;
       color: black;
       height: 30px;
@@ -57,10 +50,12 @@
       text-align: center;
       justify-content: center;
       align-items: center;
+      z-index: 1;
     }
 }
 .card {
   display: flex;
+  margin: 1%;
 }
 .ranking-title {
   margin-top: 100px;
@@ -69,14 +64,31 @@
 .players-plants-avatars {
   padding: 5px;
   display:flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+  margin-top: 2%;
+  margin-left: 2%;
+  // text-align: center;
+  // justify-content: center;
+  // align-items: center;
 }
-.plant-data {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+
+.score-and-level{
+display :flex;
+flex-direction: column;
+margin-right: 5px;
+position:absolute;
+right: 2%;
 }
+
+.ranking-player-level{
+
+}
+.ranking-profile-star {
+  height: 50px;
+  width: 50px;
+  bottom: 0px;
+}
+// .score {
+//   display: flex
+
+// }
 
