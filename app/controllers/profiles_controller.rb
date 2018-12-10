@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
   before_action :update_user_badges
+
+
   def show
   end
 

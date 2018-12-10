@@ -117,7 +117,6 @@ class User < ApplicationRecord
       all_badges_objects = BADGES_DATA.map do |id, information|
         Badge.new(id, information[:explanation], information[:fullfilment_condition])
       end
-
       return all_badges_objects
     end
 

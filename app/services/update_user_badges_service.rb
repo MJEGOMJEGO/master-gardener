@@ -20,4 +20,5 @@ class UpdateUserBadgesService
     @user.badges = @elligible_badges.map {|badge| badge.id}
     @user.save
   end
+
 end

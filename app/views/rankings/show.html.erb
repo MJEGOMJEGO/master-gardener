@@ -1,26 +1,26 @@
 <div class="ranking-background">
   <div class="ranking-custom-container">
-    <div class="ranking-center-row">
+    <div>
       <p class= "ranking-title"> Hello <%= current_user.username %>, here is the ranking of your gardener friends !</p>
-        <div class="col-xs-12 col-sm-6 col-md-4 column-class ">
+      <div class="row" style="display: flex;">
+        <div class="col-xs-12 col-sm-2 col-md-2 column-class ">
           <div class ="ranking-area">
             <% @users.order(:score).reverse.each_with_index do |user, index| %>
-                  <div class = "users-data">
-                    <h1><%= index + 1  %></h1>
-                    <p class= "username-garden"><%= user.username %> 's Garden : </p>
+                  <div class = "users-data col-xs-12 col-sm-2 col-md-2 flexbox flexbox-center">
                       <div class = "card">
                         <div class="player-score">
                           <div class="tox-progress" data-size="90" data-thickness="30" data-color="#C0454E" data-background="#7DDAD1" data-progress="<%= (user.score.fdiv(4000)* 100).to_i %>" data-speed="5000">
                             <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;">
                                 <%= cl_image_tag user.img, class: "avatar-gardener" %>
                             </div>
+                    <p class= "username-garden"><%= user.username %> 's Garden : </p>
                           </div>
+                    <h1><%= index + 1  %></h1>
                             <div class= "players-plants-avatars">
                               <% user.plants.each do |plant| %>
                               <div class = "plant-data">
                               <svg viewBox="0 0 128 128" style="width: 75px; height: 75px;" ><%= svg 'plants', "#{plant.specie.code}" %></svg>
-                              <strong><%= plant.life_points %></strong>
-                              </div>
+                                                            </div>
                               <% end %>
                             </div>
                         </div>
@@ -31,14 +31,19 @@
                                   ToxProgress.animate();
                               });
                           </script>
-
+                    <div class ="score-and-level">
+                     <div class= "score"><h5 class ="ranking-player-score"><strong><%= user.score %></strong> Pts</h5>
+                      <%= image_tag("profile/gifts/profile-star.png", class: "ranking-profile-star")%>
                       </div>
-                     <h5>Player's score :<strong><%= user.score %></strong> points</h5>
-                     <h5> Player's level : <strong><%= user.level %></strong></h5>
+                     <div class= "level"><h5 class="ranking-player-level"> Level : <strong><%= user.level %></strong></h5>
+                      </div>
+                     </div>
+                      </div>
                   </div>
             <% end  %>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>
