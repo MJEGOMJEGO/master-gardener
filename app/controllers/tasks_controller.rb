@@ -1,31 +1,39 @@
 class TasksController < ApplicationController
-  before_action :find_task, only: [:mark_as_done, :rebuild_done_task_for_later]
-  before_action :update_user_badges
+  before_action :find_task, only: [:mark_as_done]
+
   def edit
   end
 
   def mark_as_done
-    @task.done = true
+    @task.status  = "done"
+    @task.done_at = DateTime.now
     @task.save!
+
     update_plant_lifepoints
-    update_player_score
-    flash[:action_done] = "Thanks!"
+    update_user_game_status
     rebuild_done_task_for_later
+
+     flash[:action_done] = "Thanks!"
     redirect_to plant_path(@task.plant)
   end
 
   private
 
   def rebuild_done_task_for_later
-    Task.create!(plant: @task.plant, action: @task.action, max_date: Date.today + @task.action.frequency_in_days, done: false)
+    Task.create!(
+      plant:    @task.plant,
+      action:   @task.action,
+      max_date: Date.today + @task.action.frequency_in_days,
+      status:   "pending"
+    )
   end
 
   def find_task
     @task = Task.find(params[:id])
   end
 
-  def update_user_badges
-    UpdateUserBadgesService.new(current_user).call
+  def update_user_game_status
+    Users::UpdateGameStatusService.new(current_user).call
   end
 
   def update_plant_lifepoints
@@ -34,26 +42,5 @@ class TasksController < ApplicationController
       @task.plant.life_points = @task.action.specie.max_life_points
     end
     @task.plant.save
-  end
-
-  def update_player_score
-    current_user.score = current_user.plants.sum(:life_points)
-    current_user.level = update_player_level(current_user.score)
-    current_user.save!
-    # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
-  end
-
-  def update_player_level(score)
-    if score < 500
-      0
-    elsif score < 1000
-      1
-    elsif score < 2000
-      2
-    elsif score < 3000
-      3
-    else
-      4
-    end
   end
 end

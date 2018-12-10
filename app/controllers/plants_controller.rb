@@ -1,10 +1,8 @@
 class PlantsController < ApplicationController
   before_action :find_plant, only: [:show, :edit, :update, :destroy]
   before_action :find_next_task, only: [:show]
-  before_action :update_user_badges
-  def index
-    # @plants = Plant.all
 
+  def index
     @plants = current_user.plants
   end
 
@@ -18,30 +16,20 @@ class PlantsController < ApplicationController
   def create
     @plant = Plant.new(plant_params)
     @plant.user = current_user
+
     if @plant.save
       Plants::CreateTasksService.new(@plant).call
-      # TODO update user badges
+      update_user_game_status
       redirect_to plants_path
     else
       render 'new'
     end
   end
 
- #  def edit
- #  end
-
- # def update
- #   if @plant.update()
- #   else
- #     render 'edit'
- #   end
- # end
-
-
   def destroy
     @plant.tasks.destroy_all
     @plant.delete
-    update_player_score
+    update_user_game_status
 
     redirect_to plants_path
   end
@@ -53,30 +41,9 @@ class PlantsController < ApplicationController
   end
 
 
-  def update_user_badges
-    UpdateUserBadgesService.new(current_user).call
+  def update_user_game_status
+    Users::UpdateGameStatusService.new(current_user).call
   end
-
- def update_player_score
-   current_user.score = current_user.plants.sum(:life_points)
-   current_user.level = update_player_level(current_user.score)
-   current_user.save!
-   # @task.plant.user.score = @task.plant.user.plants.sum(:life_points)
- end
-
- def update_player_level(score)
-   if score < 500
-     0
-   elsif score < 1000
-     1
-   elsif score < 2000
-     2
-   elsif score < 3000
-     3
-   else
-     4
-   end
- end
 
   def find_next_task
     if @plant.tasks.todo_quickly != []
