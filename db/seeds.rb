@@ -33,7 +33,7 @@ pot_ficus           = Action.create!(code: 'pot', name: 'pot', points: 250, spec
 exposure_ficus      = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: ficus, frequency_in_days: 40 )
 
 water_orchidee        = Action.create!(code: 'water',name: 'water', points: 100, specie: orchidee, frequency_in_days: 4 )
-cut_orchidee          = Action.create!(code: 'cut',name: 'cut', points: 100, specie: orchidee, frequency_in_days: 4 )
+cut_orchidee          = Action.create!(code: 'cut',name: 'cut', points: 100, specie: orchidee, frequency_in_days: 40 )
 feed_orchidee        = Action.create!(code: 'feed', name: 'feed', points: 25, specie: orchidee, frequency_in_days: 40 )
 pot_orchidee         = Action.create!(code: 'pot', name: 'pot', points: 250, specie: orchidee, frequency_in_days: 80 )
 exposure_orchidee    = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: orchidee, frequency_in_days: 40 )
@@ -58,29 +58,29 @@ exposure_gardenia           = Action.create!(code: 'exposure', name: 'exposure',
 
 
 puts "Creating tasks..."
-Task.create!(plant: bernard, action: water_ficus, max_date: '2018-12-12', done: false)
-Task.create!(plant: bernard, action: cut_ficus, max_date: '2018-12-15', done: false)
-Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-18', done: false)
-Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', done: false)
-Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', done: false)
+Task.create!(plant: bernard, action: water_ficus, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: bernard, action: cut_ficus, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: sophie, action: water_spathiphyllum, max_date: '2018-12-12', done: false)
-Task.create!(plant: sophie, action: cut_spathiphyllum, max_date: '2018-12-15', done: false)
-Task.create!(plant: sophie, action: feed_spathiphyllum, max_date: '2018-12-18', done: false)
-Task.create!(plant: sophie, action: pot_spathiphyllum, max_date: '2018-12-29', done: false)
-Task.create!(plant: sophie, action: exposure_spathiphyllum, max_date: '2018-12-31', done: false)
+Task.create!(plant: sophie, action: water_spathiphyllum, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: sophie, action: cut_spathiphyllum, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: sophie, action: feed_spathiphyllum, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: sophie, action: pot_spathiphyllum, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: sophie, action: exposure_spathiphyllum, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: rené, action: water_orchidee, max_date: '2018-12-12', done: false)
-Task.create!(plant: rené, action: cut_orchidee, max_date: '2018-12-15', done: false)
-Task.create!(plant: rené, action: feed_orchidee, max_date: '2018-12-18', done: false)
-Task.create!(plant: rené, action: pot_orchidee, max_date: '2018-12-29', done: false)
-Task.create!(plant: rené, action: exposure_orchidee, max_date: '2018-12-31', done: false)
+Task.create!(plant: rené, action: water_orchidee, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: rené, action: cut_orchidee, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: rené, action: feed_orchidee, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: rené, action: pot_orchidee, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: rené, action: exposure_orchidee, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: albert, action: water_orchidee, max_date: '2018-12-12', done: false)
-Task.create!(plant: albert, action: cut_orchidee, max_date: '2018-12-15', done: false)
-Task.create!(plant: albert, action: feed_orchidee, max_date: '2018-12-18', done: false)
-Task.create!(plant: albert, action: pot_orchidee, max_date: '2018-12-29', done: false)
-Task.create!(plant: albert, action: exposure_orchidee, max_date: '2018-12-31', done: false)
+Task.create!(plant: albert, action: water_orchidee, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: albert, action: cut_orchidee, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: albert, action: feed_orchidee, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: albert, action: pot_orchidee, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: albert, action: exposure_orchidee, max_date: '2018-12-31', status: "pending")
 
 puts "Finished!"
 

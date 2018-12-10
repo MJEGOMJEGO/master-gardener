@@ -5,14 +5,14 @@ class TasksController < ApplicationController
   end
 
   def mark_as_done
-    @task.done = true
+    @task.status  = "done"
     @task.done_at = DateTime.now
     @task.save!
 
     update_plant_lifepoints
     update_user_game_status
     rebuild_done_task_for_later
-  
+
      flash[:action_done] = "Thanks!"
     redirect_to plant_path(@task.plant)
   end
@@ -20,7 +20,12 @@ class TasksController < ApplicationController
   private
 
   def rebuild_done_task_for_later
-    Task.create!(plant: @task.plant, action: @task.action, max_date: Date.today + @task.action.frequency_in_days, done: false)
+    Task.create!(
+      plant:    @task.plant,
+      action:   @task.action,
+      max_date: Date.today + @task.action.frequency_in_days,
+      status:   "pending"
+    )
   end
 
   def find_task

@@ -26,17 +26,6 @@ class PlantsController < ApplicationController
     end
   end
 
- #  def edit
- #  end
-
- # def update
- #   if @plant.update()
- #   else
- #     render 'edit'
- #   end
- # end
-
-
   def destroy
     @plant.tasks.destroy_all
     @plant.delete
@@ -50,6 +39,7 @@ class PlantsController < ApplicationController
   def find_plant
     @plant = Plant.find(params[:id])
   end
+
 
   def update_user_game_status
     Users::UpdateGameStatusService.new(current_user).call
