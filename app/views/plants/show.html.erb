@@ -1,36 +1,52 @@
 <div class="container">
-    <div class=" container-show ">
-      <div class="tasks-box">
-
-        <div class="task-message">
-          <%= @no_task %>
-          <%= @task_text %>
-          <% if @task %>
+  <div class=" container-show ">
+    <div class="tasks-box">
+      <div class="task-message">
+        <%= @no_task %>
+        <%= @task_text %>
+        <% if @task %>
 
          <%= link_to mark_as_done_task_path(@task), method: :patch do %>
-             <%= svg 'actions', "#{@task.action.code}" %>
+            <%= svg 'actions', "#{@task.action.code}" %>
            <% end %>
-          <% end %>
-
-        </div>
-      </div>
-
-      <div class="plant-box">
-        <%= svg 'plants', "#{@plant.specie.code}" %>
-      </div>
-      <div class="name-box">
-        <div class="plant-name">
-          <%= @plant.nickname %>
-
-     <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
-      <i class="fas fa-trash-alt trash"></i>
-      <% end %>
-              </div>
-        <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div>
-        <div class="plant-life">
-          <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
-        </div>
+        <% end %>
       </div>
     </div>
+    <div class="plant-box">
+      <%= svg 'plants', "#{@plant.specie.code}" %>
+    </div>
+    <div class="name-box">
+      <div class="plant-name">
+        <%= @plant.nickname %>
+        <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
+          <i class="fas fa-trash-alt trash"></i>
+        <% end %>
+      </div>
+      <!-- <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div> -->
+      <div class="plant-life">
+        <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
+      </div>
+    </div>
+    <div style="width: 400px; margin: 50px auto">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="max-width: 60%">
+          <span class="title">60%</span>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
+
+
+<% if flash[:action_done] %>
+  <div id="popup" class="popup-appear">
+    <div class="popup-content">
+    <p>Thanks <%= current_user.username %></p>
+    <p>Now I am filling better !</p>
+    <p>Your plant has now <%= @plant.life_points%></p>
+    <p>Your total score is <%= current_user.score %></p>
+    <p>Your level is <%= current_user.level %></p>
+    </div>
+  </div>
+<% end %>
 

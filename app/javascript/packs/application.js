@@ -1,5 +1,3 @@
 import "bootstrap";
-import "jquery";
 import "../components/togglemenu";
-
-
+import "../components/popup";
