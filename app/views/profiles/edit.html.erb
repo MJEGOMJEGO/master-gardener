@@ -1,78 +1,26 @@
-<div class = "test-background-profile">
-<div class="container test-background-profile">
-<div class = "profile-page">
-<div class= "profile-title">
-  Awards Gallery
-</div>
+<div class="background-form-login">
+  <div class="container-form-password">
+   <h2> Need to change your player infos ?</h2>
+      <%= simple_form_for @user, url: profile_path do |f| %>
+    <div class="form-inputs-sign-up">
+      <div class="form-block">
+         <%= f.input :username, required: true,
+                      label: false,
+                      placeholder: "Username",
+                      autofocus: true,
+                      input_html: { autocomplete: "Your username" } %>
 
-<!-- badges area -->
-<div class="">
-    <p class="hand"> My gifts </p>
-  <div class="stars">
-
-    <div class= "display-stars">
-    <h2>
-    <% star_counter = @user.level%>
-    <% if star_counter == 1 %>
-    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
-    <% elsif star_counter == 2 %>
-    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
-    <% elsif star_counter == 3 %>
-    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/gift-brouette.png", class: "profile-star")%>
-    <% elsif star_counter == 4 %>
-    <%= image_tag("profile/gifts/gift-gloves.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/gift-secateur.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/gift-brouette.png", class: "profile-star")%>
-    <%= image_tag("profile/gifts/profile-star.png", class: "profile-star")%>
-    <% end %>
-    <% black_stars = 4 - star_counter %>
-    <% black_stars.times do  %>
-    <%= image_tag("profile/gifts/gift-no-gift.png", class: "profile-star-grey")%>
-    <% end %>
-    </h2>
-  </div>
-  </div>
-</div>
-<p class="hand"> My badges </p>
-  <div class="container-badges">
-    <div class="row">
-          <% User::BADGES_DATA.each do |code, explanation| %>
-      <div class="col-xs-3 col-sm-3 col-md-2">
-        <div class="badges-area ">
-            <%= image_tag "profile/badges/#{code}.png", title: explanation.first, class: "#{@user.badges.include?(code) ? 'badge-won' : 'badge-not-won'}" %>
-        </div>
+        <%= f.input :city_location, required: true,
+                    label: false,
+                    placeholder: "Your city",
+                    autofocus: true,
+                    input_html: { autocomplete: "Your City" } %>
       </div>
-          <% end %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, "UPDATE INFOS", class: "btn-form-sign-up" %>
     </div>
   </div>
+  <% end %>
 </div>
 
-<!-- Edit Profile -->
-
-  <div class="profile-container-form-sign-up">
-   <p> Need to change player details ?</p>
-      <%= simple_form_for @user, url: profile_path do |f| %>
-        <div class="form-inputs-sign-up">
-          <div class="form-block inputs-width">
-             <%= f.input :username, required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "Your username" } %>
-
-            <%= f.input :city_location, required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "Your City" } %>
-            <%= f.input :img %>
-            <%= f.input :img_cache, as: :hidden %>
-          </div>
-        <div class="form-actions">
-          <%= image_tag("profile/hand-kawaii.png", class: "hand-kawaii")%>
-          <p><%= f.button :submit, class: "btn-form-sign-up" %></p>
-        </div>
-        </div>
-      <% end %>
-  </div>
-</div>
-</div>
