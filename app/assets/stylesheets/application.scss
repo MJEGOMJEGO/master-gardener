@@ -20,4 +20,12 @@
 @import "components/tox-progress";
 @import "components/registration_form";
 @import "components/dropdown-menu";
+@import "components/popup";
+@import "components/progressbar";
 @import "pages/ranking";
+
+body {
+  background: url(https://media.istockphoto.com/vectors/sun-on-sky-blue-background-template-vector-id965747368);
+  background-size: cover;
+  background-repeat: none;
+}
