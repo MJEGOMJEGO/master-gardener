@@ -43,7 +43,7 @@
 
           <% if @plants.count == 5 %>
             <%= link_to plant_path(@plants.last) do %>
-                <%= plants_svg plant.specie.code, plant.next_task_to_do.try(:action).try(:name) %>
+                <%= plants_svg @plants.last.specie.code, @plants.last.next_task_to_do.try(:action).try(:name) %>
                 <!-- With default value object in plant.rb -->
                 <%# plants_svg plant.specie.code, plant.next_task_to_do.action.name %>
             <% end %>
