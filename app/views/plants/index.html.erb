@@ -6,11 +6,13 @@
         <div class="plants-shelf">
           <%= components_svg('drink') %>
           <% @plants[0..1].each do |plant| %>
+            <div class="plant-index">
             <%= link_to plant_path(plant) do %>
                 <%= plants_svg plant.specie.code, plant.next_task_to_do.try(:action).try(:name) %>
                 <!-- With default value object in plant.rb -->
                 <%# plants_svg 'plants', plant.specie.code, plant.next_task_to_do.action.name %>
               <% end %>
+              </div>
             <% end %>
           <% if [0, 1].include?(@plants.length) %>
             <%= link_to new_plant_path do %>
@@ -23,11 +25,13 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="plants-shelf">
           <% @plants[2..3].each do |plant| %>
+          <div class="plant-index">
             <%= link_to plant_path(plant) do %>
                 <%= plants_svg plant.specie.code, plant.next_task_to_do.try(:action).try(:name) %>
                 <!-- With default value object in plant.rb -->
                 <%# plants_svg 'plants', plant.specie.code, plant.next_task_to_do.action.name %>
             <% end %>
+            </div>
           <% end %>
           <% if [2, 3].include?(@plants.length) %>
             <%= link_to new_plant_path do %>
@@ -43,10 +47,12 @@
 
           <% if @plants.count == 5 %>
             <%= link_to plant_path(@plants.last) do %>
-                <%= plants_svg plant.specie.code, plant.next_task_to_do.try(:action).try(:name) %>
+            <div class="plant-index">
+                <%= plants_svg @plants.last.specie.code, @plants.last.next_task_to_do.try(:action).try(:name) %>
                 <!-- With default value object in plant.rb -->
                 <%# plants_svg plant.specie.code, plant.next_task_to_do.action.name %>
             <% end %>
+          </div>
           <% else %>
             <%= link_to new_plant_path do %>
               <%= components_svg('pot') %>
