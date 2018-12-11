@@ -1,40 +1,35 @@
 //////PLANT div including : image, name, life points and bubble
 
-.plant-show {
-  //width : 50%;
-  height: calc(100vh - 150px);
-  margin: 0 2%;
-}
-
-
-.plant-with-bubble {
-  display: table;
-  //justify-content: space-between;
-}
-
 .plant {
-  display:table-cell;
-  //vertical-align: bottom;
-  height: 90%;
-  width: 90%;
-  padding-bottom: 10%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-top: 20%;
+  margin: 0 auto;
 }
 
 .plant svg {
   height: 50vh;
+  max-width: 250px;
+}
+
+.plant-picture {
+  position: relative;
+  z-index: 99;
 }
 
 .plant-name {
-font-weight: bold;
-font-size: 25px;
-text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
 }
 
-
 .bubble {
-  display:table-cell;
-  vertical-align: top;
-  width: 70%;
+  //z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  max-width: 50%;
 }
 
 
@@ -46,9 +41,9 @@ text-align: center;
   height: calc(100vh - 150px);
 }
 
-.tasks ul {
-  padding-top: 50%;
-}
+// .tasks ul {
+//   padding-top: 50%;
+// }
 
 .task {
   height: 10%;
