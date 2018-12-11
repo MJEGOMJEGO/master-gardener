@@ -16,7 +16,7 @@ amaryllis     = Specie.create!(code: 'amaryllis', name: 'Amaryllis', max_life_po
 cactus        = Specie.create!(code: 'cactus', name: 'Cactus', max_life_points: 1000)
 caoutchou     = Specie.create!(code: 'caoutchou', name: 'Caoutchou', max_life_points: 2000)
 ficus         = Specie.create!(code: 'ficus', name: 'Ficus', max_life_points: 2000)
-pachystachys  = Specie.create!(code: 'pachystachys', name: 'Pachystachys', max_life_points: 2000)
+pachystachys  = Specie.create!(code: 'pachystachys', name: 'Pachystachys', max_life_points: 3000)
 
 puts "Creating plants..."
 bernard = Plant.create!(specie: ficus, nickname: 'Bernard', life_points: 950, user: matt)
@@ -27,35 +27,36 @@ hubert  = Plant.create!(specie: pachystachys, nickname: 'Hubert', life_points: 2
 
 
 puts "Creating actions..."
-water_ficus         = Action.create!(code: 'water', name: 'water', points: 100, specie: ficus, sentence: 'I am thirsty, give me water.', frequency_in_days: 7 )
-cut_ficus           = Action.create!(code: 'cut', name: 'cut', points: 250, specie: ficus, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40 )
-feed_ficus          = Action.create!(code: 'feed', name: 'feed', points: 25, specie: ficus, sentence: 'I am hungry, feed me.', frequency_in_days: 40 )
-pot_ficus           = Action.create!(code: 'pot', name: 'pot', points: 250, specie: ficus, sentence: 'I am to big, give me some space.', frequency_in_days: 80 )
-exposure_ficus      = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: ficus, sentence: 'I need to see the sunlight.', frequency_in_days: 40 )
 
-water_orchidee        = Action.create!(code: 'water',name: 'water', points: 100, specie: orchidee, sentence: 'I am thirsty, give me water.', frequency_in_days: 4 )
-cut_orchidee          = Action.create!(code: 'cut',name: 'cut', points: 100, specie: orchidee, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40 )
-feed_orchidee        = Action.create!(code: 'feed', name: 'feed', points: 25, specie: orchidee, sentence: 'I am hungry, feed me.', frequency_in_days: 40 )
-pot_orchidee         = Action.create!(code: 'pot', name: 'pot', points: 250, specie: orchidee, sentence: 'I am to big, give me some space.',  frequency_in_days: 80 )
-exposure_orchidee    = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: orchidee, sentence: 'I need to see the sunlight.', frequency_in_days: 40 )
+water_amaryllis     = Action.create!(code: 'water', name: 'water', points: 100, specie: amaryllis, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
+cut_amaryllis       = Action.create!(code: 'cut', name: 'cut', points: 250, specie: amaryllis, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_amaryllis      = Action.create!(code: 'feed', name: 'feed', points: 25, specie: amaryllis, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_amaryllis       = Action.create!(code: 'pot', name: 'pot', points: 250, specie: amaryllis, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
+exposure_amaryllis  = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: amaryllis, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
 
-water_guzmania        = Action.create!(code: 'water', name: 'water', points: 100, specie: guzmania, sentence: 'I am thirsty, give me water.', frequency_in_days: 7 )
-cut_guzmania          = Action.create!(code: 'cut', name: 'cut', points: 250, specie: guzmania, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40 )
-feed_guzmania          = Action.create!(code: 'feed', name: 'feed', points: 25, specie: guzmania, sentence: 'I am hungry, feed me.', frequency_in_days: 40 )
-pot_guzmania           = Action.create!(code: 'pot', name: 'pot', points: 250, specie: guzmania, sentence: 'I am to big, give me some space.', frequency_in_days: 80 )
-exposure_guzmania      = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: guzmania, sentence: 'I need to see the sunlight.', frequency_in_days: 40 )
+water_cactus     = Action.create!(code: 'water',name: 'water', points: 100, specie: cactus, sentence: 'I am thirsty, give me water.', frequency_in_days: 4)
+cut_cactus       = Action.create!(code: 'cut',name: 'cut', points: 100, specie: cactus, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_cactus      = Action.create!(code: 'feed', name: 'feed', points: 25, specie: cactus, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_cactus       = Action.create!(code: 'pot', name: 'pot', points: 250, specie: cactus, sentence: 'I am to big, give me some space.',  frequency_in_days: 80)
+exposure_cactus  = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: cactus, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
 
-water_spathiphyllum         = Action.create!(code: 'water', name: 'water', points: 100, specie: spathiphyllum, sentence: 'I am thirsty, give me water.', frequency_in_days: 7 )
-cut_spathiphyllum           = Action.create!(code: 'cut', name: 'cut', points: 250, specie: spathiphyllum, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40 )
-feed_spathiphyllum          = Action.create!(code: 'feed', name: 'feed', points: 25, specie: spathiphyllum, sentence: 'I am hungry, feed me.', frequency_in_days: 40 )
-pot_spathiphyllum           = Action.create!(code: 'pot', name: 'pot', points: 250, specie: spathiphyllum, sentence: 'I am to big, give me some space.', frequency_in_days: 80 )
-exposure_spathiphyllum      = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: spathiphyllum, sentence: 'I need to see the sunlight.', frequency_in_days: 40 )
+water_caoutchou    = Action.create!(code: 'water', name: 'water', points: 100, specie: caoutchou, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
+cut_caoutchou      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: caoutchou, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_caoutchou     = Action.create!(code: 'feed', name: 'feed', points: 25, specie: caoutchou, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_caoutchou      = Action.create!(code: 'pot', name: 'pot', points: 250, specie: caoutchou, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
+exposure_caoutchou = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: caoutchou, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
 
-water_gardenia              = Action.create!(code: 'water', name: 'water', points: 100, specie: gardenia, sentence: 'I am thirsty, give me water.', frequency_in_days: 7 )
-cut_gardenia                =  Action.create!(code: 'cut', name: 'cut', points: 250, specie: gardenia, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40 )
-feed_gardenia               = Action.create!(code: 'feed', name: 'feed', points: 25, specie: gardenia, sentence: 'I am hungry, feed me.', frequency_in_days: 40 )
-pot_gardenia                = Action.create!(code: 'pot', name: 'pot', points: 250, specie: gardenia, sentence: 'I am to big, give me some space.', frequency_in_days: 80 )
-exposure_gardenia           = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: gardenia, sentence: 'I need to see the sunlight.',  frequency_in_days: 40 )
+water_ficus    = Action.create!(code: 'water', name: 'water', points: 100, specie: ficus, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
+cut_ficus      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: ficus, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_ficus     = Action.create!(code: 'feed', name: 'feed', points: 25, specie: ficus, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_ficus      = Action.create!(code: 'pot', name: 'pot', points: 250, specie: ficus, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
+exposure_ficus = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: ficus, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
+
+water_pachystachys    = Action.create!(code: 'water', name: 'water', points: 100, specie: pachystachys, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
+cut_pachystachys      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: pachystachys, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_pachystachys     = Action.create!(code: 'feed', name: 'feed', points: 25, specie: pachystachys, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_pachystachys      = Action.create!(code: 'pot', name: 'pot', points: 250, specie: pachystachys, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
+exposure_pachystachys = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: pachystachys, sentence: 'I need to see the sunlight.',  frequency_in_days: 40)
 
 
 puts "Creating tasks..."
@@ -84,3 +85,4 @@ Task.create!(plant: albert, action: pot_amaryllis, max_date: '2018-12-29', statu
 Task.create!(plant: albert, action: exposure_amaryllis, max_date: '2018-12-31', status: "pending")
 
 puts "Finished!"
+
