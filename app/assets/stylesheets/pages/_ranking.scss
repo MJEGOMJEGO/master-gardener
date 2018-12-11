@@ -1,10 +1,10 @@
 
 .ranking-background {
-  background-color: rgba(136, 223, 215, 0.52);
+  //background-color: rgba(136, 223, 215, 0.52);
   justify-content: center;
   text-align:center;
   display: flex;
-  min-height: calc(100vh);
+  min-height: calc(100vh - 130px);
 }
 .ranking-custom-container {
   width: 600px;
