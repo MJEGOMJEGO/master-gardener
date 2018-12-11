@@ -25,10 +25,12 @@
   position: relative;
 }
 
-.plant-index{
+
+.plant-index svg {
   align-self: flex-end;
   margin-bottom: -10px;
-  height: 27vh;
+  height: 23vh;
+  width: auto;
 }
 
 .plant-index:hover {
@@ -51,10 +53,9 @@
 }
 
 .drink {
-  height: 30%;
+  height: 60px;
   align-self: flex-end;
   margin-bottom: -6px;
-  // position: absolute;
   left: 5px;
 }
 
@@ -71,11 +72,104 @@
   animation-iteration-count: 1;
 }
 
-.plant-index-ficus:hover {
-  cursor: pointer;
-  animation: plant-bounce 0.3s ease;
-  animation-iteration-count: 1;
+// .plant-index-ficus:hover {
+//   cursor: pointer;
+//   animation: plant-bounce 0.3s ease;
+//   animation-iteration-count: 1;
+// }
+
+#mouth #Fill-94, #mouth #Fill-95 {
+ animation: wide2 0.75s infinite;
+
 }
+
+#drop-white, #drop-blue {
+ animation: drop 1.5s infinite;
+}
+
+
+@keyframes wide2{
+  from {
+    transform: scaleY(0.75);
+  }
+  25% {
+     transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+  75% {
+     transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.75);
+  }
+}
+
+
+@keyframes drop {
+  from {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(5px);
+  }
+
+  15% {
+    transform: translateY(7px);
+  }
+
+  20% {
+    transform: translateY(10px);
+  }
+
+  to {
+    transform: translateY(100px);
+  }
+}
+
+#heart #Fill-60, #heart #Fill-61, #heart #Fill-62, #heart #Fill-63, #heart #Fill-64, #heart #Fill-65 {
+  animation: scale 0.7s infinite;
+}
+
+#smile #Fill-315, #smile #Fill-314, #smile #Fill-313, #smile #Fill-312 {
+  animation: wide 0.7s infinite;
+
+}
+
+
+@keyframes wide {
+  from {
+    transform: scaleY(0.75);
+  }
+  25% {
+     transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.50);
+  }
+  75% {
+     transform: scaleY(1);
+  }
+  to {
+    transform: scaleY(0.75);
+  }
+}
+
+@keyframes scale {
+  from {
+     transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5) translateX(-10px) translateY(-10px);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
+
 
 
 
