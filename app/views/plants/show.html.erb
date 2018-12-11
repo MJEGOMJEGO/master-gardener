@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <div class="plant">
+      <div class="plant-show">
         <div class="bubble">
           <div class="circular">
             <div class="message">
@@ -17,22 +17,34 @@
             <div class="circular2"></div>
           </div>
         </div>
-        <div class="plant-picture">
+        <div class="plant-with-task">
           <%= plants_svg @plant.specie.code, @plant.next_task_to_do.try(:action).try(:name) %>
           <% if @task  %>
-          <div class="task">
-
-            <%= svg 'actions', "#{task.action.code}" %>
-            <%= task.action.name %> before <%= task.max_date %>
-              <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
-                <i class="fas fa-check-circle"></i>
-              <% end %>
+            <div class="task">
+              <div class="task-image">
+                <%= actions_svg @task.action.code %>
               </div>
-            <% end  %>
-
-
-
+              <div class="task-text">
+                did you <%= @task.action.name %> me ? <br>(due date <%= @task.max_date %>)
+              </div>
+              <div class="exp">
+                <div class="checkbox">
+                  <form>
+                    <div>
+                      <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
+                      <input type="checkbox" id="check" name="check" value="" />
+                      <label for="check">
+                        <span><!-- This span is needed to create the "checkbox" element --></span>
+                      </label>
+                      <% end %>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
+
         <div class="plant-name">
           <%= @plant.nickname %>
           <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
@@ -40,12 +52,14 @@
           <% end %>
           <br><%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
         </div>
+          <div class="stat-1 stat-bar">
+            <span class="stat-bar-rating" role="stat-bar" style="width: <%= (@plant.life_points.to_f / @plant.specie.max_life_points.to_f)*100.to_i %>%;"></span>
+          </div>
       </div>
 
     </div>
   </div>
-
-  </div>
+</div>
 
 
 <% if flash[:action_done] %>

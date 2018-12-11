@@ -23,10 +23,11 @@
 @import "components/popup";
 @import "components/progressbar";
 @import "components/bubble";
+@import "components/checkbox";
 @import "pages/ranking";
 
 body {
-  background: white;
+  background: gray;
   background-size: cover;
   background-repeat: none;
 

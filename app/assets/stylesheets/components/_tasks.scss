@@ -1,10 +1,27 @@
-//////PLANT div including : image, name, life points and bubble
-.plant {
-  position: relative;
+.plant-show {
+  //position: relative;
   height: 100%;
   width: 100%;
   padding-top: 20%;
   margin: 0 auto;
+}
+
+.bubble {
+  //z-index: 1;
+  //position: absolute;
+  //top: 0;
+  //left: 50%;
+  max-width: 50%;
+  margin-left: 25%;
+}
+
+
+.plant-with-task {
+  //position: relative;
+  padding-top: 30px;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
 }
 
 .plant svg {
@@ -12,61 +29,37 @@
   max-width: 250px;
 }
 
-.plant-picture {
-  position: relative;
-  z-index: 99;
-}
-
-.plant-name {
-  font-weight: bold;
-  font-size: 25px;
-  text-align: center;
-}
-
-.bubble {
-  //z-index: 1;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  max-width: 50%;
-}
-
-
-
-
-////// Task list
-
-.tasks {
-  height: calc(100vh - 150px);
-}
-
-// .tasks ul {
-//   padding-top: 50%;
-// }
-
 .task {
-  height: 10%;
-  display: flex;
-  align-items: center;
-  height: 17%;
-  width: 94%;
+  position: relative;
   margin-left: 5%;
   margin-right: 5%;
   border-radius: 15px;
-  background-color: green;
-  top: 85%;
+  border: 2px solid #ADEBF3;
+  text-align: center;
+  //margin-bottom: 33px;
 }
 
-.plant-name {
-font-weight: bold;
-font-size: 25px
+.task-image {
+  position: absolute;
+  top: -29px;
+  left: 30%;
 }
 
 .task svg {
   height: 7vh;
 }
 
+.task-text{
+  padding: 10px 5px 5px 10px;
+  font-size: 12px;
+}
 
+.plant-name {
+  padding: 30px;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
 
 ////// Progress bar
 
