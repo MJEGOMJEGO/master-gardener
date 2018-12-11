@@ -4,6 +4,13 @@
   //width : 50%;
   height: calc(100vh - 150px);
   margin: 0 2%;
+
+.container-show {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 130px);
+  //border-radius: 15px;
+  background-color: #F0F8FF;
 }
 
 
@@ -54,6 +61,18 @@ text-align: center;
   height: 10%;
   display: flex;
   align-items: center;
+  height: 17%;
+  width: 94%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 15px;
+  background-color: green;
+  top: 85%;
+}
+
+.plant-name {
+font-weight: bold;
+font-size: 25px
 }
 
 .task svg {

@@ -28,6 +28,7 @@
 
 
         </div>
+
       </div>
     </div>
     <div class="col col-xs-12 col-sm-6">
@@ -67,11 +68,13 @@
 <% if flash[:action_done] %>
   <div id="popup" class="popup-appear">
     <div class="popup-content">
-    <p>Thanks <%= current_user.username %></p>
-    <p>Now I am filling better !</p>
-    <p>Your plant has now <%= @plant.life_points%></p>
-    <p>Your total score is <%= current_user.score %></p>
-    <p>Your level is <%= current_user.level %></p>
+<!--     <p>Thanks <%= current_user.username %></p>-->
+    <!-- <p>Now I am filling better !</p> -->
+    <p>You got it!</p>
+    <%= image_tag "components/pop.svg" %>
+    <p><%= @plant.nickname %> as <%= @plant.life_points%> pv</p>
+    <p>You have <%= current_user.score %> pts</p>
+    <!-- <p>Your level is <%= current_user.level %></p> -->
     </div>
   </div>
 <% end %>
