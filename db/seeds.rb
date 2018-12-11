@@ -27,6 +27,7 @@ hubert  = Plant.create!(specie: pachystachys, nickname: 'Hubert', life_points: 2
 
 
 puts "Creating actions..."
+
 water_amaryllis     = Action.create!(code: 'water', name: 'water', points: 100, specie: amaryllis, frequency_in_days: 7 )
 cut_amaryllis       = Action.create!(code: 'cut', name: 'cut', points: 250, specie: amaryllis, frequency_in_days: 40 )
 feed_amaryllis      = Action.create!(code: 'feed', name: 'feed', points: 25, specie: amaryllis, frequency_in_days: 40 )
@@ -59,29 +60,29 @@ exposure_pachystachys = Action.create!(code: 'exposure', name: 'exposure', point
 
 
 puts "Creating tasks..."
-Task.create!(plant: bernard, action: water_ficus, max_date: '2018-12-12', done: false)
-Task.create!(plant: bernard, action: cut_ficus, max_date: '2018-12-15', done: false)
-Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-18', done: false)
-Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', done: false)
-Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', done: false)
+Task.create!(plant: bernard, action: water_ficus, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: bernard, action: cut_ficus, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: sophie, action: water_caoutchou, max_date: '2018-12-12', done: false)
-Task.create!(plant: sophie, action: cut_caoutchou, max_date: '2018-12-15', done: false)
-Task.create!(plant: sophie, action: feed_caoutchou, max_date: '2018-12-18', done: false)
-Task.create!(plant: sophie, action: pot_caoutchou, max_date: '2018-12-29', done: false)
-Task.create!(plant: sophie, action: exposure_caoutchou, max_date: '2018-12-31', done: false)
+Task.create!(plant: sophie, action: water_caoutchou, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: sophie, action: cut_caoutchou, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: sophie, action: feed_caoutchou, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: sophie, action: pot_caoutchou, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: sophie, action: exposure_caoutchou, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: rené, action: water_cactus, max_date: '2018-12-12', done: false)
-Task.create!(plant: rené, action: cut_cactus, max_date: '2018-12-15', done: false)
-Task.create!(plant: rené, action: feed_cactus, max_date: '2018-12-18', done: false)
-Task.create!(plant: rené, action: pot_cactus, max_date: '2018-12-29', done: false)
-Task.create!(plant: rené, action: exposure_cactus, max_date: '2018-12-31', done: false)
+Task.create!(plant: rené, action: water_cactus, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: rené, action: cut_cactus, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: rené, action: feed_cactus, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: rené, action: pot_cactus, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: rené, action: exposure_cactus, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: albert, action: water_amaryllis, max_date: '2018-12-12', done: false)
-Task.create!(plant: albert, action: cut_amaryllis, max_date: '2018-12-15', done: false)
-Task.create!(plant: albert, action: feed_amaryllis, max_date: '2018-12-18', done: false)
-Task.create!(plant: albert, action: pot_amaryllis, max_date: '2018-12-29', done: false)
-Task.create!(plant: albert, action: exposure_amaryllis, max_date: '2018-12-31', done: false)
+Task.create!(plant: albert, action: water_amaryllis, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: albert, action: cut_amaryllis, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: albert, action: feed_amaryllis, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: albert, action: pot_amaryllis, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: albert, action: exposure_amaryllis, max_date: '2018-12-31', status: "pending")
 
 puts "Finished!"
 

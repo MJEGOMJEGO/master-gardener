@@ -1,9 +1,5 @@
-.wraper-index {
-  background-color: rgba(136, 223, 215, 0.52);
-}
-
 .custom-container {
-  height: 90vh;
+  height: calc(100vh - 150px);
   display: flex;
   align-items: center;
 }

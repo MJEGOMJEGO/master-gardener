@@ -15,14 +15,14 @@
 
 .badge-won {
   cursor: help;
-  height: 100px;
-  width: 100px;
+  height: 80px;
+  width: 80px;
   border-radius: 50%;
   // background-color: yellow;
   box-shadow: 0 9px 6px -6px grey;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  border: 8px solid rgba(0, 102, 51, 0.60);
+  //margin-top: 10px;
+  //margin-bottom: 10px;
+  border: 20px solid transparent;
   z-index: 1;
   animation: pulse 2s infinite;
 }
@@ -35,14 +35,14 @@
 .badge-not-won {
   height: 100px;
   width: 100px;
-  filter: grayscale(80%);
-  border-radius: 50%;
-  background-color: lightgrey;
-  box-shadow: 0 9px 6px -6px grey;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  filter: grayscale(100%);
+  //border-radius: 50%;
+  //background-color: lightgrey;
+  //box-shadow: 0 9px 6px -6px grey;
+  //margin-top: 10px;
+  //margin-bottom: 10px;
   z-index: 1;
-
+  border: 20px solid transparent;
 }
 
 .badge-not-won:hover {

@@ -1,36 +1,81 @@
-<div class="container">
-    <div class=" container-show ">
-      <div class="tasks-box">
-
-        <div class="task-message">
-          <%= @no_task %>
-          <%= @task_text %>
-          <% if @task %>
-
-         <%= link_to mark_as_done_task_path(@task), method: :patch do %>
-             <%= svg 'actions', "#{@task.action.code}" %>
-           <% end %>
-          <% end %>
-
-        </div>
-      </div>
-
-      <div class="plant-box">
-        <%= svg 'plants', "#{@plant.specie.code}" %>
-      </div>
-      <div class="name-box">
-        <div class="plant-name">
-          <%= @plant.nickname %>
-
-     <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
-      <i class="fas fa-trash-alt trash"></i>
-      <% end %>
+<div class="container container-show">
+  <div class="row align-items-center">
+    <div class="col col-xs-12 col-sm-6">
+      <div class="plant-show">
+        <div>
+          <div class="plant-with-bubble">
+            <div class="plant">
+              <%= svg 'plants', "#{@plant.specie.code}" %>
+            </div>
+            <div class="bubble">
+              <div class="circular">
+                <%= @no_task %>
+                <%= @task_text %>
+                <div class="circular1"></div>
+                <div class="circular2"></div>
               </div>
-        <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div>
-        <div class="plant-life">
-          <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
+            </div>
+          </div>
+
+            <div class="plant-name">
+              <%= @plant.nickname %>
+              <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
+                <i class="fas fa-trash-alt trash"></i>
+              <% end %>
+              <br><%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
+            </div>
+              <!-- <div class="progress-bar">https://codepen.io/dwidomski/pen/KBzuo</div> -->
+
+
         </div>
+
       </div>
     </div>
+    <div class="col col-xs-12 col-sm-6">
+        <div class="tasks">
+          <ul>
+            <% @plant.tasks.each do |task| %>
+              <%# if @task %>
+
+              <div class="task">
+
+                <%= svg 'actions', "#{task.action.code}" %>
+                <%= task.action.name %> before <%= task.max_date %>
+                  <%= link_to mark_as_done_task_path(task), class: "action", method: :patch do %>
+                    <i class="fas fa-check-circle"></i>
+                  <% end %>
+
+
+              </div>
+            <% end  %>
+          </ul>  <%# end %>
+
+        </div>
+
+
+    </div>
+  </div>
 </div>
+    <!-- <div style="width: 400px; margin: 50px auto">
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="max-width: 60%">
+          <span class="title">60%</span>
+          </div>
+        </div>
+    </div> -->
+
+
+<% if flash[:action_done] %>
+  <div id="popup" class="popup-appear">
+    <div class="popup-content">
+<!--     <p>Thanks <%= current_user.username %></p>-->
+    <!-- <p>Now I am filling better !</p> -->
+    <p>You got it!</p>
+    <%= image_tag "components/pop.svg" %>
+    <p><%= @plant.nickname %> as <%= @plant.life_points%> pv</p>
+    <p>You have <%= current_user.score %> pts</p>
+    <!-- <p>Your level is <%= current_user.level %></p> -->
+    </div>
+  </div>
+<% end %>
 
