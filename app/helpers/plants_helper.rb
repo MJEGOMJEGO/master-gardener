@@ -16,7 +16,7 @@ module PlantsHelper
     when "water"   then "thirsty"
     when "feed"    then "feed"
     when "pot"     then "repot"
-    when "neutral" then "neutral"
+    # when "neutral" then "neutral"
     else
       "feelgood"
     end
