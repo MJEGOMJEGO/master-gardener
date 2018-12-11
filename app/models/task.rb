@@ -3,7 +3,7 @@ class Task < ApplicationRecord
   belongs_to :action
 
   extend Enumerize
-  enumerize :status, in: [:pending, :done, :deadline_missed], scope: true
+  enumerize :status, in: [:pending, :done, :deadline_missed], scope: true, predicates: true
 
   scope :todo_quickly, -> do
     with_status(:pending).
