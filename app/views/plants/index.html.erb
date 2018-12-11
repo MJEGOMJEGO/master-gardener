@@ -47,6 +47,7 @@
 
           <% if @plants.count == 5 %>
             <%= link_to plant_path(@plants.last) do %>
+
             <div class="plant-index">
                 <%= plants_svg @plants.last.specie.code, @plants.last.next_task_to_do.try(:action).try(:name) %>
                 <!-- With default value object in plant.rb -->
