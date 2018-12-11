@@ -27,4 +27,10 @@ module PlantsHelper
     return File.read(file_path).html_safe if File.exists?(file_path)
     '(not found)'
   end
+
+  def actions_svg(action_name)
+    file_path = "#{Rails.root}/app/assets/images/actions/#{action_name}.svg"
+    return File.read(file_path).html_safe if File.exists?(file_path)
+    '(not found)'
+  end
 end

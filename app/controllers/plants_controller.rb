@@ -40,7 +40,6 @@ class PlantsController < ApplicationController
     @plant = Plant.find(params[:id])
   end
 
-
   def update_user_game_status
     Users::UpdateGameStatusService.new(current_user).call
   end
