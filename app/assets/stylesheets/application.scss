@@ -23,11 +23,13 @@
 @import "components/popup";
 @import "components/progressbar";
 @import "components/bubble";
+@import "components/checkbox";
 @import "pages/ranking";
+@import "components/menu";
 @import "pages/tasklist";
 
 body {
-  background: url(https://media.istockphoto.com/vectors/sky-with-clouds-vector-id1062342354?s=2048x2048);
+  background: rgba(136, 232, 245, 0.5);
   background-size: cover;
   background-repeat: none;
 

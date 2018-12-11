@@ -1,5 +1,5 @@
 <div class="player-score">
-  <div class="tox-progress" data-size="90" data-thickness="30" data-color="#C0454E" data-background="#7DDAD1" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
+  <div class="tox-progress" data-size="90" data-thickness="30" data-color="#a6e059" data-background="#C4F3F8" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
     <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;">
 
       <% case current_user.level %>
