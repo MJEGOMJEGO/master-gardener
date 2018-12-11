@@ -11,20 +11,21 @@
       <%if current_page?(plants_path)%>
         <div class="rect-box">
           <div class="player-level">
-            <p>Hey <%= current_user.username %>,<br>
+            <p>
             <% case current_user.level %>
               <% when 0 %>
-                <span>the baby-gardener !</span>
+                <span> Baby-gardener </span>
               <% when 1 %>
-                <span>the green lover !</span>
+                <span> Green lover </span>
               <% when 2 %>
-                <span>the vegetal protector !</span>
+                <span> Vegetal protector </span>
               <% when 3 %>
-                <span>the botanist !</span>
+                <span> Botanist </span>
               <% when 4 %>
-                <span>you are Master Gardener !</span>
+                <span>Master Gardener </span>
               <% end %>
             </p>
+            <%= current_user.score %>
 
           </div>
         </div>
@@ -53,7 +54,7 @@
 <div>
   <ul id="menu-list" class="list-unstyled menu-disappear hide">
     <li>
-      <%= link_to plants_path do %>
+      <%= link_to profile_path do %>
         <p><i class="fas fa-trophy"></i> my achievements</p>
       <% end %>
     </li>

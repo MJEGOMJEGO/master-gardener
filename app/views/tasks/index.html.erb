@@ -3,7 +3,7 @@
   <div class="row center-row">
     <div class= "col-xs-12 col-sm-12 col-md-12">
         <h1 class ="tasklist-title"> My Taskboard</h1>
-            <h2> Here are the tasks that you succeeded :</h2>
+            <!-- <h2> Here are the tasks that you succeeded :</h2> -->
           <div class = "one-kind-of-task">
               <div class="icon-and-tasks">
                   <div class ="only-tasks">
@@ -15,19 +15,19 @@
             </div>
             </div>
           </div>
-            <h2> Here are the tasks that you missed :</h2>
+            <!-- <h2> Here are the tasks that you missed :</h2> -->
           <div class = "one-kind-of-task">
               <div class="icon-and-tasks">
                 <div class ="only-tasks">
                 <% @user_tasks.each  do |task| %>
-                <% if task.deadline_missed? %>
-                  <h3><%= image_tag "tasklist/missed.png", class: "icon" %> You missed to <%= task.action.name %> <%= task.plant.nickname %>, on <%= task.done_at.strftime("%A, %b %d") %>. </h3><h4 class= "missing-points-message">You lost : <%= task.action.points %> points<h4>
-                <% end  %>
+                  <% if task.deadline_missed? %>
+                    <h3><%= image_tag "tasklist/missed.png", class: "icon" %> You missed to <%= task.action.name %> <%= task.plant.nickname %>, on <%= task.done_at.strftime("%A, %b %d") %>. </h3><h4 class= "missing-points-message">You lost : <%= task.action.points %> points<h4>
+                  <% end  %>
               <% end  %>
             </div>
           </div>
           </div>
-            <h2> Here are all your soon pending tasks :</h2>
+            <!-- <h2> Here are all your soon pending tasks :</h2> -->
           <div class = "one-kind-of-task">
               <div class="icon-and-tasks">
                 <div class ="only-tasks">
