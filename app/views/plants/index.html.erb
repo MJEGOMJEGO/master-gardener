@@ -1,17 +1,24 @@
+<!-- def svg(folder, specie_name, task_action_name) -->
 
   <div class="container custom-container">
     <div class="row center-row">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="plants-shelf">
-          <%= svg 'components', 'drink' %>
+          <% if false %>
+            <%= svg 'components', 'drink' %>
+          <% end %>
           <% @plants[0..1].each do |plant| %>
             <%= link_to plant_path(plant) do %>
-                <%= svg 'plants', "#{plant.specie.code}" %>
+                <%= svg 'plants', plant.specie.code, plant.next_task_to_do[:task].try(:action).try(:name) %>
+                <!-- With default value object in plant.rb -->
+                <%# svg 'plants', plant.specie.code, plant.next_task_to_do[:task].action.name %>
               <% end %>
             <% end %>
           <% if [0, 1].include?(@plants.length) %>
             <%= link_to new_plant_path do %>
+              <% if false %>
                 <%= svg 'components', 'pot' %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -21,12 +28,16 @@
         <div class="plants-shelf">
           <% @plants[2..3].each do |plant| %>
             <%= link_to plant_path(plant) do %>
-                <%= svg 'plants', "#{plant.specie.code}" %>
+                <%= svg 'plants', plant.specie.code, plant.next_task_to_do[:task].try(:action).try(:name) %>
+                <!-- With default value object in plant.rb -->
+                <%# svg 'plants', plant.specie.code, plant.next_task_to_do[:task].action.name %>
             <% end %>
           <% end %>
           <% if [2, 3].include?(@plants.length) %>
             <%= link_to new_plant_path do %>
+              <% if false %>
                 <%= svg 'components', 'pot' %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -34,14 +45,21 @@
 
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="plants-shelf">
-          <%= svg 'components', 'books' %>
+          <% if false %>
+            <%= svg 'components', 'books' %>
+          <% end %>
+
           <% if @plants.count == 5 %>
             <%= link_to plant_path(@plants.last) do %>
-                <%= svg 'plants', "#{@plants.last.specie.code}" %>
+                <%= svg 'plants', plant.specie.code, plant.next_task_to_do[:task].try(:action).try(:name) %>
+                <!-- With default value object in plant.rb -->
+                <%# svg 'plants', plant.specie.code, plant.next_task_to_do[:task].action.name %>
             <% end %>
           <% else %>
             <%= link_to new_plant_path do %>
+              <% if false %>
                 <%= svg 'components', 'pot' %>
+              <% end %>
             <% end %>
           <% end %>
         </div>
