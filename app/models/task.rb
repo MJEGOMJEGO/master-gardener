@@ -9,8 +9,9 @@ class Task < ApplicationRecord
     with_status(:pending).
     where("max_date >= :today AND max_date <= :in_four_days",
       today: Date.today,
-      in_four_days: Date.today + 4.days
-    )
+      in_four_days: Date.today + 2.days
+    ).
+    order(max_date: :asc)
   end
 
   def overdue?

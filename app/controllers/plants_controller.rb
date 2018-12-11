@@ -45,27 +45,12 @@ class PlantsController < ApplicationController
   end
 
   def find_next_task
-    if @plant.tasks.todo_quickly != []
-      @plant.tasks.todo_quickly.each do |task|
-        if task.action.name == "water"
-          @task = task
-          @task_text = "  I am thirsty, give me water"
-        elsif task.action.name == "exposure"
-          @task = task
-          @task_text = "  I need to see the sunlight."
-        elsif task.action.name == "cut"
-          @task = task
-          @task_text = "  I have to many leafs give me a nice leaf-cut."
-        elsif task.action.name == "feed"
-          @task = task
-          @task_text = "  I am hungry, feed me."
-        elsif task.action.name == "pot"
-          @task = task
-          @task_text = "  I am to big, give me some space."
-        end
-      end
-    else
+    @task = @plant.next_task_to_do
+
+    if @task.nil?
       @no_task = "I am feeling good today. Come back tomorow."
+    else
+      @task_text = @task.action.sentence
     end
   end
 
