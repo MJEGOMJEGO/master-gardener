@@ -1,6 +1,10 @@
 class TasksController < ApplicationController
   before_action :find_task, only: [:mark_as_done]
 
+  def index
+    @user_tasks = current_user.tasks
+  end
+
   def edit
   end
 
