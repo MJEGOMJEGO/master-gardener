@@ -1,0 +1,28 @@
+.circular {
+  position: relative;
+  font-size: 1.1em;
+  background: rgba(150, 150, 150, 1);
+  color: $gray;
+  border-radius: 50%;
+  padding: 15% 5%;
+  width: 20em;
+  text-align: center;
+}
+.circular1 {
+  background: rgba(150, 150, 150, 1);
+  width: 20px;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 40px;
+  bottom: -20px;
+}
+.circular2 {
+  background: rgba(150, 150, 150, 1);
+  width: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  bottom: -35px;
+}
