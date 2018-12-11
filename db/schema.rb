@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_172850) do
+ActiveRecord::Schema.define(version: 2018_12_11_094034) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_172850) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "code"
+    t.string "sentence"
     t.index ["specie_id"], name: "index_actions_on_specie_id"
   end
 
@@ -93,7 +94,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_172850) do
     t.string "username"
     t.string "city_location"
     t.integer "level"
-    t.integer "score"
+    t.integer "score", default: 0
     t.string "img"
     t.text "badges", array: true
     t.index ["email"], name: "index_users_on_email", unique: true
