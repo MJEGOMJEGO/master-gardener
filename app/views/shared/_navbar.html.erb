@@ -2,31 +2,35 @@
 
     <!-- Box on the left with rounded avatar and rectangle with player level -->
     <div class="level-box">
-
+      <!-- Rounded progress bar with avatar gardener inside -->
+      <div class="dropdown-on-avatar">
+        <%= render 'shared/avatar' %>
+      </div>
         <!-- Rectangle box on the right of the avatar -->
-          <div class="rect-box">
-            <div class="player-level">
-              <p>Hey ! <%= current_user.username %>
-              <% case current_user.level %>
-                <% when 0 %>
-                  <span>the baby-gardener !</span>
-                <% when 1 %>
-                  <span>the green lover !</span>
-                <% when 2 %>
-                  <span>the vegetal protector !</span>
-                <% when 3 %>
-                  <span>the botanist !</span>
-                <% when 4 %>
-                  <span>you are Master Gardener !</span>
-                <% end %>
-              </p>
 
-            </div>
+      <%if current_page?(plants_path)%>
+        <div class="rect-box">
+          <div class="player-level">
+            <p>Hey <%= current_user.username %>,<br>
+            <% case current_user.level %>
+              <% when 0 %>
+                <span>the baby-gardener !</span>
+              <% when 1 %>
+                <span>the green lover !</span>
+              <% when 2 %>
+                <span>the vegetal protector !</span>
+              <% when 3 %>
+                <span>the botanist !</span>
+              <% when 4 %>
+                <span>you are Master Gardener !</span>
+              <% end %>
+            </p>
+
           </div>
-          <!-- Rounded progress bar with avatar gardener inside -->
-          <div class="dropdown-on-avatar">
-            <%= render 'shared/avatar' %>
-          </div>
+        </div>
+      <% end  %>
+
+
 
 
     </div>
@@ -45,9 +49,9 @@
 
 </div>
 <!-- Dropdown menu items -->
-<!-- <div>
-  <ul id="mobile-menu" class="disappear-menu menu-hidden list-unstyled">
-    <i class="fas fa-times close"></i>
+
+<div>
+  <ul id="menu-list" class="list-unstyled menu-disappear hide">
     <li>
       <%= link_to plants_path do %>
         <p><i class="fas fa-trophy"></i> my achievements</p>
@@ -73,7 +77,7 @@
 
 
 
-</div> -->
+</div>
 
 
 

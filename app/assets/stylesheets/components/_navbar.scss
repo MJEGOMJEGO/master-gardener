@@ -5,7 +5,7 @@
   z-index: 99;
   //box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
   //background-color: rgb(136, 223, 215);
-  transition: all 0.3s ease;
+  //transition: all 0.3s ease;
   height: 130px;
   display: flex;
   align-items: center;
@@ -17,28 +17,21 @@
   padding: 0 5%;
   display: flex;
   align-items: center;
-  position: relative;
+  //position: relative;
 }
 
-.rect-box {
-  position: absolute;
-  left: 130px;
-  width: 200px;
-  height: 60px;
-  border-radius: 10px;
-  background-color: #C0454E;
-  border: 2px solid yellow;
-  display: flex;
-  align-items: center;
+.dropdown-on-avatar{
+  //position: absolute;
 }
 
 .player-level p {
-  margin-left: 30px;
+  margin-left: 15px;
   margin-bottom: 0;
-  width: 150px;
-  text-align: center;
-  font-size: 14px;
-  color: white;
+  //width: 150px;
+  //text-align: center;
+  font-size: 15px;
+  color: black;
+  font-weight: bolder;
 }
 
 .navbar-gardener > a {
