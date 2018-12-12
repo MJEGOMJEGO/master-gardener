@@ -48,7 +48,7 @@ class PlantsController < ApplicationController
     @task = @plant.next_task_to_do
 
     if @task.nil?
-      @no_task = "I am feeling good today. Come back tomorow."
+      @no_task = "I feel good today. Come back tomorow."
     else
       @task_text = @task.action.sentence
     end
