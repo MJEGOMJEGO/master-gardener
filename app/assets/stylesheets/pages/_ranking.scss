@@ -1,97 +1,51 @@
+.card {
+  margin: 7px;
+  border-radius: 10px;
+  background-color: white;
 
-// .ranking-background {
-  //background-color: rgba(136, 223, 215, 0.52);
-//   justify-content: center;
-//   text-align:center;
-//   display: flex;
-//   min-height: calc(100vh - 130px);
-// }
-.ranking-custom-container {
-  width: 800px;
-  // display: flex;
-  margin: auto;
-  // align-items: center;
-  // justify-content: center;
-}
-// .column-class{
-//   justify-content: center;
-// }
-// .username-garden {
-//   // text-align: left;
-// }
-// .ranking-area{
-//     justify-content: center;
-// }
-// .users-data {
-//   position: relative;
-//   background-color : white;
-//   width: 100%;
-
-//   border-radius: 10px;
-//   justify-content: center;
-//   margin-bottom: 10px;
-//     h5 {
-//       // text-align : left;
-//     }
-//     h1 {
-
-//       top: 0px;
-
-//       font-size: 25px;
-//       border-radius: 50%;
-//       background-color: rgba(0, 102, 51, 0.4);
-//       border: 1px solid rgba(0, 102, 51, 1);
-//       font-weight: darkgrey;
-//       color: black;
-//       height: 30px;
-//       width: 30px;
-//       // text-align: center;
-//       justify-content: center;
-//       // align-items: center;
-//       z-index: 1;
-//     }
-// }
-// .card {
-//   display: flex;
-//   margin: 1%;
-// }
-// .ranking-title {
-//   margin-top: 100px;
-//   text-align: center;
-// }
-.players-plants-avatars {
-  // padding: 5px;
-  display:flex;
-  margin-top: 2%;
-  // margin-left: 2%;
-  // text-align: center;
-  // justify-content: center;
-  // align-items: center;
 }
 
-// .score-and-level{
-// display :flex;
-// flex-direction: column;
-// margin-right: 5px;
-// position:absolute;
-// right: 2%;
-// }
 
-// .ranking-player-level{
+  .ranking {
+    display: flex;
+    margin: 5px;
+    // vertical-align: center;
 
-// }
-// .ranking-profile-star {
-//   height: 50px;
-//   width: 50px;
-//   bottom: 0px;
-// }
-// .score {
-//   display: flex
+  }
 
-// }
+    .player-score{
+      // height: 50px;
+      // width: 50px;
+
+    }
+
+    .info-player {
+      flex-grow: 1;
+      padding-left: 10px;
+      margin-top: 10px
+
+    }
+
+      .info-player h5 {
+        margin-bottom: 0px;
+
+      }
+      .info-player p {
+        font-size: 13px;
+
+      }
+
+    .ranking-player{
+      margin-right: 3px;
+      margin-top: -23px;
+
+    }
+
+  .players-plants-avatars {
+    background-color: red;
+    margin: 5px;
+  }
 
 
-.ranking {
-display: flex;
-justify-content: space-around;
-}
+
+
