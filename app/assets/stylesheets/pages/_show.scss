@@ -13,9 +13,8 @@
   color: grey;
   font-size: 20px;
   border-radius: 5px;
-  margin-top: 30px;
   margin-bottom: 30px;
-  padding: 40px 20px;
+  padding: 30px 20px;
   width: 80%;
   box-shadow: 1px 1px 0px 0px rgba(0,0,0,.05);
   flex: 0 0 20%;
@@ -51,7 +50,7 @@
 .plant-with-task {
    flex: 1 0 auto;
    svg {
-    height: 45vh;
+    height: 42vh;
     margin: 15px 0 4px 0;
    }
 }

@@ -1,11 +1,8 @@
-.wraper-index {
-  background-color: rgba(136, 223, 215, 0.12);
-}
-
 .custom-container {
-  height: 70vh;
+  // height: 70vh;
   display: flex;
   align-items: center;
+  margin-top: 15px;
 }
 
 .center-row {
@@ -21,8 +18,7 @@
   align-items: flex-end;
   box-shadow: 0 9px 6px -6px grey;
   margin-top: 10px;
-  height: 27vh;
-  position: relative;
+  height: 23vh;
 }
 
 
@@ -47,7 +43,7 @@
 }
 
 .books {
-  height: 100px;
+  height: 70px;
   align-self: flex-end;
   margin-bottom: -4px;
 }
@@ -60,7 +56,7 @@
 // }
 
 .pot {
-  height: 100px;
+  height: 70px;
   align-self: flex-end;
   margin-bottom: -8px;
 }
