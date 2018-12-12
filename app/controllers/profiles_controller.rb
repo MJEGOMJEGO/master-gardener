@@ -9,7 +9,7 @@ class ProfilesController < ApplicationController
 
   def update
     @user.update(user_params)
-    redirect_to edit_profile_path
+    redirect_to plants_path
   end
 
   private
