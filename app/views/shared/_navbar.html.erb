@@ -3,7 +3,9 @@
   <div class="player">
     <!-- Rounded progress bar with avatar gardener inside - click to open menu -->
     <div class="dropdown-on-avatar">
-      <%= render 'shared/avatar' %>
+      <% unless current_page?(ranking_path) %>
+        <%= render 'shared/avatar' %>
+        <% end %>
 
     </div>
     <!-- player level & score-->
