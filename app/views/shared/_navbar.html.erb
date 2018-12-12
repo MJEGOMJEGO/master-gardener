@@ -3,7 +3,7 @@
   <div class="player">
     <!-- Rounded progress bar with avatar gardener inside - click to open menu -->
     <div class="dropdown-on-avatar">
-      <% unless current_page?(ranking_path) %>
+      <% if current_page?(plants_path) || current_page?(ranking_path) || current_page?(profile_path) || current_page?(tasks_path) %>
         <%= render 'shared/avatar' %>
         <% end %>
 

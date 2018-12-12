@@ -12,12 +12,10 @@ class TasksController < ApplicationController
     @task.status  = "done"
     @task.done_at = DateTime.now
     @task.save!
-    flash[:action_done] = "Thanks!"
     update_plant_lifepoints
     update_user_game_status
     rebuild_done_task_for_later
-
-
+    flash[:action_done] = "Thanks!"
     redirect_to plant_path(@task.plant)
   end
 
