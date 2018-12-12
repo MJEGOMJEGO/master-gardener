@@ -1,65 +1,42 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-md-4 col-md-offset-4">
-      <div class="plant-show">
-        <div class="bubble">
-          <div class="circular">
-            <div class="message">
-                  <%= @no_task %>
-                  <%= @task_text %>
-                  <% if @task  %>
-                    <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
-                      <i class="fas fa-check-circle"></i>
-                    <% end  %>
-                  <% end %>
-            </div>
-            <div class="circular1"></div>
-            <div class="circular2"></div>
-          </div>
+  <div class="show-plant">
+    <div class="task-sentence-show">
+      <%= @no_task %>
+      <%= @task_text %>
+      <% if @task %>
+      <div class="circle-task-icon">
+        <div class="task-icon">
+          <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
+            <%= actions_svg @task.action.code %>
+          <% end  %>
         </div>
-        <div class="plant-with-task">
-          <%= plants_svg @plant.specie.code, @plant.next_task_to_do.try(:action).try(:name) %>
-          <% if @task  %>
-            <div class="task">
-              <div class="task-image">
-                <%= actions_svg @task.action.code %>
-              </div>
-              <div class="task-text">
-                did you <%= @task.action.name %> me ? <br>(due date <%= @task.max_date %>)
-              </div>
-              <div class="exp">
-                <div class="checkbox">
-                  <form>
-                    <div>
-                      <%= link_to mark_as_done_task_path(@task), class: "action", method: :patch do %>
-                      <input type="checkbox" id="check" name="check" value="" />
-                      <label for="check">
-                        <span><!-- This span is needed to create the "checkbox" element --></span>
-                      </label>
-                      <% end %>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          <% end %>
+      </div>
+      <% end %>
+    </div>
+    <div class="plant-with-task">
+      <%= plants_svg @plant.specie.code, @plant.next_task_to_do.try(:action).try(:name) %>
+    </div>
+    <div class="plant-description">
+      <div class="plant-name-show">
+        <%= @plant.nickname %>
+        <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
+          <%= image_tag "components/trash.png", class: "trash" %>
+        <% end %>
+      </div>
+      <div class="plant-stats-show">
+        <div class="stat-1 stat-bar">
+          <span class="stat-bar-rating" role="stat-bar" style="width: <%= (@plant.life_points.to_f / @plant.specie.max_life_points.to_f)*100.to_i %>%;"></span>
+        </div>
+        <div class="player-score-show">
+         <%= "#{@plant.life_points} / #{@plant.specie.max_life_points} life points" %>
+         </div>
         </div>
 
-        <div class="plant-name">
-          <%= @plant.nickname %>
-          <%= link_to plant_path(@plant), method: :delete, data: { confirm: 'are you sure?' } do%>
-            <i class="fas fa-trash-alt trash"></i>
-          <% end %>
-          <br><%= "#{@plant.life_points} / #{@plant.specie.max_life_points} PV" %>
-        </div>
-          <div class="stat-1 stat-bar">
-            <span class="stat-bar-rating" role="stat-bar" style="width: <%= (@plant.life_points.to_f / @plant.specie.max_life_points.to_f)*100.to_i %>%;"></span>
-          </div>
-      </div>
 
     </div>
   </div>
 </div>
+
 
 <% if flash[:action_done] %>
   <div id="popup" class="popup-appear">
