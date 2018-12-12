@@ -10,13 +10,13 @@ class User
       description: 'level 3',
       fullfilment_condition: ->(user) { user.score >= 2000 }
     },
-    'green-lover' =>  {
-      explanation: 'Green Lover',
+    'vegetal-protector' =>  {
+      explanation: 'Vegetal-protector',
       description: 'level 2',
       fullfilment_condition: ->(user) { user.score >= 1000 }
     },
-    'novice' => {
-      explanation: 'Novice',
+    'green-lover' => {
+      explanation: 'Green lover',
       description: 'level 1',
       fullfilment_condition: ->(user) { user.score >= 500 }
     },
@@ -35,49 +35,49 @@ class User
       description: 'five plants in your garden',
       fullfilment_condition: ->(user) { user.plants.count >= 5 }
     },
-    'orchidee-genious' => {
-      explanation: 'orchidee-genious',
-      description: '5 good answers on plant orchidee',
+    'amaryllis-genious' => {
+      explanation: 'amaryllis-genious',
+      description: '5 good answers on plant amaryllis',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'orchidee-master' => {
-      explanation: 'orchidee-master',
-      description: 'max-life reached on orchidee',
+    'amaryllis-master' => {
+      explanation: 'amaryllis-master',
+      description: 'max-life reached on amaryllis',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'gardenia-genious' => {
-      explanation: 'gardenia-genious',
-      description: '5 good answers on plant gardenia',
+    'caoutchouc-genious' => {
+      explanation: 'caoutchouc-genious',
+      description: '5 good answers on plant caoutchouc',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'gardenia-master' => {
-      explanation: 'gardenia-master',
-      description: 'max-life reached on gardenia',
+    'caoutchouc-master' => {
+      explanation: 'caoutchouc-master',
+      description: 'max-life reached on caoutchouc',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'spathiphyllum-genious' => {
-      explanation: 'spathiphyllum-genious',
-      description: '5 good answers on plant spathiphyllum',
+    'pachystachys-genious' => {
+      explanation: 'pachy-genious',
+      description: '5 good answers on plant pachystachys',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'spathiphyllum-master' => {
-      explanation: 'spathiphyllum-master',
-      description: 'max-life reached on spathiphyllum',
+    'pachystachys-master' => {
+      explanation: 'pachy-master',
+      description: 'max-life reached on pachystachys',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'ficus-benjamina-master' => {
+    'ficus-master' => {
       explanation: 'ficus-master',
       description: 'max-life reached on ficus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'guzmania-genious' => {
-      explanation: 'guzmania-genious',
-      description: '5 good answers on plant guzmania',
+    'cactus-genious' => {
+      explanation: 'cactus-genious',
+      description: '5 good answers on plant cactus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'guzmania-master' => {
-      explanation: 'guzmania-master',
-      description: 'max-life reached on guzmania',
+    'cactus-master' => {
+      explanation: 'cactus-master',
+      description: 'max-life reached on cactus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'arroseur' => {
@@ -105,7 +105,7 @@ class User
       description: 'Sun explosure 3 times',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
-    'ficus-benjamina-genious' => {
+    'ficus-genious' => {
       explanation: 'ficus-genious',
       description: '5 good answers on plant ficus',
       fullfilment_condition: ->(user) { user.username == "fake" }
