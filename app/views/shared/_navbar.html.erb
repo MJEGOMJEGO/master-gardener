@@ -25,7 +25,9 @@
           <p><%= current_user.score %> / 3000 pts</p>
         </div>
       </div>
-      <%= render 'shared/avatar' %>
+      <%= link_to profile_path do %>
+        <%= render 'shared/avatar' %>
+      <% end %>
     </div>
   <% else  %>
   <!-- Back -->
