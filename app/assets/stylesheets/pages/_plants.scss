@@ -1,9 +1,9 @@
 .wraper-index {
-  background-color: rgba(136, 223, 215, 0.52);
+  background-color: rgba(136, 223, 215, 0.12);
 }
 
 .custom-container {
-  height: 90vh;
+  height: 70vh;
   display: flex;
   align-items: center;
 }
@@ -15,7 +15,7 @@
 
 .plants-shelf {
   display: flex;
-  border-bottom: 1em solid #D4B483;
+  border-bottom: 0.5em solid #D4B483;
   border-radius: 6px;
   justify-content: space-around;
   align-items: flex-end;
@@ -52,12 +52,12 @@
   margin-bottom: -4px;
 }
 
-.drink {
-  height: 60px;
-  align-self: flex-end;
-  margin-bottom: -6px;
-  left: 5px;
-}
+// .drink {
+//   height: 60px;
+//   align-self: flex-end;
+//   margin-bottom: -6px;
+//   left: 5px;
+// }
 
 .pot {
   height: 100px;
@@ -77,6 +77,8 @@
 //   animation: plant-bounce 0.3s ease;
 //   animation-iteration-count: 1;
 // }
+
+// <<------------ css animation --------------->>
 
 #mouth #Fill-94, #mouth #Fill-95 {
  animation: wide2 0.75s infinite;
@@ -129,12 +131,13 @@
 }
 
 #heart #Fill-60, #heart #Fill-61, #heart #Fill-62, #heart #Fill-63, #heart #Fill-64, #heart #Fill-65 {
-  animation: scale 0.7s infinite;
+  animation: scale 0.7s;
+  animation-iteration-count: 3;
 }
 
 #smile #Fill-315, #smile #Fill-314, #smile #Fill-313, #smile #Fill-312 {
-  animation: wide 0.7s infinite;
-
+  animation: wide 0.7s;
+  animation-iteration-count: 3;
 }
 
 
@@ -167,6 +170,187 @@
     transform: scale(1);
   }
 }
+
+
+#tooth #Fill-183, #tooth #Fill-182 {
+  animation: open 0.2s infinite;
+}
+
+#tooth #Fill-184, #tooth #Fill-185{
+  animation: teeth 0.2s infinite;
+}
+
+@keyframes open {
+  from {
+    transform: skew(5deg) scale(1);
+  }
+  50% {
+    transform: skew(-5deg) scale(1.2);
+  }
+}
+
+@keyframes teeth {
+  from {
+    transform:  translateX(0px);
+  }
+  50% {
+    transform:  translateX(5px);
+  }
+}
+
+
+#eye-left #Fill-85 {
+  animation: slide4 0.5s infinite;
+}
+
+#eye-left #Fill-86{
+  animation: slide1 0.5s infinite;
+}
+
+#eye-right #Fill-91 {
+  animation: slide2 0.5s infinite;
+}
+
+#eye-right #Fill-92 {
+  animation: slide1 0.5s infinite;
+}
+
+@keyframes slide1 {
+  from {
+    transform: translateY(0.5px);
+  }
+  50% {
+    transform: translateY(-0.5px) ;
+  }
+  to {
+    transform: translateY(0.5px);
+  }
+}
+
+@keyframes slide2 {
+  from {
+    transform: translateX(0.5px);
+  }
+  50% {
+    transform: translateX(-0.5px) ;
+  }
+  to {
+    transform: translateX(0.5px);
+  }
+}
+
+@keyframes slide3 {
+  from {
+    transform: translateY(-0.5px);
+  }
+  50% {
+    transform: translateY(0.5px) ;
+  }
+  to {
+    transform: translateY(-0.5px);
+  }
+}
+
+@keyframes slide4 {
+  from {
+    transform: translateX(-0.5px);
+  }
+  50% {
+    transform: translateX(0.5px) ;
+  }
+  to {
+    transform: translateX(-0.5px);
+  }
+}
+
+#tongue  {
+   animation: tongue-out 1.5s infinite;
+}
+
+
+
+#eye-left #Fill-51 {
+   animation: eyebrow 1.5s infinite;
+}
+
+
+
+#eye-left #Fill-53, #eye-left #Fill-52, #eye-left #Fill-50{
+   animation: blink-eye 1.5s infinite;
+
+}
+
+@keyframes blink-eye {
+  from {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1);
+  }
+   26% {
+    transform: scale(0);
+  }
+
+    75% {
+    transform: scale(0);
+  }
+     76% {
+    transform: scale(1);
+  }
+
+  100% {
+     transform: scale(1);
+  }
+
+}
+
+
+
+@keyframes eyebrow {
+  from {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  26% {
+    transform: translateY(7px) translateX(0px);
+  }
+
+  75% {
+    transform: translateY(7px) translateX(0px);
+  }
+  76% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  100% {
+     transform: translateY(0px);
+  }
+
+}
+
+@keyframes tongue-out {
+  0% {
+    transform: translateY(5px) translateX(2px);
+  }
+  25% {
+    transform: translateY(5px) translateX(2px);
+  }
+  26% {
+    transform: translateY(16px) translateX(2px);
+  }
+  75% {
+    transform: translateY(16px) translateX(2px);
+  }
+  76% {
+    transform: translateY(5px) translateX(2px);
+  }
+  100% {
+    transform: translateY(5px) translateX(2px);
+  }
+}
+
 
 
 
