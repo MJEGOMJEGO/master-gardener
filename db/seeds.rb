@@ -14,13 +14,13 @@ henri  = User.create!(email: 'henri-devorsine@hotmail.fr', password: 'password',
 puts "Creating species..."
 amaryllis     = Specie.create!(code: 'amaryllis', name: 'Amaryllis', max_life_points: 2000)
 cactus        = Specie.create!(code: 'cactus', name: 'Cactus', max_life_points: 1000)
-caoutchou     = Specie.create!(code: 'caoutchou', name: 'Caoutchou', max_life_points: 2000)
+caoutchouc     = Specie.create!(code: 'caoutchouc', name: 'Caoutchouc', max_life_points: 2000)
 ficus         = Specie.create!(code: 'ficus', name: 'Ficus', max_life_points: 2000)
 pachystachys  = Specie.create!(code: 'pachystachys', name: 'Pachystachys', max_life_points: 3000)
 
 puts "Creating plants..."
 bernard = Plant.create!(specie: ficus, nickname: 'Bernard', life_points: 950, user: matt)
-sophie  = Plant.create!(specie: caoutchou, nickname: 'Sophie', life_points: 100, user: matt)
+sophie  = Plant.create!(specie: caoutchouc, nickname: 'Sophie', life_points: 100, user: matt)
 rené    = Plant.create!(specie: cactus, nickname: 'René', life_points: 800, user: matt)
 albert  = Plant.create!(specie: amaryllis, nickname: 'Albert', life_points: 400, user: ben)
 hubert  = Plant.create!(specie: pachystachys, nickname: 'Hubert', life_points: 200, user: ben)
@@ -40,11 +40,11 @@ feed_cactus      = Action.create!(code: 'feed', name: 'feed', points: 25, specie
 pot_cactus       = Action.create!(code: 'pot', name: 'pot', points: 250, specie: cactus, sentence: 'I am to big, give me some space.',  frequency_in_days: 80)
 exposure_cactus  = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: cactus, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
 
-water_caoutchou    = Action.create!(code: 'water', name: 'water', points: 100, specie: caoutchou, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
-cut_caoutchou      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: caoutchou, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
-feed_caoutchou     = Action.create!(code: 'feed', name: 'feed', points: 25, specie: caoutchou, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
-pot_caoutchou      = Action.create!(code: 'pot', name: 'pot', points: 250, specie: caoutchou, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
-exposure_caoutchou = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: caoutchou, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
+water_caoutchouc    = Action.create!(code: 'water', name: 'water', points: 100, specie: caoutchouc, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
+cut_caoutchouc      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: caoutchouc, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
+feed_caoutchouc     = Action.create!(code: 'feed', name: 'feed', points: 25, specie: caoutchouc, sentence: 'I am hungry, feed me.', frequency_in_days: 40)
+pot_caoutchouc      = Action.create!(code: 'pot', name: 'pot', points: 250, specie: caoutchouc, sentence: 'I am to big, give me some space.', frequency_in_days: 80)
+exposure_caoutchouc = Action.create!(code: 'exposure', name: 'exposure', points: 150, specie: caoutchouc, sentence: 'I need to see the sunlight.', frequency_in_days: 40)
 
 water_ficus    = Action.create!(code: 'water', name: 'water', points: 100, specie: ficus, sentence: 'I am thirsty, give me water.', frequency_in_days: 7)
 cut_ficus      = Action.create!(code: 'cut', name: 'cut', points: 250, specie: ficus, sentence: 'I have to many leafs give me a nice leaf-cut.', frequency_in_days: 40)
@@ -66,11 +66,11 @@ Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-18', status:
 Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', status: "pending")
 Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', status: "pending")
 
-Task.create!(plant: sophie, action: water_caoutchou, max_date: '2018-12-12', status: "pending")
-Task.create!(plant: sophie, action: cut_caoutchou, max_date: '2018-12-15', status: "pending")
-Task.create!(plant: sophie, action: feed_caoutchou, max_date: '2018-12-18', status: "pending")
-Task.create!(plant: sophie, action: pot_caoutchou, max_date: '2018-12-29', status: "pending")
-Task.create!(plant: sophie, action: exposure_caoutchou, max_date: '2018-12-31', status: "pending")
+Task.create!(plant: sophie, action: water_caoutchouc, max_date: '2018-12-12', status: "pending")
+Task.create!(plant: sophie, action: cut_caoutchouc, max_date: '2018-12-15', status: "pending")
+Task.create!(plant: sophie, action: feed_caoutchouc, max_date: '2018-12-18', status: "pending")
+Task.create!(plant: sophie, action: pot_caoutchouc, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: sophie, action: exposure_caoutchouc, max_date: '2018-12-31', status: "pending")
 
 Task.create!(plant: rené, action: water_cactus, max_date: '2018-12-12', status: "pending")
 Task.create!(plant: rené, action: cut_cactus, max_date: '2018-12-15', status: "pending")
