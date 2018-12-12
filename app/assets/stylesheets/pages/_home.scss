@@ -20,7 +20,7 @@
   font-size: 25px;
   color: white;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: $gray;
   opacity: 0.6;
   margin-bottom: 30px;
 }
@@ -65,7 +65,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgba(136, 223, 215, 0.52);
+  //background-color: rgba(136, 223, 215, 0.52);
   z-index:-1;
   padding-left: 0;
 
@@ -75,8 +75,8 @@
     position: absolute;
     list-style: none;
     display: block;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     background-color: fade(white, 15%);
     bottom: -100px;
     animation: square 25s infinite;
