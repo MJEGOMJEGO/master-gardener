@@ -5,7 +5,7 @@
       <div class="list">
         <div class="col-xs-4 col-sm-3 col-md-2">
           <div class="container-badges">
-              <%= image_tag "profile/badges/#{badge.id}", title: badge.description, class: "#{@user.badges.include?(badge.id) ? 'badge-won' : 'badge-not-won'}" %>
+              <%= image_tag "profile/badges/#{badge.id}.svg", title: badge.description, class: "#{@user.badges.include?(badge.id) ? 'badge-won' : 'badge-not-won'}" %>
               <p><%= "
               #{badge.explanation}" %></p>
           </div>
