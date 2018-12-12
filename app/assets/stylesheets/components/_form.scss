@@ -15,11 +15,11 @@
 }
 
 .container-form-login {
-  width: 350px;
+  width: 270px;
   background-color: white;
   padding: 20px;
   border-radius: 3px;
-  // height: 70vh;
+  height: 90vh;
    h2 {
   text-align: center;
   font-weight: lighter;
@@ -33,8 +33,12 @@
  border-radius: 30px;
 }
 
-.form-control {
-  border-radius: 20px;
+// .form-control {
+//   border-radius: 20px;
+// }
+
+.form-block-sign-up {
+  width: 100%;
 }
 
 .form-check {
@@ -98,7 +102,7 @@ vertical-align: center;
 }
 
 .container-form-sign-up {
-  width: 500px;
+  width: 80%;
   background-color: white;
   padding: 20px;
   justify-content: center;
@@ -113,15 +117,10 @@ vertical-align: center;
 }
 
 .form-inputs-sign-up {
- border-radius: 30px;
- display: flex;
- justify-content: space-around;
+  border-radius: 30px;
+  display: flex;
+  justify-content: space-around;
 }
-
-.form-block {
-  display:inline-block;
-}
-
 
 .form-actions {
   display: flex;

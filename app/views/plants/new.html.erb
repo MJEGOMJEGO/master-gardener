@@ -1,13 +1,14 @@
-<div class="background-form">
+<div class=" container background-form">
   <div class="container-form">
-  <h2>Hey Matthieu, You can add a new plant here !</h2>
+  <h2>Hey <%= current_user.username %>, You have a new plant here ?!</h2>
     <%= simple_form_for [@plant] do |f| %>
     <div class="form-inputs-plant">
       <div class="form-block input-plant">
         <%= f.input :nickname, required: true,
                     label: false,
-                    placeholder: "nickname",
-                    input_html: { class: "placeholder-input" } %>
+                    placeholder: "What's the nickname of your plant ?",
+                    input_html: { class: "placeholder-input" },
+                    maxlength: 15 %>
         <div class="form-group">
           <%= f.association :specie, required: true %>
         </div>
