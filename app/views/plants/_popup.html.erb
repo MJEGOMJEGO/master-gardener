@@ -8,6 +8,23 @@
     <p><%= @plant.nickname %> has now <br> <%= @plant.life_points%> life points</p>
     <br>
     <p>Your total score is now <br><%= current_user.score %> pts</p>
+    <% if current_user.level_before < current_user.level %>
+    <p>You passed a new level !! You are now <%= current_user.level %></p>
+    <% end  %>
+    <% unless (current_user.badges - current_user.badges_before).empty?  %>
+
+
+
+      <% newbadges_labels = (current_user.badges - current_user.badges_before) %>
+
+
+      <%= new_badges = User::Badge.all.select {|badge| newbadges_labels.include?(badge.id) }%>
+      <% new_badges.each do |badge| %>
+        <div class="container-badges">
+          <%= image_tag "profile/badges/#{badge.id}.svg", class: "badge-won"%>
+        </div>
+      <% end  %>
+    <% end  %>
     </div>
     <ul class="bg-leaf">
       <li><%= components_svg('leaf') %></li>
