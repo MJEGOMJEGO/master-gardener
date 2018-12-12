@@ -1,83 +1,38 @@
 <div class="navbar-gardener">
+  <!-- Box on the left with rounded avatar and player level -->
+  <%= render 'shared/menu-burger' %>
 
-    <!-- Box on the left with rounded avatar and rectangle with player level -->
-    <div class="level-box">
-      <!-- Rounded progress bar with avatar gardener inside -->
-      <div class="dropdown-on-avatar">
-        <%= render 'shared/avatar' %>
-      </div>
-        <!-- Rectangle box on the right of the avatar -->
-
-      <%if current_page?(plants_path)%>
-        <div class="rect-box">
-          <div class="player-level">
-            <p>
-            <% case current_user.level %>
-              <% when 0 %>
-                <span> Baby-gardener </span>
-              <% when 1 %>
-                <span> Green lover </span>
-              <% when 2 %>
-                <span> Vegetal protector </span>
-              <% when 3 %>
-                <span> Botanist </span>
-              <% when 4 %>
-                <span>Master Gardener </span>
-              <% end %>
-            </p>
-            <%= current_user.score %>
-
-          </div>
+  <%if current_page?(plants_path)%>
+    <div class="player-all">
+      <div class="player">
+        <div class="player-level">
+          <p>
+          <% case current_user.level %>
+            <% when 0 %>
+              <span> BEGINNER</span>
+            <% when 1 %>
+              <span> GREEN LOVER</span>
+            <% when 2 %>
+              <span> GARDENER</span>
+            <% when 3 %>
+              <span> BOTANIST</span>
+            <% when 4 %>
+              <span> MASTER</span>
+            <% end %>
+          </p>
         </div>
-      <% end  %>
-
-
-
-
+        <div class="player-score">
+          <p><%= current_user.score %> / 3000 pts</p>
+        </div>
+      </div>
+      <%= render 'shared/avatar' %>
     </div>
-    <!-- Icon the right side of the navbar-->
-    <%if current_page?(plants_path)%>
-    <!-- Podium -->
-      <%= link_to ranking_path do %>
-        <%= image_tag "profile/podium/podium.png", height: 80 %>
-      <% end  %>
-    <% else  %>
-    <!-- Back -->
-      <%= link_to plants_path do %>
-        <%= image_tag "navbar/back.svg", height: 60 %>
-      <% end  %>
+  <% else  %>
+  <!-- Back -->
+    <%= link_to plants_path do %>
+      <%= image_tag "navbar/back.svg", height: 60 %>
     <% end  %>
-
-</div>
-<!-- Dropdown menu items -->
-
-<div>
-  <ul id="menu-list" class="list-unstyled menu-disappear hide">
-    <li>
-      <%= link_to plants_path do %>
-        <p><i class="fas fa-trophy"></i> My achievements</p>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to tasks_path do %>
-        <p><i class="fas fa-tasks"></i> My tasks</p>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to edit_profile_path do %>
-        <p><i class="fas fa-user-edit"></i> Change my profile</p>
-      <% end %>
-    </li>
-    <li>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <p><i class="fas fa-power-off"></i> Leave the game</p>
-      <% end %>
-    </li>
-
-  </ul>
-
-
-
+  <% end  %>
 </div>
 
 

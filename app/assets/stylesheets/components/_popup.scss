@@ -1,16 +1,10 @@
 .popup-content {
-  background-color: rgba(50, 120, 150, 0.9);
-  // border-radius: 20px;
-  border-top: 25px solid lightgrey;
-  border-bottom:5px solid lightgrey;  width: 600px;
-  height: 300px;
-  position: absolute;
-  left: 43%;
-  top: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  background-color: rgba(136, 223, 215, 1);
+  border-radius: 20px;
+  //height: 400px;
   text-align: center;
   text-align: middle;
+  padding: 15px;
 }
 
 .popup-content img {
@@ -19,8 +13,22 @@
 }
 
 .popup-content p {
-  color: rgb(10, 36, 114);
-  font-size: 30px;
+  color: black;
+  font-size: 20px;
+}
+
+
+
+/////////MOBILE SIZE ///////////////////
+
+@media (max-width: 720px) {
+  .popup-content {
+    //height: 400px;
+  }
+
+  .popup-content p {
+    //font-size: 20px;
+  }
 }
 
 /////////////////TOUCHE PAS EN DESSOUS ////////////////////
@@ -31,6 +39,9 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(10, 10, 10, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

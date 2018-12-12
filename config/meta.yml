@@ -1,0 +1,5 @@
+meta_product_name: "Garden Master"
+meta_title: "Garden Master"
+meta_description: "Garden Master, easy and fun way to heal your plants"
+meta_image: "og-image.jpg"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
