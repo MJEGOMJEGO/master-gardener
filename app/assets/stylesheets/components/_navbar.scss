@@ -1,7 +1,7 @@
 /* Main navbar */
 .navbar-gardener {
   top: 0 !important;
-  z-index: 99;
+  z-index: 50;
   //transition: all 0.3s ease;
   height: 130px;
   display: flex;
@@ -15,8 +15,19 @@
   padding: 0 5%;
 }
 
+.player-all{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.player-score {
+  //padding: 0 5%;
+}
+
 .avatar-gardener {
-  cursor: pointer;
+  //cursor: pointer;
   height: 70px;
   width: 70px;
   border-radius: 50%;
@@ -26,19 +37,19 @@
 }
 
 .player {
-  padding: 0 5%;
-  display: flex;
+  //padding: 0 5%;
+  //display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .player-level p {
-  margin-left: 5px;
-  margin-bottom: 0;
   font-size: 15px;
+  margin: 0;
   color: black;
 }
 
 .player-score p {
   font-weight: lighter;
-  font-size: 13px;
+  font-size: 8px;
 }
