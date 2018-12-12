@@ -1,18 +1,18 @@
 <div class="player-score">
-  <div class="tox-progress" data-size="90" data-thickness="30" data-color="#a6e059" data-background="#C4F3F8" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
+  <div class="tox-progress" data-size="90" data-thickness="20" data-color="#2f6d1b" data-background="#C4F3F8" data-progress="<%= (current_user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
     <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;">
 
       <% case current_user.level %>
-        <% when 0 %>
-          <%= image_tag "levels/baby-gardener.svg", class: "avatar-gardener" %>
+        <% when 0%>
+          <%= image_tag "levels/beginner.png", class: "avatar-gardener" %>
         <% when 1 %>
-          <%= image_tag "levels/green-lover.svg", class: "avatar-gardener" %>
+          <%= image_tag "levels/green-lover.png", class: "avatar-gardener" %>
         <% when 2 %>
-          <%= image_tag "levels/vegetal-protector.svg", class: "avatar-gardener" %>
+          <%= image_tag "levels/gardenner.png", class: "avatar-gardener" %>
         <% when 3 %>
-          <%= image_tag "levels/botanist.svg", class: "avatar-gardener" %>
+          <%= image_tag "levels/botanist.png", class: "avatar-gardener" %>
         <% when 4 %>
-          <%= image_tag "levels/garden-master.svg", class: "avatar-gardener" %>
+          <%= image_tag "levels/master.png", class: "avatar-gardener" %>
         <% end %>
     </div>
   </div>

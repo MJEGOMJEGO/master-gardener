@@ -17,12 +17,12 @@
 
 .avatar-gardener {
   cursor: pointer;
-  height: 52px;
-  width: 52px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   margin: auto;
   background-color: white;
-  border: 8px solid white;
+  //border: 8px solid white;
 }
 
 .player {
@@ -32,7 +32,7 @@
 }
 
 .player-level p {
-  margin-left: 15px;
+  margin-left: 5px;
   margin-bottom: 0;
   font-size: 15px;
   color: black;
