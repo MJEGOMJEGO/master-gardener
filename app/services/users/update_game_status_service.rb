@@ -51,6 +51,7 @@ module Users
     end
 
     def update_level
+      @user.level_before = @user.level
       new_level = if @user.score < 500
         0
       elsif @user.score < 1000

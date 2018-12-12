@@ -18,6 +18,7 @@ module Users
     end
 
     def save_reached_badges_on_user
+      @user.badges_before = @user.badges
       @user.badges = @elligible_badges.map {|badge| badge.id}
       @user.save
     end
