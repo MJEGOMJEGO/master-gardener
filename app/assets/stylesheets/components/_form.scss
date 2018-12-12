@@ -65,7 +65,7 @@ vertical-align: center;
 
 .btn-form-login:hover {
       opacity: 1;
-      background: #3ac162;
+      background: $light-green;
       text-decoration: none;
       color: white;
       transform: scale(1.05,1.05);
@@ -140,7 +140,7 @@ vertical-align: center;
 
 .btn-form-sign-up:hover {
   opacity: 1;
-  background: #3ac162;
+  background: $light-green;
   text-decoration: none;
   color: white;
   transform: scale(1.05,1.05);
@@ -178,7 +178,7 @@ vertical-align: center;
 
 .btn-form-password-reset:hover {
   opacity: 1;
-  background: #3ac162;
+  background: $light-green;
   text-decoration: none;
   color: white;
   transform: scale(1.05,1.05);

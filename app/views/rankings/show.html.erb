@@ -11,7 +11,7 @@
             <div class="ranking">
 
               <div class="player-score">
-                <div class="tox-progress" data-size="65" data-thickness="15" data-color="#2f6d1b" data-background="white" data-progress="<%= (user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
+                <div class="tox-progress" data-size="65" data-thickness="15" data-color="#32B796" data-background="white" data-progress="<%= (user.score.fdiv(3000)* 100).to_i %>" data-speed=<%= current_page?(plants_path) ? "5000" : "5" %> >
                   <div class="tox-progress-content" data-vcenter="true" style="display: flex; align-items: center;">
                       <%= cl_image_tag user.img, class: "avatar-g" %>
                   </div>

@@ -113,7 +113,7 @@ $bars: 3;
   width: 0;
   height: 100%;
   text-indent: -9999px;
-  background: linear-gradient(to right, #BAF2BB, #4DAA57);
+  background: linear-gradient(to right, $light-green, $green);
 }
 
 .stat-1 {
