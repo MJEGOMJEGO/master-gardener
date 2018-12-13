@@ -25,25 +25,25 @@
     -->
     <ul id="menu">
       <%= link_to profile_path do %>
-        <li><i class="fas fa-shield-alt"></i> My achievements</li>
+        <li><%= image_tag "components/gift.png"   %></i> Badges</li>
       <% end %>
 
       <%= link_to tasks_path do %>
-        <li><i class="fas fa-tasks"></i> My tasks</li>
+        <li><%= image_tag "components/checklist.png"   %></i>Tasks</li>
       <% end %>
 
       <%= link_to ranking_path do %>
-        <li><i class="fas fa-trophy"></i> My ranking</li>
+        <li><%= image_tag "components/podium.png"   %> Ranking</li>
       <% end %>
 
       <%= link_to edit_profile_path do %>
-        <li><i class="fas fa-user-edit"></i> Change my profile</li>
+        <li><%= image_tag "components/tools.png" %> Change my profile</li>
       <% end %>
 
       <li></li>
 
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <li><i class="fas fa-power-off"></i> Leave the game</li>
+        <li><%= image_tag "components/cancel.png" %></i> Leave the game</li>
       <% end %>
     </ul>
   </div>
