@@ -25,25 +25,24 @@
     -->
     <ul id="menu">
       <%= link_to profile_path do %>
-        <li><%= image_tag "components/gift.png"   %></i> Badges</li>
+        <li><%= image_tag "components/gift.png"%> &nbsp;Badges</li>
       <% end %>
 
       <%= link_to tasks_path do %>
-        <li><%= image_tag "components/checklist.png"   %></i>Tasks</li>
+        <li><%= image_tag "components/checklist.png"%> &nbsp;Tasks</li>
       <% end %>
 
       <%= link_to ranking_path do %>
-        <li><%= image_tag "components/podium.png"   %> Ranking</li>
+        <li><%= image_tag "components/podium.png"%> &nbsp;Ranking</li>
       <% end %>
 
       <%= link_to edit_profile_path do %>
-        <li><%= image_tag "components/tools.png" %> Change my profile</li>
+        <li><%= image_tag "components/tools.png"%> &nbsp;Change my profile</li>
       <% end %>
 
       <li></li>
-
       <%= link_to destroy_user_session_path, method: :delete do %>
-        <li><%= image_tag "components/cancel.png" %></i> Leave the game</li>
+        <li><%= image_tag "components/cancel.png" %> &nbsp;Leave the game</li>
       <% end %>
     </ul>
   </div>
