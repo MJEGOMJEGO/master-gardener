@@ -7,6 +7,11 @@ class PlantsController < ApplicationController
   end
 
   def show
+    # FOR THE THANKS POPUP
+    unless current_user.tasks.where(status: "done").empty?
+      @last_task_done = current_user.tasks.where(status: "done").order(:updated_at).last
+      @last_task_points = @last_task_done.action.points
+    end
   end
 
   def new

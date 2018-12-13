@@ -13,9 +13,12 @@ class TasksController < ApplicationController
     @task.done_at = DateTime.now
     @task.save!
     update_plant_lifepoints
+    unless max_plant_life_points?
+      flash[:action_done] = "Thanks!"
+    end
     update_user_game_status
     rebuild_done_task_for_later
-    flash[:action_done] = "Thanks!"
+
     redirect_to plant_path(@task.plant)
   end
 
@@ -36,6 +39,10 @@ class TasksController < ApplicationController
 
   def update_user_game_status
     Users::UpdateGameStatusService.new(current_user).call
+  end
+
+  def max_plant_life_points?
+    @task.plant.life_points == @task.action.specie.max_life_points
   end
 
   def update_plant_lifepoints

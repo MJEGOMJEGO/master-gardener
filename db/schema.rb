@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_184810) do
+
+ActiveRecord::Schema.define(version: 2018_12_13_085433) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,7 +99,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_184810) do
     t.integer "score", default: 0
     t.string "img"
     t.text "badges", default: [], array: true
-    t.integer "level_before"
+    t.integer "level_before", default: 0
     t.text "badges_before", array: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -19,7 +19,8 @@ class User
     'green-lover' => {
       explanation: 'Green lover',
       description: 'Level 1, 500 pts',
-      fullfilment_condition: ->(user) { user.score >= 500 }
+      fullfilment_condition: ->(user) { user.score >= 300 }
+
     },
     'amateur' => {
       explanation:'Amateur',
