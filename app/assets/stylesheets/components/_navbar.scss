@@ -40,16 +40,19 @@
   //padding: 0 5%;
   //display: flex;
   align-items: center;
-  text-align: center;
+  // text-align: center;
 }
 
 .player-level p {
-  font-size: 15px;
-  margin: 0;
+  font-size: 17px;
+  margin-bottom: 0;
+  margin-top: 6px;
   color: black;
 }
 
 .player-score p {
   font-weight: lighter;
-  font-size: 8px;
+  font-size: 11px;
+  margin-top: -10px;
+  // margin-left: 5px;
 }
