@@ -75,13 +75,13 @@
 
 @keyframes pulse {
   0% {
-    box-shadow: 0 0 0 0 $green;
+    box-shadow: 0 0 0 3px rgba(50, 183, 150, 0.8);
   }
   50% {
-      box-shadow: 0 0 0 10px $green;
+      box-shadow: 0 0 0 10px rgba(50, 183, 150, 0.2);
   }
   100% {
-      box-shadow: 0 0 0 0 $green;
+      box-shadow: 0 0 0 3px rgba(50, 183, 150, 0.8);
   }
 }
 

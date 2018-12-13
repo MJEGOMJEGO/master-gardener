@@ -11,7 +11,8 @@ class User
       fullfilment_condition: ->(user) { user.score >= 2000 }
     },
     'vegetal-protector' =>  {
-      explanation: 'Vegetal-protector',
+
+      explanation: 'Gardener',
       description: 'Level 2, 1000 pts',
       fullfilment_condition: ->(user) { user.score >= 1000 }
     },
@@ -36,52 +37,52 @@ class User
       fullfilment_condition: ->(user) { user.plants.count >= 5 }
     },
     'amaryllis-genious' => {
-      explanation: 'amaryllis-genious',
+      explanation: 'Amary genious',
       description: '5 good answers on plant amaryllis',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'amaryllis-master' => {
-      explanation: 'Amary-master',
+      explanation: 'Amary master',
       description: 'Max-life reached on amaryllis',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'caoutchouc-genious' => {
-      explanation: 'Caout-genious',
+      explanation: 'Caout genious',
       description: '5 good answers on plant caoutchouc',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'caoutchouc-master' => {
-      explanation: 'Caout-master',
+      explanation: 'Caout master',
       description: 'Max-life reached on caoutchouc',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'pachystachys-genious' => {
-      explanation: 'Pachy-genious',
+      explanation: 'Pachy genious',
       description: '5 good answers on plant pachystachys',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'pachystachys-master' => {
-      explanation: 'Pachy-master',
+      explanation: 'Pachy master',
       description: 'Max-life reached on pachystachys',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'ficus-master' => {
-      explanation: 'Ficus-master',
+      explanation: 'Ficus master',
       description: 'Max-life reached on ficus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'cactus-genious' => {
-      explanation: 'Cactus-genious',
+      explanation: 'Cactus genious',
       description: '5 good answers on plant cactus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'cactus-master' => {
-      explanation: 'Cactus-master',
+       explanation: 'Cactus master',
       description: 'Max-life reached on cactus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'arroseur' => {
-      explanation: 'Watering 10 times',
+      explanation: 'Watering',
       description: 'Watering 10 times',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
@@ -91,7 +92,7 @@ class User
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'rempoteur' => {
-      explanation: 'Repot 2 times',
+      explanation: 'Repot',
       description: 'Repot 2 times',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
@@ -101,12 +102,12 @@ class User
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'mister-meteo' =>  {
-      explanation: 'Mister-meteo',
+      explanation: 'Mister meteo',
       description: 'Sun explosure 3 times',
       fullfilment_condition: ->(user) { user.username == "fake" }
     },
     'ficus-genious' => {
-      explanation: 'Ficus-genious',
+      explanation: 'Ficus genious',
       description: '5 good answers on plant ficus',
       fullfilment_condition: ->(user) { user.username == "fake" }
     }
