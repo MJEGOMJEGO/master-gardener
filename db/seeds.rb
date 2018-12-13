@@ -6,9 +6,9 @@ User.destroy_all
 Specie.destroy_all
 
 puts "Creating users..."
-matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 2, score: 1950, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')), badges: ['fake-flower-1'])
+matt = User.create!(email: 'jego_matt@hotmail.com', password: 'password', username: 'Matthieu', city_location: 'Nantes', level: 2, score: 1600, img: File.open(Rails.root.join('db/fixtures/users/Matt.png')), badges: ['fake-flower-1'])
 ben  = User.create!(email: 'bendelonge@yahoo.com', password: 'password',username: 'Benoit', city_location: 'Paris', level: 0, score: 400, img: File.open(Rails.root.join('db/fixtures/users/Benoit.jpg')), badges: ['fake-flower-1'])
-adrien  = User.create!(email: 'adrien.pierre.bonnet@gmail.com', password: 'password',username: 'Adrien', city_location: 'Bordeaux', level: 0, score: 400, img: File.open(Rails.root.join('db/fixtures/users/Adrien.jpg')), badges: ['fake-flower-1'])
+adrien  = User.create!(email: 'adrien.pierre.bonnet@gmail.com', password: 'password',username: 'Adrien', city_location: 'Bordeaux', level: 0, score: 500, img: File.open(Rails.root.join('db/fixtures/users/Adrien.jpg')), badges: ['fake-flower-1'])
 henri  = User.create!(email: 'henri-devorsine@hotmail.fr', password: 'password',username: 'Henri', city_location: 'Lille', level: 0, score: 100, img: File.open(Rails.root.join('db/fixtures/users/Henri.jpg')), badges: ['fake-flower-1'])
 
 puts "Creating species..."
@@ -66,7 +66,7 @@ puts "Creating tasks..."
 Task.create!(plant: bernard, action: water_ficus, max_date: '2018-12-25', status: "pending")
 Task.create!(plant: bernard, action: cut_ficus, max_date: '2018-12-18', status: "pending")
 Task.create!(plant: bernard, action: feed_ficus, max_date: '2018-12-14', status: "pending")
-Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-29', status: "pending")
+Task.create!(plant: bernard, action: pot_ficus, max_date: '2018-12-01', status: "deadline_missed")
 Task.create!(plant: bernard, action: exposure_ficus, max_date: '2018-12-31', status: "pending")
 
 Task.create!(plant: sophie, action: water_caoutchouc, max_date: '2018-12-25', status: "pending")

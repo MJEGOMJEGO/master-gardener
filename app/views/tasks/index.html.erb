@@ -21,7 +21,7 @@
                 <div class ="only-tasks">
                 <% @user_tasks.each  do |task| %>
                   <% if task.deadline_missed? %>
-                    <h3><div class="icon-separated"><%= image_tag "tasklist/missed.png", class: "icon" %><div>You missed to <%= task.action.name %> <%= task.plant.nickname %>, on <%= task.done_at.strftime("%A, %b %d") %>. </h3><h4 class= "missing-points-message">You lost : <%= task.action.points %> points</h4>
+                    <h3><div class="icon-separated"><%= image_tag "tasklist/missed.png", class: "icon" %><div>You missed to <%= task.action.name %> <%= task.plant.nickname %>, on <%= task.max_date.strftime("%A, %b %d") %>. </h3><h4 class= "missing-points-message">You lost : <%= task.action.points %> points</h4>
                       </div>
                     </div>
                   <% end  %>
