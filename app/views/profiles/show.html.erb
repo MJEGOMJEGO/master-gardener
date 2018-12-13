@@ -4,7 +4,7 @@
       <div class="col-xs-6 col-sm-3 col-md-2">
         <div class="list">
           <div class="container-badges">
-              <div class="<%="#{@user.badges.include?(badge.id) ? 'badge-won' : 'badge-not-won'}"%>">
+              <div class="trigger_popup_fricc <%="#{@user.badges.include?(badge.id) ? 'badge-won' : 'badge-not-won'}"%>" data-target="badge-popup-<%= badge.id %>">
                 <%= image_tag "profile/badges/#{badge.id}.svg", title: badge.description %>
               </div>
           </div>
@@ -13,8 +13,15 @@
           </div>
         </div>
       </div>
+
+      <div class="hover_bkgr_fricc" id="badge-popup-<%= badge.id %>">
+        <span class="helper"></span>
+        <div>
+          <div class="popupCloseButton"> ° </div>
+          <p>Badge rule :<br /><%= badge.description %></p>
+        </div>
+      </div>
     <% end %>
   </div>
 </div>
-
 

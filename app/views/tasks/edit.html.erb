@@ -1,14 +1,1 @@
-<h1>Tasks#edit</h1>
-<p>Find me in app/views/tasks/edit.html.erb</p>
 
-  <div class = "one-kind-of-task">
-      <div class="icon-and-tasks">
-        <div class ="only-tasks">
-        <% @user_tasks.each  do |task| %>
-        <% if task.pending?  && (task.max_date - Date.today < 5) %>
-          <h3><%= image_tag "tasklist/pending.png", class: "icon" %> You have to <%= task.action.name %> <%= task.plant.nickname %>, on <%= task.max_date.strftime("%A, %b %d") %> . </h3><h4 class= "pending-points-message"> You could win : <%= task.action.points %> points<h4>
-        <% end  %>
-      <% end  %>
-    </div>
-  </div>
-</div>
