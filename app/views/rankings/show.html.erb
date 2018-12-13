@@ -48,7 +48,6 @@
 
 
               <div class = "ranking-player">
-                <h1 >
                   <% if index + 1 == 1 %>
                     <span><%= image_tag "components/gold.png"  %></span>
                   <% elsif index + 1 == 2 %>
@@ -56,9 +55,8 @@
                   <% elsif index + 1 == 3 %>
                     <span><%= image_tag "components/bronze.png"  %></span>
                   <% else %>
-                    <p>#<%= index + 1 %></p>
+                    <p><%= index + 1 %></p>
                   <% end %>
-                </h1>
               </div>
 
 

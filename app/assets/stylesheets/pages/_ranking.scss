@@ -20,74 +20,81 @@
 }
 
 
-  .ranking {
-    display: flex;
-    margin: 10px;
-    padding-left: 3px;
-    height: 65px;
-    // vertical-align: center;
+.ranking {
+  display: flex;
+  margin: 10px;
+  padding-left: 3px;
+  height: 65px;
+  // vertical-align: center;
 
+}
+
+
+.player-score{
+  margin-top: 10px;
+
+}
+  .avatar-g {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: auto;
+    background-color: white;
+    //border: 8px solid white;
   }
 
 
-    .player-score{
-      margin-top: 10px;
+.info-player {
+  flex-grow: 1;
+  padding-left: 10px;
+  margin-top: 5px
 
-    }
-      .avatar-g {
-        cursor: pointer;
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        margin: auto;
-        background-color: white;
-        //border: 8px solid white;
-      }
+}
+
+.info-player h5 {
+  margin-bottom: 0px;
+
+}
+.info-player p {
+  font-size: 11px;
+  color: grey;
+}
+
+.info-player h6 {
+  font-size: 11px;
+  margin-top: -12px;
+  color: grey;
+
+}
+
+.ranking-player{
+  margin-right: 1px;
+  margin-top: 20px;
 
 
-    .info-player {
-      flex-grow: 1;
-      padding-left: 10px;
-      margin-top: 5px
+}
 
-    }
+.ranking-player img {
+  height: 40px;
+  width: 30px;
+}
 
-      .info-player h5 {
-        margin-bottom: 0px;
+.ranking-player p {
+  margin-right: 9px;
+  font-size: 22px;
 
-      }
-      .info-player p {
-        font-size: 11px;
-        color: grey;
-      }
+}
 
-      .info-player h6 {
-        font-size: 11px;
-        margin-top: -12px;
-        color: grey;
+.players-plants-avatars {
+  // background-color: red;
+  margin: 5px;
+  // height: 70px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 10px;
 
-      }
-
-    .ranking-player{
-      margin-right: 3px;
-      margin-top: -12px;
-      color: grey;
-
-    }
-    .ranking-player img {
-      height: 50px;
-      width: 35px;
-    }
-
-  .players-plants-avatars {
-    // background-color: red;
-    margin: 5px;
-    // height: 70px;
-    padding-left: 15px;
-    padding-bottom: 5px;
-    padding-top: 10px;
-
-  }
+}
 
 
 
