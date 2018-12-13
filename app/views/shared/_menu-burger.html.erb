@@ -44,6 +44,15 @@
       <%= link_to destroy_user_session_path, method: :delete do %>
         <li><%= image_tag "components/cancel.png" %> &nbsp;Leave the game</li>
       <% end %>
+      <br>
+      <br>
+      <div style="border: 1px solid lightgrey"></div>
+      <br>
+      <div class="weather">
+        <p style="text-align: center"> Weather in <%= current_user.city_location %></p>
+        <%= image_tag "weather/#{@weather[:conditions]}.svg"%>
+        <p> <%= @weather[:temperature].round(1) %> °C</p>
+      </div>
     </ul>
   </div>
 </nav>
