@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_12_221522) do
+ActiveRecord::Schema.define(version: 2018_12_13_085433) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_221522) do
     t.integer "score", default: 0
     t.string "img"
     t.text "badges", default: [], array: true
-    t.integer "level_before"
+    t.integer "level_before", default: 0
     t.text "badges_before", array: true
     t.float "latitude"
     t.float "longitude"

@@ -1,5 +1,5 @@
 .popup-content {
-  background-color: rgba(136, 223, 215, 1);
+  background-color: white;
   border-radius: 20px;
   //height: 400px;
   text-align: center;
@@ -13,25 +13,14 @@
 }
 
 .popup-content p {
-  color: black;
+  color: grey;
   font-size: 20px;
 }
 
-
-
-/////////MOBILE SIZE ///////////////////
-
-@media (max-width: 720px) {
-  .popup-content {
-    //height: 400px;
-  }
-
-  .popup-content p {
-    //font-size: 20px;
-  }
+.popup-content h1 {
+  color: $light-red;
 }
 
-/////////////////TOUCHE PAS EN DESSOUS ////////////////////
 .popup-appear {
   animation: slide-in-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   position: absolute;
@@ -102,7 +91,7 @@
     height: 40px;
     background-color: fade(white, 15%);
     bottom: -100px;
-    animation: square 15s infinite;
+    animation: square 2s infinite;
     // transition-timing-function: linear;
 
     &:nth-child(1){
@@ -115,13 +104,13 @@
       width: 30px;
       height: 30px;
 
-      animation-delay: 5s;
+      animation-delay: 1s;
       // animation-duration: 10s;
     }
 
     &:nth-child(3){
       left: 25%;
-      animation-delay: 4s;
+      animation-delay: 1.1s;
     }
 
     &:nth-child(4){
@@ -136,7 +125,7 @@
 
     &:nth-child(5){
       left: 70%;
-      animation-delay: 9s;
+      animation-delay: 1.2s;
     }
 
     &:nth-child(6){
@@ -144,7 +133,7 @@
       width: 60px;
       height: 60px;
 
-      animation-delay: 3s;
+      animation-delay: 1.3s;
       background-color: fade(white, 20%);
     }
 
@@ -153,7 +142,7 @@
       width: 50px;
       height: 50px;
 
-      animation-delay: 7s;
+      animation-delay: 1.4s;
     }
 
     &:nth-child(8){
@@ -161,7 +150,7 @@
       width: 20px;
       height: 20px;
 
-      animation-delay: 15s;
+      animation-delay: 1.5s;
       // animation-duration: 40s;
     }
 
@@ -170,7 +159,7 @@
       width: 15px;
       height: 15px;
 
-      animation-delay: 2s;
+      animation-delay: 1.6s;
       // animation-duration: 40s;
       background-color: fade(white, 30%);
     }
@@ -180,36 +169,47 @@
       width: 90px;
       height: 90px;
 
-      animation-delay: 11s;
+      animation-delay: 1.7s;
     }
 
     &:nth-child(11){
       left: 45%;
-      animation-delay: 2s;
+      animation-delay: 1.8s;
+      width: 90px;
+      height: 90px;
+
 
     }
 
     &:nth-child(12){
       left: 55%;
-      animation-delay: 0s;
+      animation-delay: 1.9s;
+      width: 90px;
+      height: 90px;
 
     }
 
     &:nth-child(13){
       left: 34%;
-      animation-delay: 5s;
+      animation-delay: 0.9s;
+      width: 90px;
+      height: 90px;
 
     }
 
     &:nth-child(14){
       left: 65%;
-      animation-delay: 4s;
+      animation-delay: 0.8s;
+      width: 90px;
+      height: 90px;
 
     }
 
     &:nth-child(15){
       left: 78%;
-      animation-delay: 7s;
+      animation-delay: 0.7s;
+      width: 90px;
+      height: 90px;
 
     }
   }
