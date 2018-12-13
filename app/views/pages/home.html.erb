@@ -1,21 +1,23 @@
-<div class="container">
+<div class="container container-banner">
+  <div class="plant-ficus">
+   <%= plants_svg 'ficus', 'feelgood' %>
+  </div>
+  <div class="plant-caoutchouc">
+   <%= plants_svg 'caoutchouc', 'feelgood' %>
+  </div>
+  <div class="plant-cactus">
+   <%= plants_svg 'cactus', 'feelgood' %>
+  </div>
+  <div class="plant-amaryllis">
+   <%= plants_svg 'amaryllis', 'feelgood' %>
+  </div>
   <div class="banner">
-    <div class="banner-content">
-      <h1>Welcome to Garden Master !</h1>
-      <p>easy and fun way to heal your plants</p>
-      <%= link_to 'PLAY NOW', plants_path, class: "btn-form-banner" %>
-    </div>
-
-
-    </div>
-    <ul class="bg-bubbles">
-      <li><%= components_svg('pot') %></li>
-
-      <li><%= plants_svg 'cactus', 'feelgood' %></li>
-      <li><%= plants_svg 'amaryllis', 'water' %></li>
-      <li><%= plants_svg 'ficus', 'repot' %></li>
-      <li><%= plants_svg 'caoutchouc', 'neutral' %></li>
-      <li><%= plants_svg 'pachystachys', 'feed' %></li>
-    </ul>
+  <div class="banner-content">
+    <h1>Garden Master</h1>
+    <p>easy and fun way to heal<br>your plants</p>
+    <%= link_to 'PLAY NOW', plants_path, class: "btn-treehouse btn-banner" %>
+  </div>
 </div>
+
+
 
