@@ -19,7 +19,7 @@ class User
     'green-lover' => {
       explanation: 'Green lover',
       description: 'Level 1, 500 pts',
-      fullfilment_condition: ->(user) { user.score >= 300 }
+      fullfilment_condition: ->(user) { user.score >= 500 }
 
     },
     'amateur' => {
@@ -34,8 +34,8 @@ class User
     },
     'collector' => {
       explanation: 'Collector',
-      description: 'Five plants in your garden',
-      fullfilment_condition: ->(user) { user.plants.count >= 5 }
+      description: 'Four plants in your garden',
+      fullfilment_condition: ->(user) { user.plants.count >= 4 }
     },
     'amaryllis-genious' => {
       explanation: 'Amary genious',
@@ -85,7 +85,7 @@ class User
     'arroseur' => {
       explanation: 'Watering',
       description: 'Watering 10 times',
-      fullfilment_condition: ->(user) { user.username == "fake" }
+      fullfilment_condition: ->(user) { user.plants.count == 4 }
     },
     'cuisinier' => {
       explanation: 'Cook',
