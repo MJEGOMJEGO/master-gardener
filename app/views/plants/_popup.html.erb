@@ -1,34 +1,35 @@
 <% if flash[:action_done] %>
   <div id="popup" class="container popup-appear">
     <div class="popup-content">
-<!--     <p>Thanks <%= current_user.username %></p>-->
-    <!-- <p>Now I am filling better !</p> -->
-    <p>Well done, you win :</p>
-    <h1><%= @last_task_points %> points !</h1>
+    <p>Well done</p>
+    <h1>+ <%= @last_task_points %> pts !</h1>
     <br>
     <% if current_user.level_before < current_user.level %>
-      <p>You passed a new level !! You are now : </p>
+      <p>You passed a new level !! <br> You are now : </p>
       <% case current_user.level %>
         <% when 0 %>
-          <span> BEGINNER</span>
+          <h2> BEGINNER</h2>
           <%= image_tag "levels/beginner.png", class: "avatar-gardener" %>
         <% when 1 %>
-          <span> GREEN LOVER</span>
+          <h2> GREEN LOVER</h2>
           <%= image_tag "levels/green-lover.png", class: "avatar-gardener" %>
         <% when 2 %>
-          <span> GARDENER</span>
+          <h2> GARDENER</h2>
           <%= image_tag "levels/gardenner.png", class: "avatar-gardener" %>
         <% when 3 %>
-          <span> BOTANIST</span>
+          <h2> BOTANIST</h2>
           <%= image_tag "levels/botanist.png", class: "avatar-gardener" %>
         <% when 4 %>
-          <span> MASTER</span>
+          <h2> MASTER</h2>
           <%= image_tag "levels/master.png", class: "avatar-gardener" %>
         <% end %>
+    <%# else  %>
+    <% elsif (current_user.badges - current_user.badges_before).length > 0   %>
+    <p> You win a new badge !! </p>
+      <%= link_to profile_path do %>
+        <%= image_tag "components/kdo.svg", height: 70 %>
+      <% end  %>
     <% end  %>
-    <%# unless (current_user.badges - current_user.badges_before).empty?  %>
-    <!-- <p> You win a new badge !! </p>
-     --><%# end  %>
     </div>
     <ul class="bg-leaf">
       <li><%= components_svg('leaf') %></li>

@@ -1,6 +1,6 @@
 .popup-content {
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   //height: 400px;
   text-align: center;
   text-align: middle;
@@ -18,7 +18,15 @@
 }
 
 .popup-content h1 {
-  color: $light-red;
+  color: $green;
+  margin: 0;
+}
+
+.popup-content h2 {
+  color: black;
+  font-size: 20px;
+  font-style: bold;
+  margin: 0;
 }
 
 .popup-appear {
