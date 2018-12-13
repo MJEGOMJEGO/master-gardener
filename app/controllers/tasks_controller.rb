@@ -9,9 +9,9 @@ class TasksController < ApplicationController
   end
 
   def mark_as_done
-    #@task.status  = "done"
-    #@task.done_at = DateTime.now
-    #@task.save!
+    @task.status  = "done"
+    @task.done_at = DateTime.now
+    @task.save!
     update_plant_lifepoints
     update_user_game_status
     rebuild_done_task_for_later
