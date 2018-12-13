@@ -9,6 +9,7 @@
 
 .container-banner {
   position: relative;
+  height: 100vh;
 }
 
 .banner h1 {
@@ -73,7 +74,7 @@
 .plant-ficus svg {
   height: 100px;
   position: absolute;
-  top: 150px;
+  top: 170px;
   left: 50px;
   animation: float-ficus 3s ease-in-out infinite;
 }
@@ -90,7 +91,7 @@
 .plant-cactus svg {
   height: 150px;
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   right: 60px;
   transform: rotate(35deg);
   animation: float-cactus 8s ease-in-out infinite;
