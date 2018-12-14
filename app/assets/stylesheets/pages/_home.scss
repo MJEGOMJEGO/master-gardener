@@ -75,7 +75,7 @@
 .plant-cactus svg {
   height: 150px;
   position: absolute;
-  bottom: 40px;
+  bottom: 20px;
   right: 60px;
   transform: rotate(35deg);
   animation: float-cactus 8s ease-in-out infinite;
@@ -83,7 +83,7 @@
 .plant-amaryllis svg {
   height: 100px;
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   transform: rotate(-45deg);
   animation: float-amaryllis 9s ease-in-out infinite;
 }
