@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container container-custom-profile">
   <div class="row center-row">
     <% User::Badge.all.each do |badge| %>
       <div class="col-xs-6 col-sm-3 col-md-2">
@@ -17,8 +17,8 @@
       <div class="hover_bkgr_fricc" id="badge-popup-<%= badge.id %>">
         <span class="helper"></span>
         <div>
-          <div class="popupCloseButton"> ° </div>
-          <p>Badge rule :<br /><%= badge.description %></p>
+          <!-- <div class="popupCloseButton">  </div> -->
+          <p><%= badge.description %></p>
         </div>
       </div>
     <% end %>

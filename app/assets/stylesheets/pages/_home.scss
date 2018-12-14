@@ -7,14 +7,14 @@
   justify-content: center;
 }
 
-.container-banner {
-  position: relative;
-  height: 100vh;
-}
+// .container-banner {
+//   position: relative;
+//   height: 100vh;
+// }
 
 .banner h1 {
   font-size: 34px;
-  font-weight: bold;
+  // font-weight: bold;
   color: black;
   margin-top: 62px;
   margin-bottom: 20px;
@@ -36,26 +36,10 @@
   padding: 10px 40px 10px 40px;
   border-radius: 50px;
   color: white;
-  // display: block;
-  // margin: 0px auto;
   font-size:18px;
   letter-spacing: 2px;
   z-index: 999;
-  // box-shadow: 0 2px 25px $light-green;
 }
-
-
-// @keyframes pulse {
-//   0% {
-//     box-shadow: 0 0 0 0 $green;
-//   }
-//   50% {
-//       box-shadow: 0 0 0 10px $green;
-//   }
-//   100% {
-//       box-shadow: 0 0 0 0 $green;
-//   }
-// }
 
 .btn-banner:hover {
   opacity: 1;
@@ -74,7 +58,7 @@
 .plant-ficus svg {
   height: 100px;
   position: absolute;
-  top: 170px;
+  top: 110px;
   left: 50px;
   animation: float-ficus 3s ease-in-out infinite;
 }
@@ -91,7 +75,7 @@
 .plant-cactus svg {
   height: 150px;
   position: absolute;
-  bottom: 50px;
+  bottom: 40px;
   right: 60px;
   transform: rotate(35deg);
   animation: float-cactus 8s ease-in-out infinite;
@@ -103,6 +87,15 @@
   transform: rotate(-45deg);
   animation: float-amaryllis 9s ease-in-out infinite;
 }
+
+// .plant-pachystachys svg {
+//   height: 80px;
+//   position: absolute;
+//   bottom: 30px;
+//   left: 100px;
+//   transform: rotate(10deg);
+//   animation: float-amaryllis 9s ease-in-out infinite;
+// }
 
 @keyframes float-ficus {
   0% {
@@ -121,14 +114,14 @@
 @keyframes float-caoutchouc {
   0% {
     transform: translatey(0px);
-    transform: rotate(60deg);
+    transform: rotate(30deg);
   }
   50% {
     transform: translatey(-20px);
   }
   100% {
     transform: translatey(0px);
-    transform: rotate(60deg);
+    transform: rotate(30deg);
   }
 }
 
@@ -159,6 +152,20 @@
     transform: rotate(10deg);
   }
 }
+
+// @keyframes pachystachys {
+//   0% {
+//     transform: translatex(-100px);
+//     transform: rotate(40deg);
+//   }
+//   50% {
+//     transform: translatex(-20px);
+//   }
+//   100% {
+//     transform: translatex(46px);
+//     transform: rotate(40deg);
+//   }
+// }
 
 // .bg-bubbles{
 //   position: absolute;
