@@ -85,7 +85,7 @@ class User
     'arroseur' => {
       explanation: 'Watering',
       description: 'Watering 10 times',
-      fullfilment_condition: ->(user) { user.plants.count == 4 }
+      fullfilment_condition: ->(user) { user.score >= 1950  }
     },
     'cuisinier' => {
       explanation: 'Cook',
